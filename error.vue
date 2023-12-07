@@ -16,13 +16,15 @@ function handleError() {
 
 <template>
   <NuxtLayout>
-    <div flex="~ col" h-screen text-center items-center justify-center gap4>
-      <div text-3xl>
-        {{ is404 ? "This page could not be found" : "An error occurred" }}
+    <div
+      class="flex flex-col h-70vh text-center items-center justify-center gap-4"
+    >
+      <div class="text-3xl">
+        {{ is404 ? "页面找不到" : "发生了未知错误" }}
       </div>
-      <div text-xl op50>链接不存在</div>
+      <div class="text-xl opacity-50">链接不存在</div>
       <pre v-if="isDev">{{ error }}</pre>
-      <q-btn @click="handleError"> 返回 </q-btn>
+      <q-btn color="primary" @click="handleError"> 返回主页 </q-btn>
     </div>
   </NuxtLayout>
 </template>
