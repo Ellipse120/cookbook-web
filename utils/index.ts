@@ -3,7 +3,6 @@ import { date } from "quasar";
 
 const logger = createConsola({
   level: 4,
-  fancy: true,
   formatOptions: {
     columns: 80,
     colors: true,

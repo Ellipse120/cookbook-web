@@ -14,19 +14,28 @@ const toggleRightDrawer = () => {
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
+      <div class="row no-wrap shadow-1">
+        <q-toolbar class="col-8 q-gutter-md">
+          <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
+          <q-img
+            src="/logo.drawio.svg"
+            height="40px"
+            width="200px"
+            fit="fill"
+          />
+          <q-toolbar-title class="font-bold text-positive"
+            >我们的菜谱</q-toolbar-title
+          >
+        </q-toolbar>
 
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          我们的菜谱
-        </q-toolbar-title>
-
-        <DevOnly>开发模式</DevOnly>
-        <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
-      </q-toolbar>
+        <q-toolbar>
+          <q-space />
+          <DevOnly>
+            <span class="text-red-500 font-bold">开发模式</span>
+          </DevOnly>
+          <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
+        </q-toolbar>
+      </div>
 
       <q-tabs align="left">
         <q-route-tab to="/" label="全部" />

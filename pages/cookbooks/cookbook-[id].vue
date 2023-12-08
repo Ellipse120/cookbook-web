@@ -1,7 +1,9 @@
 <template>
-  <div>detail page</div>
+  <div>detail page of id: {{ route.params.id }}</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute();
+</script>
 
 <style></style>
