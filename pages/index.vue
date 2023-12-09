@@ -30,8 +30,11 @@ const confirmDelete = async () => {
       icon: "delete",
       message: "删除失败",
     });
+
     return;
   }
+
+  deleteDialogVisible.value = false;
 
   $q.notify({
     color: "positive",
@@ -39,7 +42,6 @@ const confirmDelete = async () => {
     icon: "done_all",
     message: "删除成功",
   });
-  deleteDialogVisible.value = false;
 
   refresh();
 };

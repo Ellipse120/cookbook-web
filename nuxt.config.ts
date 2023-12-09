@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     config: {
       brand: {
         positive: "#32bf1e",
+        negative: "rgb(242,83,84)",
       },
     },
   },
