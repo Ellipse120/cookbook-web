@@ -14,6 +14,7 @@ export default defineEventHandler(async (event) => {
   mockData[targetIndex] = {
     ...mockData[targetIndex],
     ...body,
+    updatedAt: new Date(),
   };
 
   return {

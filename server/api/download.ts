@@ -12,10 +12,10 @@ export default defineEventHandler(async (event) => {
     setHeader(event, "fileName", `${encodeURIComponent(query?.fileName)}`);
     await access(filePath, constants.F_OK);
     return sendStream(event, createReadStream(`${filePath}`));
-  } catch (err) {
+  } catch {
     throw createError({
       statusCode: 500,
-      message: err?.message || "文件不存在",
+      message: "文件不存在",
     });
   }
 });
