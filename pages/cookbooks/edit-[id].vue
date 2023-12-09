@@ -1,18 +1,36 @@
 <script lang="ts" setup>
+const route = useRoute();
 const $q = useQuasar();
 
 const title = ref(null);
 const content = ref(null);
-const previewImg = ref(null);
+const previewImg = ref("");
 const satisfaction = ref(1);
 const difficulty = ref(1);
 const consuming = ref(null);
 const cookingDate = ref(formatDate(new Date()));
 
+const { data, pending } = await useFetch(`/api/cookbooks/${route.params.id}`);
+
+if (data.value?.data) {
+  title.value = data.value.data.title;
+  content.value = data.value.data.content;
+  previewImg.value = data.value.data.previewImg;
+  satisfaction.value = data.value.data.satisfaction;
+  difficulty.value = data.value.data.difficulty;
+  consuming.value = data.value.data.consuming;
+  cookingDate.value = data.value.data.cookingDate;
+}
+
+function handleFormField(files: any) {
+  return [{ name: "fileName", value: files[0].name }];
+}
+
 async function onSubmit() {
   const { error } = await useFetch("/api/cookbooks", {
-    method: "post",
+    method: "put",
     body: {
+      id: route.params.id,
       title,
       content,
       previewImg,
@@ -28,7 +46,7 @@ async function onSubmit() {
       color: "green-4",
       textColor: "white",
       icon: "cloud_done",
-      message: "添加成功",
+      message: "修改成功",
     });
 
     navigateTo("/");
@@ -38,7 +56,7 @@ async function onSubmit() {
 function onReset() {
   title.value = null;
   content.value = null;
-  previewImg.value = null;
+  previewImg.value = "";
   satisfaction.value = 1;
   difficulty.value = 1;
   consuming.value = null;
@@ -53,7 +71,7 @@ function handleUploadSuccess(o: any) {
 }
 
 function removePreviewImg() {
-  previewImg.value = null;
+  previewImg.value = "";
 }
 </script>
 
@@ -70,17 +88,16 @@ function removePreviewImg() {
 
       <q-field filled label="预览图" name="previewImg" stack-label>
         <template v-slot:control>
-          <div class="w-full">
+          <div class="w-full flex">
             <q-uploader
               url="/api/upload"
               field-name="file"
               :multiple="false"
-              :form-fields="
-                (files) => [{ name: 'fileName', value: files[0].name }]
-              "
+              :form-fields="handleFormField"
               @removed="removePreviewImg"
               @uploaded="handleUploadSuccess"
             />
+            <q-img :src="previewImg" class="w-80 h-80"></q-img>
           </div>
         </template>
       </q-field>

@@ -1,10 +1,47 @@
 <script lang="ts" setup>
-const current = ref(1);
+import type { Cookbook } from "~/server/api/cookbooks.get";
 
+const $q = useQuasar();
+
+const current = ref(1);
+const deleteDialogVisible = ref(false);
+const currentItem = ref();
 const { data, refresh } = await useLazyFetch("/api/cookbooks");
 
 const addNew = () => {
   navigateTo("/cookbooks/add");
+};
+
+const deleteItem = (item: Cookbook) => {
+  currentItem.value = item;
+  deleteDialogVisible.value = true;
+};
+
+const confirmDelete = async () => {
+  const { error } = await useFetch("/api/cookbooks", {
+    method: "delete",
+    body: currentItem.value,
+  });
+
+  if (error.value) {
+    $q.notify({
+      color: "negative",
+      textColor: "white",
+      icon: "delete",
+      message: "删除失败",
+    });
+    return;
+  }
+
+  $q.notify({
+    color: "positive",
+    textColor: "white",
+    icon: "done_all",
+    message: "删除成功",
+  });
+  deleteDialogVisible.value = false;
+
+  refresh();
 };
 </script>
 
@@ -75,7 +112,7 @@ const addNew = () => {
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-          <div class="text-lg">{{ formatDate(item.updatedAt) }}</div>
+          <div class="text-lg">{{ formatDate(item.cookingDate) }}</div>
           <div class="text-caption text-grey">
             Small plates, salads & sandwiches in an intimate setting.
           </div>
@@ -86,10 +123,38 @@ const addNew = () => {
         <q-card-actions>
           <NuxtLink :to="`cookbooks/cookbook-${item.id}`">
             <q-btn flat round icon="info" color="positive" />
-            <q-btn flat color="green-5"> 详情 </q-btn>
+            <q-btn flat color="info"> 详情 </q-btn>
           </NuxtLink>
+          <NuxtLink :to="`cookbooks/edit-${item.id}`">
+            <q-btn flat color="positive"> 编辑 </q-btn>
+          </NuxtLink>
+          <q-btn flat color="red-5" @click="deleteItem(item)"> 删除 </q-btn>
         </q-card-actions>
       </q-card>
+
+      <q-dialog v-model="deleteDialogVisible" persistent>
+        <q-card>
+          <q-card-section class="row items-center">
+            <q-avatar icon="delete" color="negative" text-color="white" />
+            <span class="q-ml-sm"
+              >确定删除菜品：{{ currentItem.title }} 【id={{
+                currentItem.id
+              }}】吗?</span
+            >
+          </q-card-section>
+
+          <q-card-actions align="right">
+            <q-btn flat label="取消" v-close-popup />
+            <q-btn
+              flat
+              label="删除"
+              color="negative"
+              v-close-popup
+              @click="confirmDelete"
+            />
+          </q-card-actions>
+        </q-card>
+      </q-dialog>
     </div>
   </div>
 </template>

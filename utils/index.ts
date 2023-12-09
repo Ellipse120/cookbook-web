@@ -11,11 +11,13 @@ const logger = createConsola({
   },
 });
 
-const formatDate = (
-  value: Date | number | string | undefined,
-  formatter = "YYYY-MM-DD HH:mm:ss"
-) => {
-  return date.formatDate(value, formatter);
+type D = Date | number | string | null | undefined;
+
+const formatDate = (value: D, formatter = "YYYY-MM-DD HH:mm:ss") => {
+  const emptySymbol = "---";
+  if (value === null) return emptySymbol;
+
+  return date.formatDate(value, formatter) || emptySymbol;
 };
 
 export { logger, formatDate };

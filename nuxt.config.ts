@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
 
   quasar: {
+    plugins: ["Notify"],
     config: {
       brand: {
         positive: "#32bf1e",

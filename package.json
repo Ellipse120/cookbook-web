@@ -19,6 +19,7 @@
   "dependencies": {
     "@quasar/extras": "^1.16.9",
     "consola": "^3.2.3",
+    "formidable": "^3.5.1",
     "quasar": "^2.14.1"
   }
 }
