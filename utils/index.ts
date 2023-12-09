@@ -20,4 +20,16 @@ const formatDate = (value: D, formatter = "YYYY-MM-DD HH:mm:ss") => {
   return date.formatDate(value, formatter) || emptySymbol;
 };
 
-export { logger, formatDate };
+const downloadFile = (res: Blob, fileName = "") => {
+  const blob = new Blob([res], { type: "application/octet-stream" });
+  const el = document.createElement("a");
+  el.download = fileName;
+  el.style.display = "none";
+  el.href = URL.createObjectURL(blob);
+  document.body.appendChild(el);
+  el.click();
+  URL.revokeObjectURL(el.href);
+  document.body.removeChild(el);
+};
+
+export { logger, formatDate, downloadFile };

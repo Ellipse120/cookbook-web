@@ -31,7 +31,7 @@ const toggleRightDrawer = () => {
         <q-toolbar>
           <q-space />
           <DevOnly>
-            <span class="text-red-500 font-bold">开发模式</span>
+            <span class="text-positive font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
         </q-toolbar>

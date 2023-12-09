@@ -1,25 +1,29 @@
 <script lang="ts" setup>
+import type { Cookbook } from "~/types";
+
 const route = useRoute();
 const $q = useQuasar();
 
-const title = ref(null);
-const content = ref(null);
-const previewImg = ref("");
+const title = ref();
+const content = ref();
+const previewImg = ref();
 const satisfaction = ref(1);
 const difficulty = ref(1);
-const consuming = ref(null);
+const consuming = ref();
 const cookingDate = ref(formatDate(new Date()));
 
 const { data, pending } = await useFetch(`/api/cookbooks/${route.params.id}`);
 
-if (data.value?.data) {
-  title.value = data.value.data.title;
-  content.value = data.value.data.content;
-  previewImg.value = data.value.data.previewImg;
-  satisfaction.value = data.value.data.satisfaction;
-  difficulty.value = data.value.data.difficulty;
-  consuming.value = data.value.data.consuming;
-  cookingDate.value = data.value.data.cookingDate;
+const d = data.value!.data;
+
+if (d) {
+  title.value = d.title;
+  content.value = d.content;
+  previewImg.value = d.previewImg || "";
+  satisfaction.value = d.satisfaction ?? 0;
+  difficulty.value = d.difficulty ?? 0;
+  consuming.value = d.consuming ?? "";
+  cookingDate.value = formatDate(d.cookingDate);
 }
 
 function handleFormField(files: any) {

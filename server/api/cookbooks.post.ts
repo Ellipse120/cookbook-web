@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
   mockData.push(newItem);
 
   return {
-    statusCode: "200",
+    statusCode: 200,
     statusMessage: "成功",
     data: newItem,
   };

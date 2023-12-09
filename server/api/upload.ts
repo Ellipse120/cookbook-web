@@ -1,7 +1,6 @@
 import formidable from "formidable";
 import fs from "fs";
 import path from "path";
-import { logger } from "~/utils";
 
 export default defineEventHandler(async (event) => {
   let fields;
