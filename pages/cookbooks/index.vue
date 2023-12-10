@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+import type { Cookbook } from "~/types";
+
 const selection = ref([]);
 const { data, pending, refresh } = await useLazyFetch("/api/cookbooks", {
-  transform: (t) => {
-    return t.map((o) => ({
+  transform: (t: Cookbook[]) => {
+    return t.map((o: Cookbook) => ({
       ...o,
       checked: false,
     }));
@@ -81,7 +83,7 @@ function batchDelete(ids: (string | number)[]) {
           <q-item-section>
             <q-item-label>
               <q-rating
-                :model-value="item.satisfaction"
+                :model-value="item.satisfaction || 0"
                 max="5"
                 size="1.2rem"
                 color="red"
@@ -94,7 +96,7 @@ function batchDelete(ids: (string | number)[]) {
 
             <q-item-label>
               <q-rating
-                :model-value="item.difficulty"
+                :model-value="item.difficulty || 0"
                 max="5"
                 size="1.2rem"
                 color="negative"

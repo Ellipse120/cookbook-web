@@ -12,7 +12,7 @@ const addNew = () => {
   navigateTo("/cookbooks/add");
 };
 
-const deleteItem = (item: Cookbook) => {
+const deleteItem = (item: any) => {
   currentItem.value = item;
   deleteDialogVisible.value = true;
 };
@@ -46,7 +46,7 @@ const confirmDelete = async () => {
   refresh();
 };
 
-async function downloadImg(item: Cookbook) {
+async function downloadImg(item: any) {
   const { data } = await useFetch(`/api/download`, {
     query: {
       fileName: item.previewImg,
@@ -124,7 +124,7 @@ async function downloadImg(item: Cookbook) {
               color="positive"
               icon="download"
               class="absolute top-0 right-12px -translate-y-1/2"
-              @click="downloadImg(item as Cookbook)"
+              @click="downloadImg(item)"
             />
 
             <div class="row no-wrap items-center">
@@ -156,23 +156,29 @@ async function downloadImg(item: Cookbook) {
           <q-card-section class="q-pt-none">
             <div class="text-lg">{{ formatDate(item.cookingDate) }}</div>
             <div class="text-caption text-grey">
-              Small plates, salads & sandwiches in an intimate setting.
+              <div v-if="item.categories.length">
+                <q-chip
+                  v-for="(ca, caIndex) in item.categories"
+                  :key="`category-${caIndex}`"
+                  :label="ca"
+                ></q-chip>
+              </div>
+
+              <q-chip v-else label="--"></q-chip>
             </div>
           </q-card-section>
 
           <q-separator />
 
           <q-card-actions>
-            <NuxtLink :to="`cookbooks/cookbook-${item.id}`">
+            <NuxtLink :to="`cookbooks/cookbook-${item.id}`" external>
               <q-btn flat round icon="info" color="positive" />
               <q-btn flat color="info"> 详情 </q-btn>
             </NuxtLink>
-            <NuxtLink :to="`cookbooks/edit-${item.id}`">
+            <NuxtLink :to="`cookbooks/edit-${item.id}`" external>
               <q-btn flat color="positive"> 编辑 </q-btn>
             </NuxtLink>
-            <q-btn flat color="red-5" @click="deleteItem(item as Cookbook)">
-              删除
-            </q-btn>
+            <q-btn flat color="red-5" @click="deleteItem(item)"> 删除 </q-btn>
           </q-card-actions>
         </q-card>
       </q-intersection>

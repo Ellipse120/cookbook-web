@@ -13,6 +13,7 @@ export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   deleted: false,
   consuming: "10min",
   comments: [],
+  categories: ["菜", "热菜"],
   cookingDate: new Date(),
   createdAt: new Date(),
   updatedAt: new Date(),

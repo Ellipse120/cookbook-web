@@ -1,4 +1,4 @@
-import { mockData } from "./cookbooks.get";
+import { mockData } from "./cookbooks";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -9,6 +9,8 @@ export default defineEventHandler(async (event) => {
       message: "id不能为空",
     });
   }
+
+  console.log(body);
 
   const targetIndex = mockData.findIndex((o) => o.id === body.id);
   mockData[targetIndex] = {

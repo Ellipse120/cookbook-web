@@ -7,7 +7,10 @@ const previewImg = ref(null);
 const satisfaction = ref(1);
 const difficulty = ref(1);
 const consuming = ref(null);
+const comments = ref([]);
+const categories = ref([]);
 const cookingDate = ref(formatDate(new Date()));
+const categoryOptions = useCategoriesInitData();
 
 async function onSubmit() {
   const { error } = await useFetch("/api/cookbooks", {
@@ -20,6 +23,8 @@ async function onSubmit() {
       difficulty,
       consuming,
       cookingDate,
+      comments,
+      categories,
     },
   });
 
@@ -55,6 +60,10 @@ function handleUploadSuccess(o: any) {
 function removePreviewImg() {
   previewImg.value = null;
 }
+
+const handleFiles = (files: any) => [
+  { name: "fileName", value: files[0].name },
+];
 </script>
 
 <template>
@@ -75,9 +84,7 @@ function removePreviewImg() {
               url="/api/upload"
               field-name="file"
               :multiple="false"
-              :form-fields="
-                (files) => [{ name: 'fileName', value: files[0].name }]
-              "
+              :form-fields="handleFiles"
               @removed="removePreviewImg"
               @uploaded="handleUploadSuccess"
             />
@@ -93,75 +100,101 @@ function removePreviewImg() {
         type="textarea"
       />
 
-      <q-field filled label="满意度" name="satisfaction" stack-label>
-        <template v-slot:control>
-          <q-slider
-            v-model="satisfaction"
-            :min="0"
-            :max="5"
-            :step="1"
-            label
-            label-always
-            class="q-mt-lg"
-          />
-        </template>
-      </q-field>
-
-      <q-field filled label="难度" name="difficulty" stack-label>
-        <template v-slot:control>
-          <q-slider
-            v-model="difficulty"
-            :min="0"
-            :max="5"
-            :step="1"
-            label
-            label-always
-            class="q-mt-lg"
-          />
-        </template>
-      </q-field>
-
-      <q-input
+      <q-select
         filled
-        v-model="consuming"
-        label="耗时"
-        lazy-rules
-        :rules="[(val) => (val && val.length > 0) || '不能为空']"
-      />
-
-      <q-input filled v-model="cookingDate" label="烹饪时间">
-        <template v-slot:prepend>
-          <q-icon name="event" class="cursor-pointer">
-            <q-popup-proxy
-              cover
-              transition-show="scale"
-              transition-hide="scale"
-            >
-              <q-date v-model="cookingDate" mask="YYYY-MM-DD HH:mm">
-                <div class="row items-center justify-end">
-                  <q-btn v-close-popup label="Close" color="primary" flat />
-                </div>
-              </q-date>
-            </q-popup-proxy>
-          </q-icon>
+        v-model="categories"
+        multiple
+        :options="categoryOptions"
+        use-chips
+        label="类别"
+        hint="可多选"
+      >
+        <template v-slot:selected-item="scope">
+          <q-chip
+            removable
+            @remove="scope.removeAtIndex(scope.index)"
+            :tabindex="scope.tabindex"
+            color="positive"
+            text-color="white"
+          >
+            {{ scope.opt }}
+          </q-chip>
         </template>
+      </q-select>
 
-        <template v-slot:append>
-          <q-icon name="access_time" class="cursor-pointer">
-            <q-popup-proxy
-              cover
-              transition-show="scale"
-              transition-hide="scale"
-            >
-              <q-time v-model="cookingDate" mask="YYYY-MM-DD HH:mm" format24h>
-                <div class="row items-center justify-end">
-                  <q-btn v-close-popup label="Close" color="primary" flat />
-                </div>
-              </q-time>
-            </q-popup-proxy>
-          </q-icon>
-        </template>
-      </q-input>
+      <div class="grid grid-cols-2 gap-4">
+        <q-field filled label="满意度" name="satisfaction">
+          <template v-slot:control>
+            <q-slider
+              v-model="satisfaction"
+              :min="0"
+              :max="5"
+              :step="1"
+              label
+              label-always
+              class="q-mt-lg"
+            />
+          </template>
+        </q-field>
+
+        <q-field filled label="难度" name="difficulty">
+          <template v-slot:control>
+            <q-slider
+              v-model="difficulty"
+              :min="0"
+              :max="5"
+              :step="1"
+              label
+              label-always
+              class="q-mt-lg"
+            />
+          </template>
+        </q-field>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <q-input
+          filled
+          v-model="consuming"
+          label="耗时"
+          lazy-rules
+          :rules="[(val) => (val && val.length > 0) || '不能为空']"
+        />
+
+        <q-input filled v-model="cookingDate" label="烹饪时间">
+          <template v-slot:prepend>
+            <q-icon name="event" class="cursor-pointer">
+              <q-popup-proxy
+                cover
+                transition-show="scale"
+                transition-hide="scale"
+              >
+                <q-date v-model="cookingDate" mask="YYYY-MM-DD HH:mm">
+                  <div class="row items-center justify-end">
+                    <q-btn v-close-popup label="Close" color="primary" flat />
+                  </div>
+                </q-date>
+              </q-popup-proxy>
+            </q-icon>
+          </template>
+
+          <template v-slot:append>
+            <q-icon name="access_time" class="cursor-pointer">
+              <q-popup-proxy
+                cover
+                transition-show="scale"
+                transition-hide="scale"
+              >
+                <q-time v-model="cookingDate" mask="YYYY-MM-DD HH:mm" format24h>
+                  <div class="row items-center justify-end">
+                    <q-btn v-close-popup label="Close" color="primary" flat />
+                  </div>
+                </q-time>
+              </q-popup-proxy>
+            </q-icon>
+          </template>
+        </q-input>
+      </div>
 
       <div>
         <q-btn label="保存" type="submit" color="primary" />

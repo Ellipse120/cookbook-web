@@ -1,4 +1,4 @@
-import { mockData } from "../cookbooks.get";
+import { mockData } from "../cookbooks";
 
 export default defineEventHandler((event) => {
   const id = getRouterParam(event, "id");

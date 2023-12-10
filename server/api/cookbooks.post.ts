@@ -1,4 +1,4 @@
-import { mockData } from "./cookbooks.get";
+import { mockData } from "./cookbooks";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
