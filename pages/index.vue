@@ -154,17 +154,20 @@ async function downloadImg(item: any) {
           </q-card-section>
 
           <q-card-section class="q-pt-none">
-            <div class="text-lg">{{ formatDate(item.cookingDate) }}</div>
+            <div class="text-lg text-gray-500">
+              {{ formatDate(item.cookingDate) }}
+            </div>
             <div class="text-caption text-grey">
-              <div v-if="item.categories.length">
+              <q-scroll-area visible class="h-2.2rem">
                 <q-chip
                   v-for="(ca, caIndex) in item.categories"
                   :key="`category-${caIndex}`"
                   :label="ca"
-                ></q-chip>
-              </div>
-
-              <q-chip v-else label="--"></q-chip>
+                  color="positive"
+                  text-color="white"
+                />
+                <q-chip v-if="!item.categories.length" label="--" />
+              </q-scroll-area>
             </div>
           </q-card-section>
 

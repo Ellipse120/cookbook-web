@@ -29,15 +29,6 @@ function batchDelete(ids: (string | number)[]) {
           @click="refresh()"
           >刷新 {{ data?.length || 0 }}</q-btn
         >
-        <!-- <q-btn
-          push
-          icon="delete_outline"
-          color="negative"
-          :disable="!selection.length"
-          :loading="pending"
-          @click="batchDelete()"
-          >批量删除</q-btn
-        > -->
         <q-btn-dropdown
           auto-close
           rounded

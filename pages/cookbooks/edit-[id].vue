@@ -17,7 +17,7 @@ const categoryOptions = useCategoriesInitData();
 
 const { data, pending } = await useFetch(`/api/cookbooks/${route.params.id}`);
 
-const d: Cookbook = data.value!.data;
+const d: any = data.value!.data;
 
 if (d) {
   title.value = d.title;

@@ -10,8 +10,6 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  console.log(body);
-
   const targetIndex = mockData.findIndex((o) => o.id === body.id);
   mockData[targetIndex] = {
     ...mockData[targetIndex],
