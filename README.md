@@ -1,75 +1,17 @@
-# Nuxt UI Minimal Starter
+# 我们的菜谱应用功能
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+> 使用`Nuxt3`, `Quasar Framework`, `UnoCSS` etc, building this app, play for fun.
 
-## Setup
+- [x] 可以记录做菜的细节, 可以记录步骤,
 
-Make sure to install the dependencies:
+- [x] 有文字视频图片, 有点类似 vlog, 上传媒体文件临时存放`/public/uploads`目录下
 
-```bash
-# npm
-npm install
+- [] 评论(待定)
 
-# pnpm
-pnpm install
+- [x] 菜做的满意度，菜难度、复杂度
 
-# yarn
-yarn install
+- [x] 打标签 [菜，肉，汤，凉菜，热菜，火锅，面食，豆制品，水产]
 
-# bun
-bun install
-```
+- [x] 回收站功能：逻辑删除功能
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [] db?
