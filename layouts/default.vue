@@ -15,7 +15,7 @@ const toggleRightDrawer = () => {
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <div class="row no-wrap shadow-1">
-        <q-toolbar class="col-8 q-gutter-md">
+        <q-toolbar elavated class="col-8 q-gutter-md">
           <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
           <q-img
             src="/logo.drawio.svg"
@@ -29,19 +29,23 @@ const toggleRightDrawer = () => {
         </q-toolbar>
 
         <q-toolbar>
-          <q-space />
+          <q-toolbar-title class="flex p-2 gap-4">
+            <NuxtLink to="/" class="no-underline">
+              <div>全部</div>
+            </NuxtLink>
+            <NuxtLink to="/cookbooks" class="no-underline">
+              <div>菜谱列表</div>
+            </NuxtLink>
+            <NuxtLink to="/charts" class="no-underline">
+              <div>统计</div>
+            </NuxtLink>
+          </q-toolbar-title>
           <DevOnly>
             <span class="text-positive font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
         </q-toolbar>
       </div>
-
-      <q-tabs align="left">
-        <q-route-tab to="/" label="全部" />
-        <q-route-tab to="/cookbooks" label="菜谱列表" />
-        <q-route-tab to="/charts" label="统计" />
-      </q-tabs>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" side="left" bordered>
@@ -53,7 +57,7 @@ const toggleRightDrawer = () => {
     </q-drawer>
 
     <q-page-container>
-      <slot />
+      <NuxtPage></NuxtPage>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
@@ -68,3 +72,5 @@ const toggleRightDrawer = () => {
     </q-footer>
   </q-layout>
 </template>
+
+<style></style>

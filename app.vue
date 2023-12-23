@@ -5,4 +5,11 @@
   </NuxtLayout>
 </template>
 
-<style></style>
+<style>
+.router-link-active {
+  @apply text-white;
+}
+.router-link-exact-active {
+  @apply text-white;
+}
+</style>

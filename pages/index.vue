@@ -80,7 +80,7 @@ async function downloadImg(item: any) {
 </script>
 
 <template>
-  <div class="q-pa-md">
+  <div class="px-4 py-2">
     <div class="row">
       <q-btn-group push>
         <q-btn

@@ -6,7 +6,7 @@ export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   content: "花菜，里脊肉",
   previewImg:
     index % 2 === 0
-      ? "/uploads/1702111266981_96345_IMG_8552.JPG"
+      ? "/uploads/排骨炖萝卜.jpg"
       : "/uploads/红糖糍粑——陶德砂锅.jpg",
   satisfaction: index % 6,
   difficulty: index % 6,

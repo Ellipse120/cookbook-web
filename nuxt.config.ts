@@ -1,3 +1,5 @@
+import transformerDirectives from "@unocss/transformer-directives";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -15,5 +17,9 @@ export default defineNuxtConfig({
         negative: "rgb(242,83,84)",
       },
     },
+  },
+
+  unocss: {
+    transformers: [transformerDirectives()],
   },
 });
