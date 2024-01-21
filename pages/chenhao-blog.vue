@@ -6,9 +6,17 @@ type BlogT = {
   views: string;
 };
 
-const { data, pending, refresh } = useLazyFetch("chenhao-recommend-blog.json", {
-  server: true,
-});
+const { data, pending, refresh } = useLazyFetch("/api/scrap/featured-blog");
+
+const getCapture = async (link: string) => {
+  const { data } = useFetch(`/api/scrap/blog-snapshot`, {
+    method: "post",
+    body: {
+      link,
+    },
+  });
+  console.log(data);
+};
 </script>
 
 <template>
@@ -73,9 +81,18 @@ const { data, pending, refresh } = useLazyFetch("chenhao-recommend-blog.json", {
         <q-item-section side>
           <q-skeleton type="QBtn" v-if="pending" />
 
-          <NuxtLink v-else :to="blog.link" target="_blank">
+          <q-btn
+            v-else
+            round
+            color="positive"
+            icon="navigation"
+            size="0.8rem"
+            @click="getCapture(blog.link)"
+          />
+
+          <!-- <NuxtLink v-else :to="blog.link" target="_blank">
             <q-icon name="info" color="green" size="1.5rem" />
-          </NuxtLink>
+          </NuxtLink> -->
         </q-item-section>
       </q-item>
     </q-list>
