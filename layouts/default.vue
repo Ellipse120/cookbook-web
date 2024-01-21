@@ -39,6 +39,9 @@ const toggleRightDrawer = () => {
             <NuxtLink to="/charts" class="no-underline">
               <div>统计</div>
             </NuxtLink>
+            <NuxtLink to="/chenhao-blog" class="no-underline">
+              <div>左耳听风优质博客备份</div>
+            </NuxtLink>
           </q-toolbar-title>
           <DevOnly>
             <span class="text-positive font-bold">开发模式</span>

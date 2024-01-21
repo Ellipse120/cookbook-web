@@ -1,21 +1,41 @@
 <script lang="ts" setup>
-type BlogT = {
-  date: string;
-  title: string;
-  link: string;
-  views: string;
-};
+import type { BlogUpdateT } from "~/types";
 
-const { data, pending, refresh } = useLazyFetch("/api/scrap/featured-blog");
+const $q = useQuasar();
+
+const { data, pending, refresh } = useLazyFetch<BlogUpdateT>(
+  "/api/scrap/featured-blog"
+);
+
+let blobUrl: string;
+const [dialogVisible, toggleDialog] = useToggle();
+const [imgLoading, toggleImgLoading] = useToggle();
 
 const getCapture = async (link: string) => {
-  const { data } = useFetch(`/api/scrap/blog-snapshot`, {
+  toggleImgLoading();
+
+  const { data, error } = await useFetch(`/api/scrap/blog-snapshot`, {
     method: "post",
     body: {
       link,
     },
   });
-  console.log(data);
+
+  toggleImgLoading();
+  toggleDialog();
+
+  if (error.value) {
+    $q.notify({
+      color: "green-4",
+      textColor: "white",
+      icon: "cloud_done",
+      message: "添加成功",
+    });
+
+    return;
+  }
+
+  blobUrl = computed(() => data.value?.data).value || "";
 };
 </script>
 
@@ -26,9 +46,9 @@ const getCapture = async (link: string) => {
         <NuxtLink
           to="https://coolshell.cn/featured"
           target="_blank"
-          class="text-positive"
+          class="text-positive decoration-none"
         >
-          左耳朵耗子-优质博客
+          左耳听风-优质博客【更新日期：{{ data?.updateDate }}】
         </NuxtLink>
       </div>
 
@@ -37,14 +57,14 @@ const getCapture = async (link: string) => {
         color="primary"
         :loading="pending"
         @click="refresh()"
-        >刷新 {{ (data as BlogT[])?.length || 0 }}</q-btn
+        >刷新 {{ data?.data?.length || 0 }}</q-btn
       >
     </div>
 
     <q-list>
       <q-item
         v-ripple
-        v-for="(blog, index) in data as BlogT[]"
+        v-for="(blog, index) in data?.data"
         :key="`blog${index}`"
       >
         <q-item-section avatar>
@@ -87,14 +107,17 @@ const getCapture = async (link: string) => {
             color="positive"
             icon="navigation"
             size="0.8rem"
+            :loading="imgLoading"
             @click="getCapture(blog.link)"
           />
-
-          <!-- <NuxtLink v-else :to="blog.link" target="_blank">
-            <q-icon name="info" color="green" size="1.5rem" />
-          </NuxtLink> -->
         </q-item-section>
       </q-item>
     </q-list>
+
+    <q-dialog v-model="dialogVisible">
+      <q-card class="min-h-50vh overflow-auto">
+        <img :src="blobUrl" class="h-full w-full" />
+      </q-card>
+    </q-dialog>
   </div>
 </template>

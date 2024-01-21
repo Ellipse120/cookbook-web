@@ -21,3 +21,15 @@ export interface Cookbook {
   createdAt: Date | string;
   updatedAt: Date | string;
 }
+
+export type BlogT = {
+  date: string;
+  title: string;
+  link: string;
+  views: string;
+};
+
+export type BlogUpdateT = {
+  data: BlogT[];
+  updateDate: string;
+};

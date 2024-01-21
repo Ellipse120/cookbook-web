@@ -1,21 +1,41 @@
 import { chromium } from "playwright";
+import { access, constants } from "node:fs/promises";
 
 export default defineEventHandler(async (event) => {
   const { link } = await readBody(event);
+  const appConfig = useAppConfig();
 
   if (!link) {
     return {
-      statusCode: 200,
+      statusCode: 500,
       statusMessage: "Must have link param",
+      data: "",
     };
   }
 
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
+  const linkURL = new URL(link);
+  const screenshotUrl = `${appConfig.chenhaoBlogDir}\/${linkURL.pathname}.png`;
 
-  await page.goto(link);
+  try {
+    await access(screenshotUrl, constants.F_OK);
+  } catch (error) {
+    const browser = await chromium.launch();
+    const page = await browser.newPage();
 
-  const buffer = await page.screenshot();
+    await page.goto(link, {
+      timeout: 0,
+    });
 
-  return buffer;
+    page.evaluate("document.getElementById('masthead').remove()");
+
+    await page.locator(".post-content").screenshot({
+      path: screenshotUrl,
+    });
+  }
+
+  return {
+    statusCode: 200,
+    statusMessage: "获取快照成功",
+    data: screenshotUrl.replace("public", ""),
+  };
 });
