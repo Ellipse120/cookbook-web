@@ -1,19 +1,45 @@
 <script lang="ts" setup>
 import type { Cookbook } from "~/types";
 
+const $q = useQuasar();
+
 const selection = ref([]);
 const { data, pending, refresh } = await useLazyFetch("/api/cookbooks", {
   transform: (t: Cookbook[]) => {
-    return t.map((o: Cookbook) => ({
-      ...o,
-      checked: false,
-    }));
+    return t
+      .map((o: Cookbook) => ({
+        ...o,
+        checked: false,
+      }))
+      .filter((t) => !t.deleted);
   },
 });
 
-function batchDelete(ids: (string | number)[]) {
-  //todo
-  console.log(ids);
+async function batchDelete(ids: (string | number)[]) {
+  const { error } = await useFetch("/api/cookbooks", {
+    method: "delete",
+    body: ids,
+  });
+
+  if (error.value) {
+    $q.notify({
+      color: "negative",
+      textColor: "white",
+      icon: "delete",
+      message: "删除失败",
+    });
+
+    return;
+  }
+
+  $q.notify({
+    color: "positive",
+    textColor: "white",
+    icon: "done_all",
+    message: "删除成功",
+  });
+
+  refresh();
 }
 </script>
 

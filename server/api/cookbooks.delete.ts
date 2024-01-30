@@ -1,15 +1,27 @@
 import { mockData } from "./cookbooks";
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event);
+  const ids = await readBody(event);
 
-  const targetIndex = mockData.findIndex((o) => o.id === body.id);
+  if (!Array.isArray(ids)) {
+    throw createError({
+      statusCode: 400,
+      message: "参数`ids`类型为数组",
+    });
+  }
 
-  mockData[targetIndex].deleted = true;
+  for (let index = 0; index < mockData.length; index++) {
+    const element = mockData[index];
+    mockData[index].deleted = ids.includes(element.id);
+  }
+
+  // const targetIndex = mockData.findIndex((o) => o.id === body);
+
+  // mockData[targetIndex].deleted = true;
 
   return {
     statusCode: 200,
     statusMessage: "删除成功",
-    data: mockData.splice(targetIndex, 1),
+    data: mockData,
   };
 });

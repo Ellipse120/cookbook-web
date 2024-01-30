@@ -20,7 +20,7 @@ const deleteItem = (item: any) => {
 const confirmDelete = async () => {
   const { error } = await useFetch("/api/cookbooks", {
     method: "delete",
-    body: currentItem.value,
+    body: [currentItem.value.id],
   });
 
   if (error.value) {
@@ -181,7 +181,14 @@ async function downloadImg(item: any) {
             <NuxtLink :to="`cookbooks/edit-${item.id}`" external>
               <q-btn flat color="positive"> 编辑 </q-btn>
             </NuxtLink>
-            <q-btn flat color="red-5" @click="deleteItem(item)"> 删除 </q-btn>
+            <q-btn
+              flat
+              color="red-5"
+              :disable="item.deleted"
+              @click="deleteItem(item)"
+            >
+              删除
+            </q-btn>
           </q-card-actions>
         </q-card>
       </q-intersection>
