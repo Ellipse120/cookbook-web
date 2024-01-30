@@ -1,11 +1,36 @@
 import { chromium } from "playwright";
-import { access, constants, writeFile, readFile } from "node:fs/promises";
+import {
+  access,
+  constants,
+  writeFile,
+  readFile,
+  readdir,
+  rm,
+} from "node:fs/promises";
 import { resolve } from "node:path";
 import { Buffer } from "node:buffer";
 
 export default defineEventHandler(async () => {
   const today = new Date().toISOString().split("T")[0];
-  const jsonPath = `public/chenhao-recommend-blog/${today}.json`;
+  const assertDirectory = "public/chenhao-recommend-blog/";
+  const jsonPath = `${assertDirectory}${today}.json`;
+
+  const files = await readdir(assertDirectory);
+  const latestNFiles = 3;
+  const cachedFiles = files.slice(-latestNFiles);
+
+  /**
+   *! cache latest N files
+   **/
+  if (files.length > latestNFiles) {
+    for (const iterator of files) {
+      if (!cachedFiles.includes(iterator)) {
+        await rm(`${assertDirectory}${iterator}`).catch((e) => {
+          throw new Error("No such file: " + e.message);
+        });
+      }
+    }
+  }
 
   try {
     await access(jsonPath, constants.F_OK);
