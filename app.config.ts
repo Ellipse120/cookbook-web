@@ -5,4 +5,5 @@ export default defineAppConfig({
   },
 
   chenhaoBlogDir: "public/chenhao-blogs-screenshot",
+  latestNFiles: 3,
 });

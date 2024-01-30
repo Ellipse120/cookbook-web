@@ -15,10 +15,6 @@ export default defineEventHandler(async (event) => {
     mockData[index].deleted = ids.includes(element.id);
   }
 
-  // const targetIndex = mockData.findIndex((o) => o.id === body);
-
-  // mockData[targetIndex].deleted = true;
-
   return {
     statusCode: 200,
     statusMessage: "删除成功",

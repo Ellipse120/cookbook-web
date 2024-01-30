@@ -16,7 +16,7 @@ export default defineEventHandler(async () => {
   const jsonPath = `${assertDirectory}${today}.json`;
 
   const files = await readdir(assertDirectory);
-  const latestNFiles = 3;
+  const latestNFiles = useAppConfig().latestNFiles || 1;
   const cachedFiles = files.slice(-latestNFiles);
 
   /**
