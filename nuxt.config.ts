@@ -3,7 +3,13 @@ import transformerDirectives from "@unocss/transformer-directives";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-quasar-ui", "@unocss/nuxt", "@nuxt/image", "@vueuse/nuxt"],
+  modules: [
+    "nuxt-quasar-ui",
+    "@unocss/nuxt",
+    "@nuxt/image",
+    "@vueuse/nuxt",
+    "nuxt-security",
+  ],
 
   image: {
     dir: "/public/uploads",
