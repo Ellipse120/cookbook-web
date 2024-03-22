@@ -3,10 +3,18 @@ import type { Cookbook } from "~/types";
 
 const $q = useQuasar();
 
-const current = ref(1);
 const deleteDialogVisible = ref(false);
 const currentItem = ref();
-const { data, pending, refresh } = await useLazyFetch("/api/cookbooks");
+const { data, pending, refresh, error } = await useLazyFetch("/api/cookbooks");
+
+if (error.value) {
+  $q.notify({
+    color: "negative",
+    textColor: "white",
+    icon: "delete",
+    message: error.value.message,
+  });
+}
 
 const addNew = () => {
   navigateTo("/cookbooks/add");
@@ -99,7 +107,6 @@ async function downloadImg(item: any) {
       <q-chip icon="donut_large" color="positive" text-color="white"
         >共计：<span class="font-bold text-lg">{{ data?.length }}</span></q-chip
       >
-      <q-pagination v-model="current" :max="5" input />
     </div>
 
     <div class="row items-start q-gutter-md pt-4">

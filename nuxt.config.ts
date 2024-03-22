@@ -28,4 +28,20 @@ export default defineNuxtConfig({
   unocss: {
     transformers: [transformerDirectives()],
   },
+
+  security: {
+    rateLimiter: {
+      tokensPerInterval: 100,
+      interval: 300000,
+    },
+  },
+
+  routeRules: {
+    "/api/**": {
+      cors: true,
+      headers: {
+        ls: "lusai-server",
+      },
+    },
+  },
 });

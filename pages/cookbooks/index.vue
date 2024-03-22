@@ -129,11 +129,11 @@ async function batchDelete(ids: (string | number)[]) {
               icon="update"
               color="negative"
               text-color="white"
-              size="0.6rem"
+              size="0.8rem"
             >
               {{ formatDate(item.updatedAt) }}
               <q-tooltip class="bg-negative" :offset="[10, 10]">
-                更新时间
+                更新时间: {{ formatDate(item.updatedAt) }}
               </q-tooltip>
             </q-chip>
 
@@ -141,11 +141,11 @@ async function batchDelete(ids: (string | number)[]) {
               icon="access_time"
               color="positive"
               text-color="white"
-              size="0.6rem"
+              size="0.8rem"
             >
               {{ formatDate(item.createdAt) }}
               <q-tooltip class="bg-positive" :offset="[10, 10]">
-                创建时间
+                创建时间: {{ formatDate(item.createdAt) }}
               </q-tooltip>
             </q-chip>
           </q-item-section>
