@@ -15,7 +15,7 @@ const toggleRightDrawer = () => {
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <div class="row no-wrap shadow-1">
-        <q-toolbar elavated class="col-8 q-gutter-md">
+        <q-toolbar elavated class="q-gutter-md">
           <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
           <q-img
             src="/logo.drawio.svg"
@@ -30,17 +30,20 @@ const toggleRightDrawer = () => {
 
         <q-toolbar>
           <q-toolbar-title class="flex p-2 gap-4">
-            <NuxtLink to="/" class="no-underline">
+            <NuxtLink to="/" class="text-gray-400 no-underline">
               <div>全部</div>
             </NuxtLink>
-            <NuxtLink to="/cookbooks" class="no-underline">
+            <NuxtLink to="/cookbooks" class="text-gray-400 no-underline">
               <div>菜谱列表</div>
             </NuxtLink>
-            <NuxtLink to="/charts" class="no-underline">
+            <NuxtLink to="/charts" class="text-gray-400 no-underline">
               <div>统计</div>
             </NuxtLink>
-            <NuxtLink to="/chenhao-blog" class="no-underline">
+            <NuxtLink to="/chenhao-blog" class="text-gray-400 no-underline">
               <div>左耳听风优质博客备份</div>
+            </NuxtLink>
+            <NuxtLink to="/jiuzhaigou" class="text-gray-400 no-underline">
+              <div>九寨沟</div>
             </NuxtLink>
           </q-toolbar-title>
           <DevOnly>
