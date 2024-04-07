@@ -2,19 +2,11 @@ import { chromium } from "playwright";
 import { access, constants } from "node:fs/promises";
 
 export default defineEventHandler(async (event) => {
-  const { link } = await readBody(event);
   const appConfig = useAppConfig();
 
-  if (!link) {
-    return {
-      statusCode: 500,
-      statusMessage: "Must have link param",
-      data: "",
-    };
-  }
+  const today = new Date().toISOString().split("T")[0];
 
-  const linkURL = new URL(link);
-  const screenshotUrl = `${appConfig.chenhaoBlogDir}\/${linkURL.pathname}.png`;
+  const screenshotUrl = `${appConfig.jiuzhaigouChartDir}\/${today}.png`;
 
   try {
     await access(screenshotUrl, constants.F_OK);
@@ -22,14 +14,13 @@ export default defineEventHandler(async (event) => {
     const browser = await chromium.launch();
     const page = await browser.newPage();
 
-    await page.goto(link, {
+    await page.goto(appConfig.jiuzhaigouPageUrl, {
       timeout: 0,
     });
 
-    page.evaluate("document.getElementById('masthead').remove()");
-
-    await page.locator(".post-content").screenshot({
+    await page.screenshot({
       path: screenshotUrl,
+      fullPage: true,
     });
 
     browser.close();
