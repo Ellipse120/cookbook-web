@@ -38,10 +38,21 @@ export default defineEventHandler(async (event) => {
         iscenicid: iscenicid,
         status: "1",
       },
+      async onResponse({ response }) {
+        response._data = {
+          category: value,
+          data: JSON.parse(response._data),
+        };
+      },
     })
   );
 
-  const responseData = await Promise.allSettled(promises);
+  const responseData = await Promise.allSettled(promises).catch((_) => {
+    throw createError({
+      statusCode: 500,
+      message: "json parse error or request error",
+    });
+  });
 
-  return responseData;
+  return responseData.map((r: any) => r.value);
 });

@@ -15,6 +15,9 @@ const { data: data2 } = await useFetch("/api/jiuzhaigou", {
   query: {
     iscenicid: 4,
   },
+  transform: (value) => {
+    return value;
+  },
 });
 </script>
 
