@@ -47,7 +47,7 @@ const toggleRightDrawer = () => {
             </NuxtLink>
           </q-toolbar-title>
           <DevOnly>
-            <span class="text-positive font-bold">开发模式</span>
+            <span class="text-positive text-xl font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
         </q-toolbar>
@@ -68,12 +68,7 @@ const toggleRightDrawer = () => {
 
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Made by Ellipse120
-        </q-toolbar-title>
+        <q-toolbar-title> Made by Ellipse120 </q-toolbar-title>
       </q-toolbar>
     </q-footer>
   </q-layout>
