@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const linkURL = new URL(link);
-  const screenshotUrl = `${appConfig.chenhaoBlogDir}\/${linkURL.pathname}.png`;
+  const screenshotUrl = `${appConfig.chenhaoBlogDir}/${linkURL.pathname}.png`;
 
   try {
     await access(screenshotUrl, constants.F_OK);

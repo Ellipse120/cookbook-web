@@ -158,5 +158,3 @@ async function batchDelete(ids: (string | number)[]) {
     </q-inner-loading>
   </div>
 </template>
-
-<style></style>

@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import type { Cookbook } from "~/types";
-
 const route = useRoute();
 const $q = useQuasar();
 
@@ -236,5 +234,3 @@ function removePreviewImg() {
     </q-form>
   </div>
 </template>
-
-<style></style>

@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   const today = new Date().toISOString().split("T")[0];
 
-  const screenshotUrl = `${appConfig.jiuzhaigouChartDir}\/${today}.png`;
+  const screenshotUrl = `${appConfig.jiuzhaigouChartDir}/${today}.png`;
 
   try {
     await access(screenshotUrl, constants.F_OK);

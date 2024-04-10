@@ -116,7 +116,7 @@ const getCapture = async (link: string) => {
 
     <q-dialog v-model="dialogVisible">
       <q-card class="min-h-50vh overflow-auto">
-        <img :src="blobUrl" class="h-full w-full" />
+        <img :src="blobUrl" alt="博客截图" class="h-full w-full" />
       </q-card>
     </q-dialog>
   </div>

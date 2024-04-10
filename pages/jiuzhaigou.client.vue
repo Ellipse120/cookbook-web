@@ -12,7 +12,7 @@
         未使用：<b class="text-red font-900">{{ summeryData.unused }}</b>
       </div>
     </div>
-    <div class="grid grid-cols-[1fr_2fr_1fr] ">
+    <div class="grid grid-cols-[1fr_2fr_1fr]">
       <HighchartsWrapper :options="option1" />
       <HighchartsWrapper :options="option2" />
       <HighchartsWrapper :options="option3" />
@@ -265,7 +265,9 @@ const option4 = computed(() => {
 
 type o5 = { date: string; y: number };
 const option5 = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "未来15天游客预定人数");
+  const t = data?.value?.find(
+    (o: any) => o?.category === "未来15天游客预定人数"
+  );
 
   return {
     chart: {
@@ -354,5 +356,3 @@ const option6 = computed(() => {
   };
 });
 </script>
-
-<style></style>

@@ -9,5 +9,3 @@ const route = useRoute();
 
 const { data, pending } = await useFetch(`/api/cookbooks/${route.params.id}`);
 </script>
-
-<style></style>

@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 
 export default defineEventHandler(async (event) => {
-  let fields;
   let files;
   let oldPath = "";
   let newPath = "";
@@ -16,7 +15,7 @@ export default defineEventHandler(async (event) => {
   });
 
   try {
-    [fields, files] = await form.parse(event.node.req);
+    [, files] = await form.parse(event.node.req);
 
     fileName = `${Date.now()}_${Math.round(Math.random() * 100000)}_${
       files.file?.[0].originalFilename

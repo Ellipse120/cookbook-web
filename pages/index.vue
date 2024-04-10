@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import type { Cookbook } from "~/types";
-
 const $q = useQuasar();
 
 const deleteDialogVisible = ref(false);
@@ -55,7 +53,7 @@ const confirmDelete = async () => {
 };
 
 async function downloadImg(item: any) {
-  const { data } = await useFetch(`/api/download`, {
+  await useFetch(`/api/download`, {
     query: {
       fileName: item.previewImg,
     },
@@ -80,7 +78,6 @@ async function downloadImg(item: any) {
           icon: "sms_failed",
           message: response?._data.message,
         });
-        return;
       }
     },
   });

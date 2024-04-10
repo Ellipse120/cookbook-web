@@ -203,5 +203,3 @@ const handleFiles = (files: any) => [
     </q-form>
   </div>
 </template>
-
-<style></style>
