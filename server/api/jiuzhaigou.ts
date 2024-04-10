@@ -65,8 +65,12 @@ export default defineEventHandler(async (event) => {
       },
       async onResponse({ response }) {
         globalThis.jsonpAbaTourKc = function (o: any) {
-          a = { ...o };
+          a = o.dateList.map((d: any) => ({
+              date: d.date,
+              y: d?.numberList?.[0]?.stockNumb - d?.numberList?.[0]?.number
+            })).filter((s: any) => s.date > today)
         };
+
         eval(response._data);
 
         response._data = {
@@ -74,6 +78,7 @@ export default defineEventHandler(async (event) => {
           data: a,
         };
 
+        a = {}
         globalThis.jsonpAbaTourKc = () => {};
       },
     }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-4 place-items-center gap-4 text-lg p-4">
+    <div class="grid grid-cols-4 place-items-center gap-4 text-lg m-4">
       <div>游客实时预订</div>
       <div>
         总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
@@ -12,7 +12,7 @@
         未使用：<b class="text-red font-900">{{ summeryData.unused }}</b>
       </div>
     </div>
-    <div class="grid grid-cols-[1fr_2fr_1fr] gap-4">
+    <div class="grid grid-cols-[1fr_2fr_1fr] ">
       <HighchartsWrapper :options="option1" />
       <HighchartsWrapper :options="option2" />
       <HighchartsWrapper :options="option3" />
@@ -20,22 +20,13 @@
       <HighchartsWrapper :options="option5" />
       <HighchartsWrapper :options="option6" />
     </div>
-
-    <pre>
-      todo: replace real API
-      {{ data }}
-    </pre>
   </div>
 </template>
 
 <script lang="ts" setup>
 // const { data } = await useFetch(`/api/scrap/jiuzhaigou-chart`);
 // const imgUrl = computed(() => data.value?.data);
-function jsonpAbaTourKc(o: any) {
-  console.log(o?.iscenicid);
 
-  return o?.iscenicid;
-}
 const { data } = await useFetch<any>(
   "/api/jiuzhaigou", // use real api
   {
@@ -44,8 +35,6 @@ const { data } = await useFetch<any>(
     },
   }
 );
-
-const t = data?.value?.find((o: any) => o?.category === "未来15天游客预定人数");
 
 type summeryDataT = {
   name: string;
@@ -274,10 +263,9 @@ const option4 = computed(() => {
   };
 });
 
+type o5 = { date: string; y: number };
 const option5 = computed(() => {
-  const t = data?.value?.find(
-    (o: any) => o?.category === "未来15天游客预定人数"
-  );
+  const t = data?.value?.find((o: any) => o?.category === "未来15天游客预定人数");
 
   return {
     chart: {
@@ -291,20 +279,7 @@ const option5 = computed(() => {
     },
     xAxis: [
       {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ],
+        categories: t?.data?.map((o: o5) => o.date),
         crosshair: true,
       },
     ],
@@ -312,55 +287,26 @@ const option5 = computed(() => {
       {
         // Primary yAxis
         labels: {
-          format: "{value}°C",
+          format: "{value}人",
         },
         title: {
-          text: "Temperature",
+          text: "预订人数",
         },
-      },
-      {
-        // Secondary yAxis
-        title: {
-          text: "Precipitation",
-        },
-        labels: {
-          format: "{value} mm",
-        },
-        opposite: true,
       },
     ],
     tooltip: {
       shared: true,
     },
     legend: {
-      align: "left",
-      x: 80,
-      verticalAlign: "top",
-      y: 60,
-      floating: true,
+      enabled: false,
     },
     series: [
       {
-        name: "Precipitation",
+        name: "人数",
         type: "column",
-        yAxis: 1,
-        data: [
-          27.6, 28.8, 21.7, 34.1, 29.0, 28.4, 45.6, 51.7, 39.0, 60.0, 28.6,
-          32.1,
-        ],
+        data: t?.data?.map((o: o5) => o.y),
         tooltip: {
-          valueSuffix: " mm",
-        },
-      },
-      {
-        name: "Temperature",
-        type: "spline",
-        data: [
-          -13.6, -14.9, -5.8, -0.7, 3.1, 13.0, 14.5, 10.8, 5.8, -0.7, -11.0,
-          -16.4,
-        ],
-        tooltip: {
-          valueSuffix: "°C",
+          valueSuffix: " 人",
         },
       },
     ],
