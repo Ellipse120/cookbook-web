@@ -74,7 +74,7 @@ const handleFiles = (files: any) => [
         v-model="title"
         label="菜名"
         lazy-rules
-        :rules="[(val) => (val && val.length > 0) || '不能为空']"
+        :rules="[(val: any) => (val && val.length > 0) || '不能为空']"
       />
 
       <q-field filled label="预览图" name="previewImg" stack-label>
@@ -158,7 +158,7 @@ const handleFiles = (files: any) => [
           v-model="consuming"
           label="耗时"
           lazy-rules
-          :rules="[(val) => (val && val.length > 0) || '不能为空']"
+          :rules="[(val: any) => (val && val.length > 0) || '不能为空']"
         />
 
         <q-input filled v-model="cookingDate" label="烹饪时间">
