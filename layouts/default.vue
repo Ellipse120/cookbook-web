@@ -45,6 +45,9 @@ const toggleRightDrawer = () => {
             <NuxtLink to="/jiuzhaigou" class="text-gray-400 no-underline">
               <div>九寨沟</div>
             </NuxtLink>
+            <NuxtLink to="/stream-demo" class="text-gray-400 no-underline">
+              <div>Stream Demo</div>
+            </NuxtLink>
           </q-toolbar-title>
           <DevOnly>
             <span class="text-positive text-xl font-bold">开发模式</span>

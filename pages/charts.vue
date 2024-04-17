@@ -1,3 +1,3 @@
 <template>
-  <div>可视化</div>
+  <div class="px-4">Chart</div>
 </template>

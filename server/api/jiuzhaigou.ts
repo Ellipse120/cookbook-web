@@ -16,12 +16,12 @@ enum RequestMethod {
 
 type RawDateString = `YYYY-MM-DD`;
 
-type payload = {
-  method: keyof RequestMethod;
-  stdt: RawDateString;
-  iscenicid: keyof 景点;
-  status: string;
-};
+// type payload = {
+//   method: keyof RequestMethod;
+//   stdt: RawDateString;
+//   iscenicid: keyof 景点;
+//   status: string;
+// };
 
 declare global {
   var jsonpAbaTourKc: Function;
