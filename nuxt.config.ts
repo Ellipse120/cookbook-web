@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
     "nuxt-security",
+    "nuxt-lodash",
   ],
 
   image: {
