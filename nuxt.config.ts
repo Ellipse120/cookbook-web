@@ -35,6 +35,10 @@ export default defineNuxtConfig({
       tokensPerInterval: 100,
       interval: 300000,
     },
+    headers: {
+      crossOriginEmbedderPolicy:
+        process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
+    },
   },
 
   routeRules: {
