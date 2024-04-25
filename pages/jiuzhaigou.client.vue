@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="grid grid-cols-4 place-items-center gap-4 text-lg m-4">
+    <div
+      class="grid grid-cols-4 place-items-center gap-4 text-2xl font-extrabold m-4 py-4"
+    >
       <div>游客实时预订</div>
       <div>
         总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
@@ -108,76 +110,123 @@ const option1 = computed(() => {
   };
 });
 
-type o2 = { isuse: string; name: string; value: number };
+type o2 = { isuse: string; name: string; value: number; y: number };
 const option2 = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "票型售检票");
+  const temp = data?.value?.find((o: any) => o.category === "票型售检票");
 
-  const unusedData = t?.data?.series[0]?.data
-    ?.filter((o: o2) => o.isuse === "未使用")
-    .map((d: o2) => ({
-      ...d,
-      y: d.value,
-    }));
-  const costedData = t?.data?.series[0]?.data
-    ?.filter((o: o2) => o.isuse === "已消费")
-    .map((d: o2) => ({
-      ...d,
-      y: d.value,
-    }));
+  const allCategories = [
+    ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name)),
+  ];
+  const displayCategories = allCategories.filter(
+    (o: any) => !o.includes("OTA")
+  );
+
+  type ResultT = Record<string, Array<any>>;
+
+  const result: any = displayCategories.reduce<ResultT>((acc, cur) => {
+    const t = allCategories.filter((o: any) => o.includes(cur));
+
+    t.forEach((e: any) => {
+      const unuse =
+        temp?.data?.series[0]?.data?.find(
+          (b: o2) => b.name === e && b.isuse === "未使用"
+        )?.value || 0;
+      const used =
+        temp?.data?.series[0]?.data?.find(
+          (b: o2) => b.name === e && b.isuse === "已消费"
+        )?.value || 0;
+
+      acc[cur as any] = {
+        [e]: [unuse, used, unuse + used],
+        ...acc[cur as any],
+      };
+    });
+
+    return acc;
+  }, {});
 
   return {
     chart: {
-      type: "column",
+      type: "pie",
     },
     title: {
       text: "今日票型售检",
     },
     plotOptions: {
-      series: {
-        grouping: false,
-        borderWidth: 0,
+      pie: {
+        show: false,
+        center: ["50%", "50%"],
       },
+    },
+    tooltip: {
+      valueSuffix: "张",
     },
     legend: {
       enabled: false,
     },
-    xAxis: {
-      type: "category",
-      categories: t?.data?.series[0]?.data?.map((s: o2) => s.name),
-    },
-    yAxis: [
+    series: [
       {
-        title: {
-          text: "",
+        name: "聚合票型",
+        data: Object.keys(result)?.map((r: any) => {
+          return {
+            name: r,
+            y: useSum(Object.keys(result[r]).map((s) => result[r][s][2])),
+          };
+        }),
+        size: "45%",
+        dataLabels: {
+          enabled: false,
+        },
+      },
+      {
+        name: "详情",
+        data: displayCategories.map((s) => {
+          const _t = temp?.data?.series[0]?.data
+            ?.map((o: any) => ({
+              ...o,
+              name: o.name,
+              y: o.value,
+            }))
+            .filter((o: any) => o.name === s);
+
+          return {
+            name: s,
+            y: useSumBy(_t, "y"),
+          };
+        }),
+        size: "60%",
+        innerSize: "60%",
+        dataLabels: {
+          enabled: false,
+        },
+        // dataLabels: {
+        //   format: '<b>{point.name}:</b> <span style="opacity: 0.5">{y}%</span>',
+        //   filter: {
+        //     property: "y",
+        //     operator: ">",
+        //     value: 1,
+        //   },
+        //   style: {
+        //     fontWeight: "normal",
+        //   },
+        // },
+        id: "xx",
+      },
+      {
+        name: "使用情况",
+        data: temp?.data?.series[0]?.data?.map((o: any) => ({
+          ...o,
+          name: `${o.name} ${o.isuse}`,
+          y: o.value,
+        })),
+        size: "80%",
+        innerSize: "80%",
+        id: "yy",
+        dataLabels: {
+          enabled: true,
         },
       },
     ],
-    series: [
-      {
-        color: "rgba(158, 159, 163, 0.6)",
-        pointPlacement: -0.2,
-        linkedTo: "main",
-        data: unusedData,
-        name: "未使用",
-      },
-      {
-        name: "已消费",
-        id: "main",
-        dataLabels: [
-          {
-            enabled: true,
-            inside: false,
-            style: {
-              fontSize: "0.8rem",
-            },
-          },
-        ],
-        data: costedData,
-      },
-    ],
-    exporting: {
-      allowHTML: true,
-    },
   };
 });
 
@@ -287,7 +336,6 @@ const option5 = computed(() => {
     ],
     yAxis: [
       {
-        // Primary yAxis
         labels: {
           format: "{value}人",
         },
@@ -310,6 +358,15 @@ const option5 = computed(() => {
         tooltip: {
           valueSuffix: " 人",
         },
+        dataLabels: [
+          {
+            enabled: true,
+            inside: false,
+            style: {
+              fontSize: "0.8rem",
+            },
+          },
+        ],
       },
     ],
   };

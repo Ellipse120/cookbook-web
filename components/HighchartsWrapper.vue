@@ -9,9 +9,12 @@ import Highcharts from "highcharts";
 import { Chart } from "highcharts-vue";
 import HighchartsA11y from "highcharts/modules/accessibility";
 import variablepie from "highcharts/modules/variable-pie";
+import treemap from "highcharts/modules/treemap";
 
 HighchartsA11y(Highcharts);
 variablepie(Highcharts);
+treemap(Highcharts);
+
 const highchartsRef = ref<any>();
 
 const props = defineProps({
