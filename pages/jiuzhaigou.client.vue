@@ -84,7 +84,7 @@ const option1 = computed(() => {
     tooltip: {
       valueSuffix: "%",
       format:
-        "<b>{series.color}{point.name}</b><br />比例 {point.percentage:.2f}% ({point.y}人)",
+        "<span><b>{point.name}</b><br />比例 {point.percentage:.2f}% ({point.y}人)</span>",
     },
 
     plotOptions: {
