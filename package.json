@@ -10,13 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.1.0",
-    "@unocss/nuxt": "^0.58.0",
+    "@nuxt/devtools": "^1.2.0",
+    "@nuxt/image": "^1.6.0",
+    "@unocss/nuxt": "^0.59.4",
     "nuxt": "^3.11.2",
     "nuxt-lodash": "^2.5.3",
-    "nuxt-quasar-ui": "^2.0.6",
-    "nuxt-security": "^1.0.1"
+    "nuxt-quasar-ui": "^2.1.0",
+    "nuxt-security": "^1.4.2"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.9",
@@ -26,6 +26,6 @@
     "highcharts": "^11.4.1",
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.40.1",
-    "quasar": "^2.14.1"
+    "quasar": "^2.15.4"
   }
 }
