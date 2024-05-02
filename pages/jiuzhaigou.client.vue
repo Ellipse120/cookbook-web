@@ -1,9 +1,26 @@
 <template>
   <div>
     <div
-      class="grid grid-cols-4 place-items-center gap-4 text-2xl font-extrabold m-4 py-4"
+      class="grid grid-cols-4 place-items-center gap-4 text-2xl font-extrabold m-4"
     >
-      <div>游客实时预订</div>
+      <div class="text-center">
+        <div>
+          <div class="text-lg">
+            <q-radio
+              v-for="([value, key]) in Object.entries(景点).filter(([_, key1]) => Number.isInteger(key1))"
+              :key="value"
+              keep-color
+              v-model="query.iscenicid"
+              :val="key"
+              :label="value"
+            />
+          </div>
+        </div>
+
+        <div>
+          游客实时预订
+        </div>
+      </div>
       <div>
         总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
       </div>
@@ -14,6 +31,7 @@
         未使用：<b class="text-red font-900">{{ summeryData.unused }}</b>
       </div>
     </div>
+
     <div class="grid grid-cols-[1fr_2fr_1fr]">
       <HighchartsWrapper :options="option1" />
       <HighchartsWrapper :options="option2" />
@@ -26,15 +44,18 @@
 </template>
 
 <script lang="ts" setup>
-// const { data } = await useFetch(`/api/scrap/jiuzhaigou-chart`);
-// const imgUrl = computed(() => data.value?.data);
+import { 景点 } from '~/constant'
+
+console.log(Object.entries(景点).filter(([_, key]) => Number.isInteger(key)))
+
+const query = ref({
+  iscenicid: 4
+});
 
 const { data } = await useFetch<any>(
   "/api/jiuzhaigou", // use real api
   {
-    query: {
-      iscenicid: 4,
-    },
+    query,
   }
 );
 
@@ -270,7 +291,8 @@ const option4 = computed(() => {
       text: "今日游客性别比例",
     },
     tooltip: {
-      valueSuffix: "%",
+      pointFormat:
+          "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
     },
     plotOptions: {
       series: {
@@ -388,7 +410,8 @@ const option6 = computed(() => {
       text: "今日团散比",
     },
     tooltip: {
-      valueSuffix: "%",
+        pointFormat:
+            "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
     },
     subtitle: {
       text: "",
