@@ -7,9 +7,10 @@
         <div>
           <div class="text-lg">
             <q-radio
-              v-for="([value, key]) in Object.entries(景点).filter(([_, key1]) => Number.isInteger(key1))"
+              v-for="[value, key] in Object.entries(景点).filter(([_, key1]) =>
+                Number.isInteger(key1)
+              )"
               :key="value"
-              keep-color
               v-model="query.iscenicid"
               :val="key"
               :label="value"
@@ -17,9 +18,7 @@
           </div>
         </div>
 
-        <div>
-          游客实时预订
-        </div>
+        <div>游客实时预订</div>
       </div>
       <div>
         总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
@@ -40,19 +39,21 @@
       <HighchartsWrapper :options="option5" />
       <HighchartsWrapper :options="option6" />
     </div>
+
+    <q-inner-loading :showing="pending">
+      <q-spinner-gears size="4rem" color="primary" />
+    </q-inner-loading>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { 景点 } from '~/constant'
-
-console.log(Object.entries(景点).filter(([_, key]) => Number.isInteger(key)))
+import { 景点 } from "~/constant";
 
 const query = ref({
-  iscenicid: 4
+  iscenicid: 4,
 });
 
-const { data } = await useFetch<any>(
+const { data, pending } = await useFetch<any>(
   "/api/jiuzhaigou", // use real api
   {
     query,
@@ -220,17 +221,6 @@ const option2 = computed(() => {
         dataLabels: {
           enabled: false,
         },
-        // dataLabels: {
-        //   format: '<b>{point.name}:</b> <span style="opacity: 0.5">{y}%</span>',
-        //   filter: {
-        //     property: "y",
-        //     operator: ">",
-        //     value: 1,
-        //   },
-        //   style: {
-        //     fontWeight: "normal",
-        //   },
-        // },
         id: "xx",
       },
       {
@@ -291,8 +281,7 @@ const option4 = computed(() => {
       text: "今日游客性别比例",
     },
     tooltip: {
-      pointFormat:
-          "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
+      pointFormat: "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
     },
     plotOptions: {
       series: {
@@ -396,7 +385,7 @@ const option5 = computed(() => {
 
 //九寨沟游客团散比
 const option6 = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "九寨沟游客团散比");
+  const t = data?.value?.find((o: any) => o?.category === "九寨沟游客团散比");
   const r = t?.data?.series?.[0]?.datalist?.[0]?.data?.map((m: o3) => ({
     ...m,
     y: m.value - 0,
@@ -410,8 +399,7 @@ const option6 = computed(() => {
       text: "今日团散比",
     },
     tooltip: {
-        pointFormat:
-            "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
+      pointFormat: "数量：{point.y} (<b>{point.percentage:.2f}%</b>)",
     },
     subtitle: {
       text: "",
