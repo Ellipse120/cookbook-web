@@ -14,7 +14,7 @@ const toggleRightDrawer = () => {
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
-      <div class="row no-wrap shadow-1">
+      <div class="grid grid-cols-[1fr_2fr] shadow-1">
         <q-toolbar elavated class="q-gutter-md">
           <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
           <q-img

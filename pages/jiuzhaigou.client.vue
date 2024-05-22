@@ -18,7 +18,21 @@
           </div>
         </div>
 
-        <div>游客实时预订</div>
+        <div>
+          游客实时预订
+          <q-spinner-hourglass
+            name="refresh"
+            v-if="pending"
+            class="text-primary"
+          />
+
+          <q-icon
+            name="refresh"
+            v-else
+            class="text-primary text-2xl cursor-pointer"
+            @click="refresh"
+          />
+        </div>
       </div>
       <div>
         总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
@@ -53,7 +67,7 @@ const query = ref({
   iscenicid: 4,
 });
 
-const { data, pending } = await useFetch<any>(
+const { data, pending, refresh } = await useFetch<any>(
   "/api/jiuzhaigou", // use real api
   {
     query,
