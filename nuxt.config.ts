@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-security",
     "nuxt-lodash",
+    "@nuxtjs/supabase",
   ],
 
   image: {
@@ -38,6 +39,16 @@ export default defineNuxtConfig({
     headers: {
       crossOriginEmbedderPolicy:
         process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
+    },
+  },
+
+  supabase: {
+    redirectOptions: {
+      login: "/login",
+      callback: "/",
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false,
     },
   },
 

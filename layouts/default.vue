@@ -1,4 +1,9 @@
 <script lang="ts" setup>
+const user = useSupabaseUser();
+const supabase = useSupabaseClient();
+
+const name = computed(() => user?.value?.user_metadata.full_name);
+
 const leftDrawerOpen = ref(false);
 const rightDrawerOpen = ref(false);
 
@@ -8,6 +13,17 @@ const toggleLeftDrawer = () => {
 
 const toggleRightDrawer = () => {
   rightDrawerOpen.value = !rightDrawerOpen.value;
+};
+
+const signOut = async () => {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    showError(error.name + ": " + error.message);
+    return;
+  }
+
+  await navigateTo("/login");
 };
 </script>
 
@@ -53,6 +69,9 @@ const toggleRightDrawer = () => {
             <span class="text-positive text-xl font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
+          <q-btn v-if="name" dense flat round icon="face" @click="signOut()">{{
+            name
+          }}</q-btn>
         </q-toolbar>
       </div>
     </q-header>

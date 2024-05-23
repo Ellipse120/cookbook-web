@@ -1,5 +1,5 @@
 import { createConsola } from "consola/core";
-import { date } from "quasar";
+import { date, Notify } from "quasar";
 
 const logger = createConsola({
   level: 4,
@@ -32,4 +32,12 @@ const downloadFile = (res: Blob, fileName = "") => {
   document.body.removeChild(el);
 };
 
-export { logger, formatDate, downloadFile };
+const showNotify = (message?: any, notifyOptions = {}) => {
+  Notify.create({
+    message: message || "occurred some error",
+    color: "negative",
+    ...notifyOptions,
+  });
+};
+
+export { logger, formatDate, downloadFile, showNotify };

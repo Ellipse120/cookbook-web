@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/image": "^1.6.0",
+    "@nuxtjs/supabase": "^1.2.2",
     "@unocss/nuxt": "^0.59.4",
     "nuxt": "^3.11.2",
     "nuxt-lodash": "^2.5.3",
