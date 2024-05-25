@@ -69,9 +69,16 @@ const signOut = async () => {
             <span class="text-positive text-xl font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
-          <q-btn v-if="name" dense flat round icon="face" @click="signOut()">{{
-            name
-          }}</q-btn>
+          <q-btn
+            v-if="name"
+            dense
+            flat
+            color="negative"
+            icon="logout"
+            @click="signOut()"
+            >{{ name }}
+            <q-tooltip> Logout </q-tooltip>
+          </q-btn>
         </q-toolbar>
       </div>
     </q-header>

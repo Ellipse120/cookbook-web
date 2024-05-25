@@ -24,27 +24,27 @@
 <script lang="ts" setup>
 const supabase = useSupabaseClient();
 const [loading, toggleLoading] = useToggle();
+const user = useSupabaseUser();
 
 const signInWithOAuth = async () => {
   toggleLoading();
 
-  const { error } = await supabase.auth
-    .signInWithOAuth({
-      provider: "github",
-      options: {
-        redirectTo: "http://localhost:3000/",
-      },
-    })
-    .finally(() => {
-      toggleLoading();
-    });
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+    options: {
+      redirectTo: "http://localhost:3000/confirm",
+    },
+  });
 
   if (error) {
     showError(error.name + ": " + error.message);
     return;
   }
 
-  await navigateTo("/");
+  if (user.value) {
+    toggleLoading();
+    await navigateTo("/");
+  }
 };
 </script>
 

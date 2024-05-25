@@ -3,6 +3,13 @@ import transformerDirectives from "@unocss/transformer-directives";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.BASE_URL || "http://localhost:3000",
+    },
+  },
+
   modules: [
     "nuxt-quasar-ui",
     "@unocss/nuxt",
@@ -45,9 +52,9 @@ export default defineNuxtConfig({
   supabase: {
     redirectOptions: {
       login: "/login",
-      callback: "/",
+      callback: "/confirm",
       include: undefined,
-      exclude: [],
+      exclude: ["/jiuzhaigou"],
       cookieRedirect: false,
     },
   },
