@@ -83,9 +83,9 @@ const summeryData = computed(() => {
   const d = t?.data?.series?.[0]?.data;
 
   return {
-    total: d?.find((o: summeryDataT) => o.name === "总计")?.value,
-    costed: d?.find((o: summeryDataT) => o.name === "已消费")?.value,
-    unused: d?.find((o: summeryDataT) => o.name === "未使用")?.value,
+    total: d?.find((o: summeryDataT) => o.name === "总计")?.value || 0,
+    costed: d?.find((o: summeryDataT) => o.name === "已消费")?.value || 0,
+    unused: d?.find((o: summeryDataT) => o.name === "未使用")?.value || 0,
   };
 });
 
