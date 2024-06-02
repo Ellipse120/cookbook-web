@@ -63,6 +63,10 @@
 <script lang="ts" setup>
 import { 景点 } from "~/constant";
 
+definePageMeta({
+  middleware: "auth",
+});
+
 const query = ref({
   iscenicid: 4,
 });

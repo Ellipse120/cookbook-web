@@ -1,8 +1,4 @@
 <script lang="ts" setup>
-definePageMeta({
-  // middleware: "auth",
-});
-
 const $q = useQuasar();
 
 const deleteDialogVisible = ref(false);
