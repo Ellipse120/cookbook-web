@@ -4,6 +4,13 @@ import transformerDirectives from "@unocss/transformer-directives";
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  app: {
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+  },
+
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL || "http://localhost:3000",
