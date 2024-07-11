@@ -83,7 +83,7 @@ type summeryDataT = {
   value: number;
 };
 const summeryData = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "游客实时预订");
+  const t = data?.value?.find((o: any) => o?.category === "游客实时预订");
   const d = t?.data?.series?.[0]?.data;
 
   return {
@@ -94,7 +94,7 @@ const summeryData = computed(() => {
 });
 
 const option1 = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "游客客源地来源统计");
+  const t = data?.value?.find((o: any) => o?.category === "游客客源地来源统计");
   const chartData = t?.data?.categories?.map(
     (province: string, index: number) => {
       return {
@@ -152,7 +152,7 @@ const option1 = computed(() => {
 
 type o2 = { isuse: string; name: string; value: number; y: number };
 const option2 = computed(() => {
-  const temp = data?.value?.find((o: any) => o.category === "票型售检票");
+  const temp = data?.value?.find((o: any) => o?.category === "票型售检票");
 
   const allCategories = [
     ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name)),
@@ -261,7 +261,7 @@ const option2 = computed(() => {
 
 type o3 = { name: string; value: number };
 const option3 = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "游客年龄段统计");
+  const t = data?.value?.find((o: any) => o?.category === "游客年龄段统计");
 
   return {
     chart: {
@@ -289,7 +289,7 @@ const option3 = computed(() => {
 
 type o4 = { name: string; value: number };
 const option4 = computed(() => {
-  const t = data?.value?.find((o: any) => o.category === "游客男女比例");
+  const t = data?.value?.find((o: any) => o?.category === "游客男女比例");
 
   return {
     chart: {
