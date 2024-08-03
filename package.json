@@ -14,12 +14,15 @@
     "@nuxt/image": "^1.6.0",
     "@nuxtjs/supabase": "^1.2.2",
     "@unocss/nuxt": "^0.59.4",
-    "nuxt": "^3.12.1",
+    "nuxt": "^3.12.4",
     "nuxt-lodash": "^2.5.3",
     "nuxt-quasar-ui": "^2.1.0",
     "nuxt-security": "^1.4.2"
   },
   "dependencies": {
+    "@formkit/core": "^1.6.5",
+    "@formkit/nuxt": "^1.6.5",
+    "@formkit/vue": "^1.6.5",
     "@quasar/extras": "^1.16.9",
     "@vueuse/nuxt": "^10.7.1",
     "consola": "^3.2.3",
@@ -27,6 +30,6 @@
     "highcharts": "^11.4.1",
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.40.1",
-    "quasar": "^2.15.4"
+    "quasar": "^2.16.6"
   }
 }

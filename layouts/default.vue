@@ -64,6 +64,9 @@ const signOut = async () => {
             <NuxtLink to="/stream-demo" class="text-gray-400 no-underline">
               <div>Stream Demo</div>
             </NuxtLink>
+            <NuxtLink to="/dynamic-form" class="text-gray-400 no-underline">
+              <div>Dynamic Form</div>
+            </NuxtLink>
           </q-toolbar-title>
           <DevOnly>
             <span class="text-positive text-xl font-bold">开发模式</span>

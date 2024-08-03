@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     "nuxt-security",
     "nuxt-lodash",
     "@nuxtjs/supabase",
+    "@formkit/nuxt",
   ],
 
   image: {
@@ -61,9 +62,13 @@ export default defineNuxtConfig({
       login: "/login",
       callback: "/confirm",
       include: undefined,
-      exclude: ["/jiuzhaigou"],
+      exclude: ["/jiuzhaigou", "/dynamic-form"],
       cookieRedirect: false,
     },
+  },
+
+  formkit: {
+    autoImport: true,
   },
 
   routeRules: {
@@ -74,4 +79,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2024-07-11",
 });
