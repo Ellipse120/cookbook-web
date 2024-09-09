@@ -10,10 +10,12 @@ import { Chart } from "highcharts-vue";
 import HighchartsA11y from "highcharts/modules/accessibility";
 import variablepie from "highcharts/modules/variable-pie";
 import treemap from "highcharts/modules/treemap";
+import bubble from 'highcharts/highcharts-more'
 
 HighchartsA11y(Highcharts);
 variablepie(Highcharts);
 treemap(Highcharts);
+bubble(Highcharts);
 
 const highchartsRef = ref<any>();
 
