@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { WombT } from '~/types';
+import type {TooltipFormatterContextObject, TooltipOptions} from 'highcharts';
 
 const data = ref<WombT[]>([
   {
@@ -116,7 +117,7 @@ const chartOption = computed(() => ({
     zooming: {
       type: 'xy'
     },
-    // height: (9 / 16 * 80) + '%',
+    height: (9 / 16 * 80) + '%',
   },
 
   legend: {
@@ -141,7 +142,6 @@ const chartOption = computed(() => ({
     },
     labels: {
       format: '{value:%Y-%m-%d}',
-      // rotation: 90,
     },
   },
 
@@ -158,10 +158,11 @@ const chartOption = computed(() => ({
   },
 
   tooltip: {
-    formatter(): string {
+    formatter () {
+      // @ts-ignore
       return '日期: <b>' + this.point.rawData.date + '</b> <br> 大小: <b>' + this.point.rawData.value + '</b>';
     }
-  },
+  } as TooltipOptions,
 
   plotOptions: {
     series: {
@@ -174,15 +175,20 @@ const chartOption = computed(() => ({
 
   series: [{
     data: data.value.map((o: WombT) => {
+      const values = (o.fixedValue || o.value).split('*').map(o => Number(o))
+      // const values = (o.fixedValue || o.value).split('*').reduce((acc, curr) => acc * Number(curr), 1)
+
       return {
         x: new Date(o.date),
         y: o.womb.size.long,
-        z: (o.fixedValue || o.value).split('*').reduce((acc, curr) => acc * Number(curr), 1),
+        z: Math.max(...values),
         name: o.date,
         country: o.date,
         rawData: o,
       }
     }),
+    sizeBy: 'width',
+    sizeByAbsoluteValue: true,
     colorByPoint: true
   }]
 }))
