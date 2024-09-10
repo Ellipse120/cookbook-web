@@ -14,7 +14,6 @@ export default defineEventHandler(async (event) => {
   //    showNotify(`${error?.name}: ${error?.message}`);
   //  }
 
-  console.log(data, error);
   if (!data.url) {
     throw createError({
       statusCode: 400,

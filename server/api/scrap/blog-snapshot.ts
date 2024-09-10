@@ -26,13 +26,13 @@ export default defineEventHandler(async (event) => {
       timeout: 0,
     });
 
-    page.evaluate("document.getElementById('masthead').remove()");
+    await page.evaluate("document.getElementById('masthead').remove()");
 
     await page.locator(".post-content").screenshot({
       path: screenshotUrl,
     });
 
-    browser.close();
+    await browser.close();
   }
 
   return {
