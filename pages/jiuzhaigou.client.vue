@@ -71,12 +71,14 @@ const query = ref({
   iscenicid: 4,
 });
 
-const { data, pending, refresh } = await useFetch<any>(
+const { data, status, refresh } = await useFetch<any>(
   "/api/jiuzhaigou", // use real api
   {
     query,
   }
 );
+
+const pending = computed(() => status.value === 'pending')
 
 type summeryDataT = {
   name: string;

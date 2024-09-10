@@ -3,13 +3,15 @@ import type { BlogUpdateT } from "~/types";
 
 const $q = useQuasar();
 
-const { data, pending, refresh } = useLazyFetch<BlogUpdateT>(
+const { data, status, refresh } = useLazyFetch<BlogUpdateT>(
   "/api/scrap/featured-blog"
 );
 
 let blobUrl: string;
 const [dialogVisible, toggleDialog] = useToggle();
 const [imgLoading, toggleImgLoading] = useToggle();
+
+const isLoading = computed(() => status.value === 'pending')
 
 const getCapture = async (link: string) => {
   toggleImgLoading();
@@ -55,7 +57,7 @@ const getCapture = async (link: string) => {
       <q-btn
         icon="refresh"
         color="primary"
-        :loading="pending"
+        :loading="isLoading"
         @click="refresh()"
         >刷新 {{ data?.data?.length || 0 }}</q-btn
       >
@@ -68,13 +70,13 @@ const getCapture = async (link: string) => {
         :key="`blog${index}`"
       >
         <q-item-section avatar>
-          <q-skeleton type="QAvatar" v-if="pending" />
+          <q-skeleton type="QAvatar" v-if="isLoading" />
 
           <div v-else>{{ index + 1 }}</div>
         </q-item-section>
 
         <q-item-section>
-          <q-skeleton type="text" v-if="pending" />
+          <q-skeleton type="text" v-if="isLoading" />
 
           <div v-else>
             <div>{{ blog.date }}</div>
@@ -85,7 +87,7 @@ const getCapture = async (link: string) => {
         </q-item-section>
 
         <q-item-section>
-          <q-skeleton type="text" v-if="pending" />
+          <q-skeleton type="text" v-if="isLoading" />
 
           <q-item-label v-else>
             <NuxtLink
@@ -99,7 +101,7 @@ const getCapture = async (link: string) => {
         </q-item-section>
 
         <q-item-section side>
-          <q-skeleton type="QBtn" v-if="pending" />
+          <q-skeleton type="QBtn" v-if="isLoading" />
 
           <q-btn
             v-else
