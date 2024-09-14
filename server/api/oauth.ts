@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
+  console.log(config.supabaseKey)
   const supabase = createClient(config.supabaseUrl, config.supabaseKey);
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "github",
