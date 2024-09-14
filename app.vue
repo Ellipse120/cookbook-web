@@ -1,3 +1,15 @@
+<script setup>
+const { loggedIn } = useUserSession();
+
+watch(loggedIn, () => {
+  console.log(loggedIn.value);
+
+  if (!loggedIn.value) {
+    navigateTo("/login");
+  }
+});
+</script>
+
 <template>
   <NuxtLoadingIndicator />
   <NuxtLayout>

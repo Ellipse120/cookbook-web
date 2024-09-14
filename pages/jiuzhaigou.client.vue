@@ -1,65 +1,3 @@
-<template>
-  <div>
-    <div
-      class="grid grid-cols-4 place-items-center gap-4 text-2xl font-extrabold m-4"
-    >
-      <div class="text-center">
-        <div>
-          <div class="text-lg">
-            <q-radio
-              v-for="[value, key] in Object.entries(景点).filter(([_, key1]) =>
-                Number.isInteger(key1)
-              )"
-              :key="value"
-              v-model="query.iscenicid"
-              :val="key"
-              :label="value"
-            />
-          </div>
-        </div>
-
-        <div>
-          游客实时预订
-          <q-spinner-hourglass
-            name="refresh"
-            v-if="pending"
-            class="text-primary"
-          />
-
-          <q-icon
-            name="refresh"
-            v-else
-            class="text-primary text-2xl cursor-pointer"
-            @click="refresh"
-          />
-        </div>
-      </div>
-      <div>
-        总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
-      </div>
-      <div>
-        已消费：<b class="text-positive font-900">{{ summeryData.costed }}</b>
-      </div>
-      <div>
-        未使用：<b class="text-red font-900">{{ summeryData.unused }}</b>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-[1fr_2fr_1fr]">
-      <HighchartsWrapper :options="option1" />
-      <HighchartsWrapper :options="option2" />
-      <HighchartsWrapper :options="option3" />
-      <HighchartsWrapper :options="option4" />
-      <HighchartsWrapper :options="option5" />
-      <HighchartsWrapper :options="option6" />
-    </div>
-
-    <q-inner-loading :showing="pending">
-      <q-spinner-gears size="4rem" color="primary" />
-    </q-inner-loading>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { 景点 } from "~/constant";
 
@@ -78,7 +16,7 @@ const { data, status, refresh } = await useFetch<any>(
   }
 );
 
-const pending = computed(() => status.value === 'pending')
+const pending = computed(() => status.value === "pending");
 
 type summeryDataT = {
   name: string;
@@ -444,3 +382,65 @@ const option6 = computed(() => {
   };
 });
 </script>
+
+<template>
+  <div>
+    <div
+      class="grid grid-cols-4 place-items-center gap-4 text-2xl font-extrabold m-4"
+    >
+      <div class="text-center">
+        <div>
+          <div class="text-lg">
+            <q-radio
+              v-for="[value, key] in Object.entries(景点).filter(([_, key1]) =>
+                Number.isInteger(key1)
+              )"
+              :key="value"
+              v-model="query.iscenicid"
+              :val="key"
+              :label="value"
+            />
+          </div>
+        </div>
+
+        <div>
+          游客实时预订
+          <q-spinner-hourglass
+            name="refresh"
+            v-if="pending"
+            class="text-primary"
+          />
+
+          <q-icon
+            name="refresh"
+            v-else
+            class="text-primary text-2xl cursor-pointer"
+            @click="refresh"
+          />
+        </div>
+      </div>
+      <div>
+        总计：<b class="text-primary font-900">{{ summeryData.total }}</b>
+      </div>
+      <div>
+        已消费：<b class="text-positive font-900">{{ summeryData.costed }}</b>
+      </div>
+      <div>
+        未使用：<b class="text-red font-900">{{ summeryData.unused }}</b>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-[1fr_2fr_1fr]">
+      <HighchartsWrapper :options="option1" />
+      <HighchartsWrapper :options="option2" />
+      <HighchartsWrapper :options="option3" />
+      <HighchartsWrapper :options="option4" />
+      <HighchartsWrapper :options="option5" />
+      <HighchartsWrapper :options="option6" />
+    </div>
+
+    <q-inner-loading :showing="pending">
+      <q-spinner-gears size="4rem" color="primary" />
+    </q-inner-loading>
+  </div>
+</template>

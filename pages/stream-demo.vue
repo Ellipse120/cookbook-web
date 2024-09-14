@@ -1,5 +1,8 @@
 <script setup lang="ts">
-let result = ref<any[]>([]);
+let result = ref([]);
+definePageMeta({
+  middleware: "auth",
+});
 
 const response = await $fetch.raw("/api/stream-demo", {
   responseType: "stream",

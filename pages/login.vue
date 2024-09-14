@@ -6,12 +6,10 @@
 
         <div>
           <q-btn-group spread>
-            <q-btn
-              color="positive"
-              size="lg"
-              :loading="loading"
-              @click="signInWithOAuth()"
-              >Login with Github
+            <q-btn color="positive" size="lg">
+              <nuxt-link to="/api/auth/github" external
+                >Login with Github</nuxt-link
+              >
               <q-tooltip> Login with Github </q-tooltip>
             </q-btn>
           </q-btn-group>
@@ -21,31 +19,6 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-const supabase = useSupabaseClient();
-const [loading, toggleLoading] = useToggle();
-const user = useSupabaseUser();
-
-const signInWithOAuth = async () => {
-  toggleLoading();
-
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: "github",
-    options: {
-      redirectTo: "http://localhost:3000/confirm",
-    },
-  });
-
-  if (error) {
-    showError(error.name + ": " + error.message);
-    return;
-  }
-
-  if (user.value) {
-    toggleLoading();
-    await navigateTo("/");
-  }
-};
-</script>
+<script lang="ts" setup></script>
 
 <style></style>

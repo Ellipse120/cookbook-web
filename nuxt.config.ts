@@ -12,8 +12,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    supabaseUrl: process.env.SUPABASE_URL,
-    supabaseKey: process.env.SUPABASE_KEY,
     public: {
       baseUrl: process.env.BASE_URL || "http://localhost:3000",
     },
@@ -26,8 +24,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-security",
     "nuxt-lodash",
-    "@nuxtjs/supabase",
     "@formkit/nuxt",
+    "nuxt-auth-utils",
   ],
 
   image: {
@@ -59,15 +57,15 @@ export default defineNuxtConfig({
     },
   },
 
-  supabase: {
-    redirectOptions: {
-      login: "/login",
-      callback: "/confirm",
-      include: undefined,
-      exclude: ["/jiuzhaigou", "/dynamic-form"],
-      cookieRedirect: false,
-    },
-  },
+  // supabase: {
+  //   redirectOptions: {
+  //     login: "/login",
+  //     callback: "/confirm",
+  //     include: undefined,
+  //     exclude: ["/jiuzhaigou", "/dynamic-form"],
+  //     cookieRedirect: false,
+  //   },
+  // },
 
   formkit: {
     autoImport: true,

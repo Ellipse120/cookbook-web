@@ -1,11 +1,15 @@
 <script lang="ts" setup>
+definePageMeta({
+  middleware: "auth",
+});
+
 const $q = useQuasar();
 
 const deleteDialogVisible = ref(false);
 const currentItem = ref();
 const { data, status, refresh, error } = await useLazyFetch("/api/cookbooks");
 
-const pending = computed(() => status.value === 'pending')
+const pending = computed(() => status.value === "pending");
 
 if (error.value) {
   $q.notify({

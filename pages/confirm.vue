@@ -5,12 +5,12 @@
 </template>
 
 <script lang="ts" setup>
-const user = useSupabaseUser();
+const { loggedIn } = useUserSession();
 
 watch(
-  user,
+  loggedIn,
   () => {
-    if (user.value) {
+    if (loggedIn.value) {
       return navigateTo("/");
     }
   },

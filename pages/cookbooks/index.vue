@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import type { Cookbook } from "~/types";
 
+definePageMeta({
+  middleware: "auth",
+});
+
 const $q = useQuasar();
 
 const selection = ref([]);

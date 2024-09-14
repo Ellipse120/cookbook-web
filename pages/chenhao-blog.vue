@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import type { BlogUpdateT } from "~/types";
 
+definePageMeta({
+  middleware: "auth",
+});
+
 const $q = useQuasar();
 
 const { data, status, refresh } = useLazyFetch<BlogUpdateT>(
@@ -11,7 +15,7 @@ let blobUrl: string;
 const [dialogVisible, toggleDialog] = useToggle();
 const [imgLoading, toggleImgLoading] = useToggle();
 
-const isLoading = computed(() => status.value === 'pending')
+const isLoading = computed(() => status.value === "pending");
 
 const getCapture = async (link: string) => {
   toggleImgLoading();

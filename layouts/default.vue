@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-const user = useSupabaseUser();
-const supabase = useSupabaseClient();
-
-const name = computed(() => user?.value?.user_metadata.full_name);
+const { user, clear }: { user: any; clear: Function } = useUserSession();
 
 const leftDrawerOpen = ref(false);
 const rightDrawerOpen = ref(false);
@@ -16,12 +13,7 @@ const toggleRightDrawer = () => {
 };
 
 const signOut = async () => {
-  const { error } = await supabase.auth.signOut();
-
-  if (error) {
-    showError(error.name + ": " + error.message);
-    return;
-  }
+  clear();
 
   await navigateTo("/login");
 };
@@ -75,16 +67,23 @@ const signOut = async () => {
             <span class="text-positive text-xl font-bold">开发模式</span>
           </DevOnly>
           <q-btn dense flat round icon="menu" @click="toggleRightDrawer()" />
-          <q-btn
-            v-if="name"
-            dense
-            flat
-            color="negative"
-            icon="logout"
-            @click="signOut()"
-            >{{ name }}
-            <q-tooltip> Logout </q-tooltip>
-          </q-btn>
+          <AuthState>
+            <template #default="{ loggedIn, clear }">
+              <q-btn
+                v-if="loggedIn"
+                dense
+                flat
+                color="negative"
+                icon="logout"
+                @click="clear()"
+                >{{ user?.name }} | 登出
+                <q-tooltip> Logout </q-tooltip>
+              </q-btn>
+            </template>
+            <template #placeholder>
+              <button disabled>Loading...</button>
+            </template>
+          </AuthState>
         </q-toolbar>
       </div>
     </q-header>
