@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { WombT } from '~/types';
-import type {TooltipFormatterContextObject, TooltipOptions} from 'highcharts';
+import type { TooltipFormatterContextObject, TooltipOptions } from 'highcharts'
+import type { WombT } from '~/types'
 
 const data = ref<WombT[]>([
   {
@@ -15,17 +15,17 @@ const data = ref<WombT[]>([
         width: 70,
         thickness: 57,
         endometrium_thickness: 5,
-        cervical_length: 35,
+        cervical_length: 35
       }
     },
     ovary: {
       leftSide: {
         long: 28,
-        width: 16,
+        width: 16
       },
       rightSide: {
         long: 30,
-        width: 23,
+        width: 23
       }
     }
   },
@@ -42,17 +42,17 @@ const data = ref<WombT[]>([
         width: 58,
         thickness: 45,
         endometrium_thickness: 10,
-        cervical_length: 31,
+        cervical_length: 31
       }
     },
     ovary: {
       leftSide: {
         long: 31,
-        width: 20,
+        width: 20
       },
       rightSide: {
         long: null,
-        width: null,
+        width: null
       }
     }
   },
@@ -68,17 +68,17 @@ const data = ref<WombT[]>([
         width: 65,
         thickness: 61,
         endometrium_thickness: 4,
-        cervical_length: 35,
+        cervical_length: 35
       }
     },
     ovary: {
       leftSide: {
         long: 28,
-        width: 18,
+        width: 18
       },
       rightSide: {
         long: 27,
-        width: 16,
+        width: 16
       }
     }
   },
@@ -94,17 +94,17 @@ const data = ref<WombT[]>([
         width: 43,
         thickness: 53,
         endometrium_thickness: 11,
-        cervical_length: 28,
+        cervical_length: 28
       }
     },
     ovary: {
       leftSide: {
         long: 26,
-        width: 20,
+        width: 20
       },
       rightSide: {
         long: 30,
-        width: 20,
+        width: 20
       }
     }
   }
@@ -117,7 +117,7 @@ const chartOption = computed(() => ({
     zooming: {
       type: 'xy'
     },
-    height: (9 / 16 * 80) + '%',
+    height: (9 / 16 * 80) + '%'
   },
 
   legend: {
@@ -141,8 +141,8 @@ const chartOption = computed(() => ({
       text: 'Date'
     },
     labels: {
-      format: '{value:%Y-%m-%d}',
-    },
+      format: '{value:%Y-%m-%d}'
+    }
   },
 
   yAxis: {
@@ -154,13 +154,13 @@ const chartOption = computed(() => ({
     labels: {
       format: '{value} mm'
     },
-    maxPadding: 0.2,
+    maxPadding: 0.2
   },
 
   tooltip: {
-    formatter () {
+    formatter() {
       // @ts-ignore
-      return '日期: <b>' + this.point.rawData.date + '</b> <br> 大小: <b>' + this.point.rawData.value + '</b>';
+      return '日期: <b>' + this.point.rawData.date + '</b> <br> 大小: <b>' + this.point.rawData.value + '</b>'
     }
   } as TooltipOptions,
 
@@ -168,7 +168,7 @@ const chartOption = computed(() => ({
     series: {
       dataLabels: {
         enabled: false,
-        format: '{point.name}',
+        format: '{point.name}'
       }
     }
   },
@@ -184,7 +184,7 @@ const chartOption = computed(() => ({
         z: Math.max(...values),
         name: o.date,
         country: o.date,
-        rawData: o,
+        rawData: o
       }
     }),
     sizeBy: 'width',
@@ -197,7 +197,7 @@ const chartOption = computed(() => ({
 <template>
   <div class="px-4">
     <client-only>
-      <HighchartsWrapper :options="chartOption"/>
+      <HighchartsWrapper :options="chartOption" />
     </client-only>
   </div>
 </template>

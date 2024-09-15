@@ -1,13 +1,13 @@
 <script setup>
-const { loggedIn } = useUserSession();
+const { loggedIn } = useUserSession()
 
 watch(loggedIn, () => {
-  console.log(loggedIn.value);
+  console.log(loggedIn.value)
 
   if (!loggedIn.value) {
-    navigateTo("/login");
+    navigateTo('/login')
   }
-});
+})
 </script>
 
 <template>

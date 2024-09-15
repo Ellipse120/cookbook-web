@@ -1,48 +1,48 @@
 <script lang="ts" setup>
-import type { BlogUpdateT } from "~/types";
+import type { BlogUpdateT } from '~/types'
 
 definePageMeta({
-  middleware: "auth",
-});
+  middleware: 'auth'
+})
 
-const $q = useQuasar();
+const $q = useQuasar()
 
 const { data, status, refresh } = useLazyFetch<BlogUpdateT>(
-  "/api/scrap/featured-blog"
-);
+  '/api/scrap/featured-blog'
+)
 
-let blobUrl: string;
-const [dialogVisible, toggleDialog] = useToggle();
-const [imgLoading, toggleImgLoading] = useToggle();
+let blobUrl: string
+const [dialogVisible, toggleDialog] = useToggle()
+const [imgLoading, toggleImgLoading] = useToggle()
 
-const isLoading = computed(() => status.value === "pending");
+const isLoading = computed(() => status.value === 'pending')
 
 const getCapture = async (link: string) => {
-  toggleImgLoading();
+  toggleImgLoading()
 
   const { data, error } = await useFetch(`/api/scrap/blog-snapshot`, {
-    method: "post",
+    method: 'post',
     body: {
-      link,
-    },
-  });
+      link
+    }
+  })
 
-  toggleImgLoading();
-  toggleDialog();
+  toggleImgLoading()
+  toggleDialog()
 
   if (error.value) {
     $q.notify({
-      color: "green-4",
-      textColor: "white",
-      icon: "cloud_done",
-      message: "添加成功",
-    });
+      color: 'green-4',
+      textColor: 'white',
+      icon: 'cloud_done',
+      message: '添加成功'
+    })
 
-    return;
+    return
   }
 
-  blobUrl = computed(() => data.value?.data).value || "";
-};
+  blobUrl = computed(() => data.value?.data).value || ''
+}
 </script>
 
 <template>
@@ -63,24 +63,33 @@ const getCapture = async (link: string) => {
         color="primary"
         :loading="isLoading"
         @click="refresh()"
-        >刷新 {{ data?.data?.length || 0 }}</q-btn
       >
+        刷新 {{ data?.data?.length || 0 }}
+      </q-btn>
     </div>
 
     <q-list>
       <q-item
-        v-ripple
         v-for="(blog, index) in data?.data"
         :key="`blog${index}`"
+        v-ripple
       >
         <q-item-section avatar>
-          <q-skeleton type="QAvatar" v-if="isLoading" />
+          <q-skeleton
+            v-if="isLoading"
+            type="QAvatar"
+          />
 
-          <div v-else>{{ index + 1 }}</div>
+          <div v-else>
+            {{ index + 1 }}
+          </div>
         </q-item-section>
 
         <q-item-section>
-          <q-skeleton type="text" v-if="isLoading" />
+          <q-skeleton
+            v-if="isLoading"
+            type="text"
+          />
 
           <div v-else>
             <div>{{ blog.date }}</div>
@@ -91,7 +100,10 @@ const getCapture = async (link: string) => {
         </q-item-section>
 
         <q-item-section>
-          <q-skeleton type="text" v-if="isLoading" />
+          <q-skeleton
+            v-if="isLoading"
+            type="text"
+          />
 
           <q-item-label v-else>
             <NuxtLink
@@ -105,7 +117,10 @@ const getCapture = async (link: string) => {
         </q-item-section>
 
         <q-item-section side>
-          <q-skeleton type="QBtn" v-if="isLoading" />
+          <q-skeleton
+            v-if="isLoading"
+            type="QBtn"
+          />
 
           <q-btn
             v-else
@@ -122,7 +137,11 @@ const getCapture = async (link: string) => {
 
     <q-dialog v-model="dialogVisible">
       <q-card class="min-h-50vh overflow-auto">
-        <img :src="blobUrl" alt="博客截图" class="h-full w-full" />
+        <img
+          :src="blobUrl"
+          alt="博客截图"
+          class="h-full w-full"
+        >
       </q-card>
     </q-dialog>
   </div>

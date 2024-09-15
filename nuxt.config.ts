@@ -1,4 +1,4 @@
-import transformerDirectives from "@unocss/transformer-directives";
+import transformerDirectives from '@unocss/transformer-directives'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -6,55 +6,66 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: {
-      name: "page",
-      mode: "out-in",
-    },
+      name: 'page',
+      mode: 'out-in'
+    }
   },
 
   runtimeConfig: {
     public: {
-      baseUrl: process.env.BASE_URL || "http://localhost:3000",
-    },
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    }
   },
 
   modules: [
-    "nuxt-quasar-ui",
-    "@unocss/nuxt",
-    "@nuxt/image",
-    "@vueuse/nuxt",
-    "nuxt-security",
-    "nuxt-lodash",
-    "@formkit/nuxt",
-    "nuxt-auth-utils",
+    'nuxt-quasar-ui',
+    '@unocss/nuxt',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    'nuxt-security',
+    'nuxt-lodash',
+    '@formkit/nuxt',
+    'nuxt-auth-utils',
+    '@nuxt/eslint'
   ],
 
   image: {
-    dir: "/public/uploads",
+    dir: '/public/uploads'
   },
 
   quasar: {
-    plugins: ["Notify"],
+    plugins: ['Notify'],
     config: {
       brand: {
-        positive: "#32bf1e",
-        negative: "rgb(242,83,84)",
-      },
-    },
+        positive: '#32bf1e',
+        negative: 'rgb(242,83,84)'
+      }
+    }
   },
 
   unocss: {
-    transformers: [transformerDirectives()],
+    transformers: [transformerDirectives()]
   },
 
   security: {
     rateLimiter: {
       tokensPerInterval: 100,
-      interval: 300000,
+      interval: 300000
     },
     headers: {
       crossOriginEmbedderPolicy:
-        process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
-    },
+        process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp'
+    }
+  },
+
+  // Development config
+  eslint: {
+    config: {
+      stylistic: {
+        quotes: 'single',
+        commaDangle: 'never'
+      }
+    }
   },
 
   // supabase: {
@@ -68,17 +79,17 @@ export default defineNuxtConfig({
   // },
 
   formkit: {
-    autoImport: true,
+    autoImport: true
   },
 
   routeRules: {
-    "/api/**": {
+    '/api/**': {
       cors: true,
       headers: {
-        ls: "lusai-server",
-      },
-    },
+        ls: 'lusai-server'
+      }
+    }
   },
 
-  compatibilityDate: "2024-07-11",
-});
+  compatibilityDate: '2024-07-11'
+})

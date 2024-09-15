@@ -1,386 +1,386 @@
 <script lang="ts" setup>
-import { 景点 } from "~/constant";
+import { 景点 } from '~/constant'
 
 definePageMeta({
-  middleware: "auth",
-});
+  middleware: 'auth'
+})
 
 const query = ref({
-  iscenicid: 4,
-});
+  iscenicid: 4
+})
 
 const { data, status, refresh } = await useFetch<any>(
-  "/api/jiuzhaigou", // use real api
+  '/api/jiuzhaigou', // use real api
   {
-    query,
+    query
   }
-);
+)
 
-const pending = computed(() => status.value === "pending");
+const pending = computed(() => status.value === 'pending')
 
 type summeryDataT = {
-  name: string;
-  value: number;
-};
+  name: string
+  value: number
+}
 const summeryData = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "游客实时预订");
-  const d = t?.data?.series?.[0]?.data;
+  const t = data?.value?.find((o: any) => o?.category === '游客实时预订')
+  const d = t?.data?.series?.[0]?.data
 
   return {
-    total: d?.find((o: summeryDataT) => o.name === "总计")?.value || 0,
-    costed: d?.find((o: summeryDataT) => o.name === "已消费")?.value || 0,
-    unused: d?.find((o: summeryDataT) => o.name === "未使用")?.value || 0,
-  };
-});
+    total: d?.find((o: summeryDataT) => o.name === '总计')?.value || 0,
+    costed: d?.find((o: summeryDataT) => o.name === '已消费')?.value || 0,
+    unused: d?.find((o: summeryDataT) => o.name === '未使用')?.value || 0
+  }
+})
 
 const option1 = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "游客客源地来源统计");
+  const t = data?.value?.find((o: any) => o?.category === '游客客源地来源统计')
   const chartData = t?.data?.categories?.map(
     (province: string, index: number) => {
       return {
         name: province,
-        y: t.data.series[0].data[index],
-      };
+        y: t.data.series[0].data[index]
+      }
     }
-  );
+  )
 
   return {
     chart: {
-      type: "pie",
+      type: 'pie'
     },
     title: {
-      text: "今日游客客源地",
+      text: '今日游客客源地'
     },
 
     accessibility: {
       announceNewData: {
-        enabled: true,
+        enabled: true
       },
       point: {
-        valueSuffix: "人",
-      },
+        valueSuffix: '人'
+      }
     },
 
     tooltip: {
-      valueSuffix: "%",
+      valueSuffix: '%',
       format:
-        "<span><b>{point.name}</b><br />比例 {point.percentage:.2f}% ({point.y}人)</span>",
+        '<span><b>{point.name}</b><br />比例 {point.percentage:.2f}% ({point.y}人)</span>'
     },
 
     plotOptions: {
       series: {
         allowPointSelect: true,
-        cursor: "pointer",
+        cursor: 'pointer',
         dataLabels: [
           {
             enabled: true,
-            distance: 20,
-          },
-        ],
-      },
+            distance: 20
+          }
+        ]
+      }
     },
 
     series: [
       {
-        name: "比例",
+        name: '比例',
         colorByPoint: true,
-        data: chartData,
-      },
-    ],
-  };
-});
+        data: chartData
+      }
+    ]
+  }
+})
 
-type o2 = { isuse: string; name: string; value: number; y: number };
+type o2 = { isuse: string, name: string, value: number, y: number }
 const option2 = computed(() => {
-  const temp = data?.value?.find((o: any) => o?.category === "票型售检票");
+  const temp = data?.value?.find((o: any) => o?.category === '票型售检票')
 
   const allCategories = [
-    ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name)),
-  ];
+    ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name))
+  ]
   const displayCategories = allCategories.filter(
-    (o: any) => !o.includes("OTA")
-  );
+    (o: any) => !o.includes('OTA')
+  )
 
-  type ResultT = Record<string, Array<any>>;
+  type ResultT = Record<string, Array<any>>
 
   const result: any = displayCategories.reduce<ResultT>((acc, cur) => {
-    const t = allCategories.filter((o: any) => o.includes(cur));
+    const t = allCategories.filter((o: any) => o.includes(cur))
 
     t.forEach((e: any) => {
-      const unuse =
-        temp?.data?.series[0]?.data?.find(
-          (b: o2) => b.name === e && b.isuse === "未使用"
-        )?.value || 0;
-      const used =
-        temp?.data?.series[0]?.data?.find(
-          (b: o2) => b.name === e && b.isuse === "已消费"
-        )?.value || 0;
+      const unuse
+        = temp?.data?.series[0]?.data?.find(
+          (b: o2) => b.name === e && b.isuse === '未使用'
+        )?.value || 0
+      const used
+        = temp?.data?.series[0]?.data?.find(
+          (b: o2) => b.name === e && b.isuse === '已消费'
+        )?.value || 0
 
       acc[cur as any] = {
         [e]: [unuse, used, unuse + used],
-        ...acc[cur as any],
-      };
-    });
+        ...acc[cur as any]
+      }
+    })
 
-    return acc;
-  }, {});
+    return acc
+  }, {})
 
   return {
     chart: {
-      type: "pie",
+      type: 'pie'
     },
     title: {
-      text: "今日票型售检",
+      text: '今日票型售检'
     },
     plotOptions: {
       pie: {
         show: false,
-        center: ["50%", "50%"],
-      },
+        center: ['50%', '50%']
+      }
     },
     tooltip: {
-      valueSuffix: "张",
+      valueSuffix: '张'
     },
     legend: {
-      enabled: false,
+      enabled: false
     },
     series: [
       {
-        name: "聚合票型",
+        name: '聚合票型',
         data: Object.keys(result)?.map((r: any) => {
           return {
             name: r,
-            y: useSum(Object.keys(result[r]).map((s) => result[r][s][2])),
-          };
+            y: useSum(Object.keys(result[r]).map(s => result[r][s][2]))
+          }
         }),
-        size: "45%",
+        size: '45%',
         dataLabels: {
-          enabled: false,
-        },
+          enabled: false
+        }
       },
       {
-        name: "详情",
+        name: '详情',
         data: displayCategories.map((s) => {
           const _t = temp?.data?.series[0]?.data
             ?.map((o: any) => ({
               ...o,
               name: o.name,
-              y: o.value,
+              y: o.value
             }))
-            .filter((o: any) => o.name === s);
+            .filter((o: any) => o.name === s)
 
           return {
             name: s,
-            y: useSumBy(_t, "y"),
-          };
+            y: useSumBy(_t, 'y')
+          }
         }),
-        size: "60%",
-        innerSize: "60%",
+        size: '60%',
+        innerSize: '60%',
         dataLabels: {
-          enabled: false,
+          enabled: false
         },
-        id: "xx",
+        id: 'xx'
       },
       {
-        name: "使用情况",
+        name: '使用情况',
         data: temp?.data?.series[0]?.data?.map((o: any) => ({
           ...o,
           name: `${o.name} ${o.isuse}`,
-          y: o.value,
+          y: o.value
         })),
-        size: "80%",
-        innerSize: "80%",
-        id: "yy",
+        size: '80%',
+        innerSize: '80%',
+        id: 'yy',
         dataLabels: {
-          enabled: true,
-        },
-      },
-    ],
-  };
-});
+          enabled: true
+        }
+      }
+    ]
+  }
+})
 
-type o3 = { name: string; value: number };
+type o3 = { name: string, value: number }
 const option3 = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "游客年龄段统计");
+  const t = data?.value?.find((o: any) => o?.category === '游客年龄段统计')
 
   return {
     chart: {
-      type: "pie",
+      type: 'pie'
     },
     title: {
-      text: "今日游客年龄段",
+      text: '今日游客年龄段'
     },
     tooltip: {
-      headerFormat: "",
+      headerFormat: '',
       pointFormat:
-        '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-        "人数: <b>{point.y}</b><br/>",
+        '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>'
+        + '人数: <b>{point.y}</b><br/>'
     },
     series: [
       {
         data: t?.data?.series[0]?.data?.map((o: o3) => ({
           ...o,
-          y: o.value,
-        })),
-      },
-    ],
-  };
-});
+          y: o.value
+        }))
+      }
+    ]
+  }
+})
 
-type o4 = { name: string; value: number };
+type o4 = { name: string, value: number }
 const option4 = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "游客男女比例");
+  const t = data?.value?.find((o: any) => o?.category === '游客男女比例')
 
   return {
     chart: {
-      type: "pie",
+      type: 'pie'
     },
     title: {
-      text: "今日游客性别比例",
+      text: '今日游客性别比例'
     },
     tooltip: {
-      pointFormat: "{point.y}人 (<b>{point.percentage:.2f}%</b>)",
+      pointFormat: '{point.y}人 (<b>{point.percentage:.2f}%</b>)'
     },
     plotOptions: {
       series: {
         allowPointSelect: true,
-        cursor: "pointer",
+        cursor: 'pointer',
         dataLabels: [
           {
             enabled: true,
-            distance: 20,
+            distance: 20
           },
           {
             enabled: true,
             distance: -40,
-            format: "{point.percentage:.1f}%",
+            format: '{point.percentage:.1f}%',
             style: {
-              fontSize: "1.2em",
-              textOutline: "none",
-              opacity: 0.7,
+              fontSize: '1.2em',
+              textOutline: 'none',
+              opacity: 0.7
             },
             filter: {
-              operator: ">",
-              property: "percentage",
-              value: 10,
-            },
-          },
-        ],
-      },
+              operator: '>',
+              property: 'percentage',
+              value: 10
+            }
+          }
+        ]
+      }
     },
     series: [
       {
-        name: "比例",
+        name: '比例',
         colorByPoint: true,
         data: t?.data?.series?.[0]?.datalist?.[0]?.data?.map((s: o4) => ({
           ...s,
-          y: s.value - 0,
-        })),
-      },
-    ],
-  };
-});
+          y: s.value - 0
+        }))
+      }
+    ]
+  }
+})
 
-type o5 = { date: string; y: number };
+type o5 = { date: string, y: number }
 const option5 = computed(() => {
   const t = data?.value?.find(
-    (o: any) => o?.category === "未来15天游客预定人数"
-  );
+    (o: any) => o?.category === '未来15天游客预定人数'
+  )
 
   return {
     chart: {
-      zoomType: "xy",
+      zoomType: 'xy'
     },
     title: {
-      text: "未来15天游客预定人数",
+      text: '未来15天游客预定人数'
     },
     subtitle: {
-      text: "",
+      text: ''
     },
     xAxis: [
       {
         categories: t?.data?.map((o: o5) => o.date),
-        crosshair: true,
-      },
+        crosshair: true
+      }
     ],
     yAxis: [
       {
         labels: {
-          format: "{value}人",
+          format: '{value}人'
         },
         title: {
-          text: "预订人数",
-        },
-      },
+          text: '预订人数'
+        }
+      }
     ],
     tooltip: {
-      shared: true,
+      shared: true
     },
     legend: {
-      enabled: false,
+      enabled: false
     },
     series: [
       {
-        name: "人数",
-        type: "column",
+        name: '人数',
+        type: 'column',
         data: t?.data?.map((o: o5) => o.y),
         tooltip: {
-          valueSuffix: " 人",
+          valueSuffix: ' 人'
         },
         dataLabels: [
           {
             enabled: true,
             inside: false,
             style: {
-              fontSize: "0.8rem",
-            },
-          },
-        ],
-      },
-    ],
-  };
-});
+              fontSize: '0.8rem'
+            }
+          }
+        ]
+      }
+    ]
+  }
+})
 
-//九寨沟游客团散比
+// 九寨沟游客团散比
 const option6 = computed(() => {
-  const t = data?.value?.find((o: any) => o?.category === "九寨沟游客团散比");
+  const t = data?.value?.find((o: any) => o?.category === '九寨沟游客团散比')
   const r = t?.data?.series?.[0]?.datalist?.[0]?.data?.map((m: o3) => ({
     ...m,
-    y: m.value - 0,
-  }));
+    y: m.value - 0
+  }))
 
   return {
     chart: {
-      type: "pie",
+      type: 'pie'
     },
     title: {
-      text: "今日团散比",
+      text: '今日团散比'
     },
     tooltip: {
-      pointFormat: "数量：{point.y} (<b>{point.percentage:.2f}%</b>)",
+      pointFormat: '数量：{point.y} (<b>{point.percentage:.2f}%</b>)'
     },
     subtitle: {
-      text: "",
+      text: ''
     },
     plotOptions: {
       series: {
         dataLabels: [
           {
             enabled: true,
-            distance: 20,
-          },
-        ],
-      },
+            distance: 20
+          }
+        ]
+      }
     },
     series: [
       {
-        name: "比例",
+        name: '比例',
         colorByPoint: true,
-        data: r,
-      },
-    ],
-  };
-});
+        data: r
+      }
+    ]
+  }
+})
 </script>
 
 <template>
@@ -406,14 +406,14 @@ const option6 = computed(() => {
         <div>
           游客实时预订
           <q-spinner-hourglass
-            name="refresh"
             v-if="pending"
+            name="refresh"
             class="text-primary"
           />
 
           <q-icon
-            name="refresh"
             v-else
+            name="refresh"
             class="text-primary text-2xl cursor-pointer"
             @click="refresh"
           />
@@ -440,7 +440,10 @@ const option6 = computed(() => {
     </div>
 
     <q-inner-loading :showing="pending">
-      <q-spinner-gears size="4rem" color="primary" />
+      <q-spinner-gears
+        size="4rem"
+        color="primary"
+      />
     </q-inner-loading>
   </div>
 </template>

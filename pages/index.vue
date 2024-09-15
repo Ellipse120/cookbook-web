@@ -1,92 +1,93 @@
 <script lang="ts" setup>
 definePageMeta({
-  middleware: "auth",
-});
+  middleware: 'auth'
+})
 
-const $q = useQuasar();
+const $q = useQuasar()
 
-const deleteDialogVisible = ref(false);
-const currentItem = ref();
-const { data, status, refresh, error } = await useLazyFetch("/api/cookbooks");
+const deleteDialogVisible = ref(false)
+const currentItem = ref()
+const { data, status, refresh, error } = await useLazyFetch('/api/cookbooks')
 
-const pending = computed(() => status.value === "pending");
+const pending = computed(() => status.value === 'pending')
 
 if (error.value) {
   $q.notify({
-    color: "negative",
-    textColor: "white",
-    icon: "delete",
-    message: error.value.message,
-  });
+    color: 'negative',
+    textColor: 'white',
+    icon: 'delete',
+    message: error.value.message
+  })
 }
 
 const addNew = () => {
-  navigateTo("/cookbooks/add");
-};
+  navigateTo('/cookbooks/add')
+}
 
 const deleteItem = (item: any) => {
-  currentItem.value = item;
-  deleteDialogVisible.value = true;
-};
+  currentItem.value = item
+  deleteDialogVisible.value = true
+}
 
 const confirmDelete = async () => {
-  const { error } = await useFetch("/api/cookbooks", {
-    method: "delete",
-    body: [currentItem.value.id],
-  });
+  const { error } = await useFetch('/api/cookbooks', {
+    method: 'delete',
+    body: [currentItem.value.id]
+  })
 
   if (error.value) {
     $q.notify({
-      color: "negative",
-      textColor: "white",
-      icon: "delete",
-      message: "删除失败",
-    });
+      color: 'negative',
+      textColor: 'white',
+      icon: 'delete',
+      message: '删除失败'
+    })
 
-    return;
+    return
   }
 
-  deleteDialogVisible.value = false;
+  deleteDialogVisible.value = false
 
   $q.notify({
-    color: "positive",
-    textColor: "white",
-    icon: "done_all",
-    message: "删除成功",
-  });
+    color: 'positive',
+    textColor: 'white',
+    icon: 'done_all',
+    message: '删除成功'
+  })
 
-  refresh();
-};
+  refresh()
+}
 
 async function downloadImg(item: any) {
   await useFetch(`/api/download`, {
     query: {
-      fileName: item.previewImg,
+      fileName: item.previewImg
     },
     retry: 0,
     onResponse({ response, options }) {
       if (response.ok) {
-        options.responseType = "arrayBuffer";
+        options.responseType = 'arrayBuffer'
 
         downloadFile(
           response._data,
           (
-            item.previewImg ||
-            decodeURIComponent(response.headers.get("fileName") || "")
+            item.previewImg
+            || decodeURIComponent(response.headers.get('fileName') || '')
           )
-            ?.split("/")
+            ?.split('/')
             ?.pop()
-        );
-      } else {
-        $q.notify({
-          color: "negative",
-          textColor: "white",
-          icon: "sms_failed",
-          message: response?._data.message,
-        });
+        )
       }
-    },
-  });
+      else {
+        $q.notify({
+          color: 'negative',
+          textColor: 'white',
+          icon: 'sms_failed',
+          message: response?._data.message
+        })
+      }
+    }
+  })
 }
 </script>
 
@@ -100,16 +101,28 @@ async function downloadImg(item: any) {
           color="primary"
           :loading="pending"
           @click="refresh()"
-          >刷新</q-btn
         >
-        <q-btn push icon="add" color="positive" @click="addNew()">添加</q-btn>
+          刷新
+        </q-btn>
+        <q-btn
+          push
+          icon="add"
+          color="positive"
+          @click="addNew()"
+        >
+          添加
+        </q-btn>
       </q-btn-group>
 
       <q-space />
 
-      <q-chip icon="donut_large" color="positive" text-color="white"
-        >共计：<span class="font-bold text-lg">{{ data?.length }}</span></q-chip
+      <q-chip
+        icon="donut_large"
+        color="positive"
+        text-color="white"
       >
+        共计：<span class="font-bold text-lg">{{ data?.length }}</span>
+      </q-chip>
     </div>
 
     <div class="row items-start q-gutter-md pt-4">
@@ -118,7 +131,11 @@ async function downloadImg(item: any) {
         :key="`menu${index}`"
         class="w-300px"
       >
-        <q-card class="w-full max-w-300px" flat bordered>
+        <q-card
+          class="w-full max-w-300px"
+          flat
+          bordered
+        >
           <q-img
             :src="item.previewImg"
             spinner-color="green-10"
@@ -138,11 +155,16 @@ async function downloadImg(item: any) {
             />
 
             <div class="row no-wrap items-center">
-              <div class="col text-h6 ellipsis">{{ item.title }}</div>
+              <div class="col text-h6 ellipsis">
+                {{ item.title }}
+              </div>
               <div
                 class="col-auto text-grey text-caption q-pt-md row no-wrap items-center"
               >
-                <q-icon name="timelapse" color="positive" />
+                <q-icon
+                  name="timelapse"
+                  color="positive"
+                />
                 {{ item.consuming }}
               </div>
             </div>
@@ -157,7 +179,7 @@ async function downloadImg(item: any) {
                 'sentiment_dissatisfied',
                 'sentiment_neutral',
                 'sentiment_satisfied',
-                'sentiment_very_satisfied',
+                'sentiment_very_satisfied'
               ]"
               size="32px"
             />
@@ -168,7 +190,10 @@ async function downloadImg(item: any) {
               {{ formatDate(item.cookingDate) }}
             </div>
             <div class="text-caption text-grey">
-              <q-scroll-area visible class="h-2.2rem">
+              <q-scroll-area
+                visible
+                class="h-2.2rem"
+              >
                 <q-chip
                   v-for="(ca, caIndex) in item.categories"
                   :key="`category-${caIndex}`"
@@ -176,7 +201,10 @@ async function downloadImg(item: any) {
                   color="positive"
                   text-color="white"
                 />
-                <q-chip v-if="!item.categories.length" label="--" />
+                <q-chip
+                  v-if="!item.categories.length"
+                  label="--"
+                />
               </q-scroll-area>
             </div>
           </q-card-section>
@@ -184,12 +212,33 @@ async function downloadImg(item: any) {
           <q-separator />
 
           <q-card-actions>
-            <NuxtLink :to="`cookbooks/cookbook-${item.id}`" external>
-              <q-btn flat round icon="info" color="positive" />
-              <q-btn flat color="info"> 详情 </q-btn>
+            <NuxtLink
+              :to="`cookbooks/cookbook-${item.id}`"
+              external
+            >
+              <q-btn
+                flat
+                round
+                icon="info"
+                color="positive"
+              />
+              <q-btn
+                flat
+                color="info"
+              >
+                详情
+              </q-btn>
             </NuxtLink>
-            <NuxtLink :to="`cookbooks/edit-${item.id}`" external>
-              <q-btn flat color="positive"> 编辑 </q-btn>
+            <NuxtLink
+              :to="`cookbooks/edit-${item.id}`"
+              external
+            >
+              <q-btn
+                flat
+                color="positive"
+              >
+                编辑
+              </q-btn>
             </NuxtLink>
             <q-btn
               flat
@@ -203,24 +252,33 @@ async function downloadImg(item: any) {
         </q-card>
       </q-intersection>
 
-      <q-dialog v-model="deleteDialogVisible" persistent>
+      <q-dialog
+        v-model="deleteDialogVisible"
+        persistent
+      >
         <q-card>
           <q-card-section class="row items-center">
-            <q-avatar icon="delete" color="negative" text-color="white" />
-            <span class="q-ml-sm"
-              >确定删除菜品：{{ currentItem.title }} 【id={{
-                currentItem.id
-              }}】吗?</span
-            >
+            <q-avatar
+              icon="delete"
+              color="negative"
+              text-color="white"
+            />
+            <span class="q-ml-sm">确定删除菜品：{{ currentItem.title }} 【id={{
+              currentItem.id
+            }}】吗?</span>
           </q-card-section>
 
           <q-card-actions align="right">
-            <q-btn flat label="取消" v-close-popup />
             <q-btn
+              v-close-popup
+              flat
+              label="取消"
+            />
+            <q-btn
+              v-close-popup
               flat
               label="删除"
               color="negative"
-              v-close-popup
               @click="confirmDelete"
             />
           </q-card-actions>

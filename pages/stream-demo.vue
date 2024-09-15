@@ -1,30 +1,30 @@
 <script setup lang="ts">
-let result = ref([]);
+const result = ref([])
 definePageMeta({
-  middleware: "auth",
-});
+  middleware: 'auth'
+})
 
-const response = await $fetch.raw("/api/stream-demo", {
-  responseType: "stream",
-});
+const response = await $fetch.raw('/api/stream-demo', {
+  responseType: 'stream'
+})
 
-const reader = response.body?.getReader();
-const decoder = new TextDecoder();
+const reader = response.body?.getReader()
+const decoder = new TextDecoder()
 
 const readData = async () => {
   while (1) {
-    const { done, value }: any = await reader?.read();
+    const { done, value }: any = await reader?.read()
 
     if (done) {
-      break;
+      break
     }
 
-    const data = decoder.decode(value);
-    result.value.push(data);
+    const data = decoder.decode(value)
+    result.value.push(data)
   }
-};
+}
 
-readData();
+readData()
 </script>
 
 <template>
@@ -32,12 +32,15 @@ readData();
     <div class="p-2">
       {{ result.length }}
       <q-virtual-scroll
+        v-slot="{ item, index }"
         style="max-height: 400px"
         :items="result"
         separator
-        v-slot="{ item, index }"
       >
-        <q-item :key="index" dense>
+        <q-item
+          :key="index"
+          dense
+        >
           <q-item-section>
             <q-item-label> {{ item }} </q-item-label>
           </q-item-section>

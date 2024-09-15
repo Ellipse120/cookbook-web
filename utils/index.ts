@@ -1,5 +1,5 @@
-import { createConsola } from "consola/core";
-import { date, Notify } from "quasar";
+import { createConsola } from 'consola/core'
+import { date, Notify } from 'quasar'
 
 const logger = createConsola({
   level: 4,
@@ -7,37 +7,37 @@ const logger = createConsola({
     columns: 80,
     colors: true,
     compact: false,
-    date: true,
-  },
-});
+    date: true
+  }
+})
 
-type D = Date | number | string | null | undefined;
+type D = Date | number | string | null | undefined
 
-const formatDate = (value: D, formatter = "YYYY-MM-DD HH:mm:ss") => {
-  const emptySymbol = "---";
-  if (value === null) return emptySymbol;
+const formatDate = (value: D, formatter = 'YYYY-MM-DD HH:mm:ss') => {
+  const emptySymbol = '---'
+  if (value === null) return emptySymbol
 
-  return date.formatDate(value, formatter) || emptySymbol;
-};
+  return date.formatDate(value, formatter) || emptySymbol
+}
 
-const downloadFile = (res: Blob, fileName = "") => {
-  const blob = new Blob([res], { type: "application/octet-stream" });
-  const el = document.createElement("a");
-  el.download = fileName;
-  el.style.display = "none";
-  el.href = URL.createObjectURL(blob);
-  document.body.appendChild(el);
-  el.click();
-  URL.revokeObjectURL(el.href);
-  document.body.removeChild(el);
-};
+const downloadFile = (res: Blob, fileName = '') => {
+  const blob = new Blob([res], { type: 'application/octet-stream' })
+  const el = document.createElement('a')
+  el.download = fileName
+  el.style.display = 'none'
+  el.href = URL.createObjectURL(blob)
+  document.body.appendChild(el)
+  el.click()
+  URL.revokeObjectURL(el.href)
+  document.body.removeChild(el)
+}
 
-const showNotify = (message?: any, notifyOptions = {}) => {
+const showNotify = (message?: string, notifyOptions = {}) => {
   Notify.create({
-    message: message || "occurred some error",
-    color: "negative",
-    ...notifyOptions,
-  });
-};
+    message: message || 'occurred some error',
+    color: 'negative',
+    ...notifyOptions
+  })
+}
 
-export { logger, formatDate, downloadFile, showNotify };
+export { logger, formatDate, downloadFile, showNotify }

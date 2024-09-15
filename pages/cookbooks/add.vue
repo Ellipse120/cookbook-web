@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-const $q = useQuasar();
+const $q = useQuasar()
 
-const title = ref(null);
-const content = ref(null);
-const previewImg = ref(null);
-const satisfaction = ref(1);
-const difficulty = ref(1);
-const consuming = ref(null);
-const comments = ref([]);
-const categories = ref([]);
-const cookingDate = ref(formatDate(new Date()));
-const categoryOptions = useCategoriesInitData();
+const title = ref(null)
+const content = ref(null)
+const previewImg = ref(null)
+const satisfaction = ref(1)
+const difficulty = ref(1)
+const consuming = ref(null)
+const comments = ref([])
+const categories = ref([])
+const cookingDate = ref(formatDate(new Date()))
+const categoryOptions = useCategoriesInitData()
 
 async function onSubmit() {
-  const { error } = await useFetch("/api/cookbooks", {
-    method: "post",
+  const { error } = await useFetch('/api/cookbooks', {
+    method: 'post',
     body: {
       title,
       content,
@@ -24,61 +24,71 @@ async function onSubmit() {
       consuming,
       cookingDate,
       comments,
-      categories,
-    },
-  });
+      categories
+    }
+  })
 
   if (!error.value) {
     $q.notify({
-      color: "green-4",
-      textColor: "white",
-      icon: "cloud_done",
-      message: "添加成功",
-    });
+      color: 'green-4',
+      textColor: 'white',
+      icon: 'cloud_done',
+      message: '添加成功'
+    })
 
-    navigateTo("/");
+    navigateTo('/')
   }
 }
 
 function onReset() {
-  title.value = null;
-  content.value = null;
-  previewImg.value = null;
-  satisfaction.value = 1;
-  difficulty.value = 1;
-  consuming.value = null;
-  cookingDate.value = formatDate(new Date());
+  title.value = null
+  content.value = null
+  previewImg.value = null
+  satisfaction.value = 1
+  difficulty.value = 1
+  consuming.value = null
+  cookingDate.value = formatDate(new Date())
 }
 
 function handleUploadSuccess(o: any) {
   try {
-    const res = JSON.parse(o.xhr.response);
-    previewImg.value = res.url;
-  } catch {}
+    const res = JSON.parse(o.xhr.response)
+    previewImg.value = res.url
+  }
+  catch {}
 }
 
 function removePreviewImg() {
-  previewImg.value = null;
+  previewImg.value = null
 }
 
 const handleFiles = (files: any) => [
-  { name: "fileName", value: files[0].name },
-];
+  { name: 'fileName', value: files[0].name }
+]
 </script>
 
 <template>
   <div class="p-4">
-    <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
+    <q-form
+      class="q-gutter-md"
+      @submit="onSubmit"
+      @reset="onReset"
+    >
       <q-input
-        filled
         v-model="title"
+        filled
         label="菜名"
         lazy-rules
         :rules="[(val: any) => (val && val.length > 0) || '不能为空']"
       />
 
-      <q-field filled label="预览图" name="previewImg" stack-label>
-        <template v-slot:control>
+      <q-field
+        filled
+        label="预览图"
+        name="previewImg"
+        stack-label
+      >
+        <template #control>
           <div class="w-full">
             <q-uploader
               url="/api/upload"
@@ -101,21 +111,21 @@ const handleFiles = (files: any) => [
       />
 
       <q-select
-        filled
         v-model="categories"
+        filled
         multiple
         :options="categoryOptions"
         use-chips
         label="类别"
         hint="可多选"
       >
-        <template v-slot:selected-item="scope">
+        <template #selected-item="scope">
           <q-chip
             removable
-            @remove="scope.removeAtIndex(scope.index)"
             :tabindex="scope.tabindex"
             color="positive"
             text-color="white"
+            @remove="scope.removeAtIndex(scope.index)"
           >
             {{ scope.opt }}
           </q-chip>
@@ -123,8 +133,12 @@ const handleFiles = (files: any) => [
       </q-select>
 
       <div class="grid grid-cols-2 gap-4">
-        <q-field filled label="满意度" name="satisfaction">
-          <template v-slot:control>
+        <q-field
+          filled
+          label="满意度"
+          name="satisfaction"
+        >
+          <template #control>
             <q-slider
               v-model="satisfaction"
               :min="0"
@@ -137,8 +151,12 @@ const handleFiles = (files: any) => [
           </template>
         </q-field>
 
-        <q-field filled label="难度" name="difficulty">
-          <template v-slot:control>
+        <q-field
+          filled
+          label="难度"
+          name="difficulty"
+        >
+          <template #control>
             <q-slider
               v-model="difficulty"
               :min="0"
@@ -154,40 +172,67 @@ const handleFiles = (files: any) => [
 
       <div class="grid grid-cols-2 gap-4">
         <q-input
-          filled
           v-model="consuming"
+          filled
           label="耗时"
           lazy-rules
           :rules="[(val: any) => (val && val.length > 0) || '不能为空']"
         />
 
-        <q-input filled v-model="cookingDate" label="烹饪时间">
-          <template v-slot:prepend>
-            <q-icon name="event" class="cursor-pointer">
+        <q-input
+          v-model="cookingDate"
+          filled
+          label="烹饪时间"
+        >
+          <template #prepend>
+            <q-icon
+              name="event"
+              class="cursor-pointer"
+            >
               <q-popup-proxy
                 cover
                 transition-show="scale"
                 transition-hide="scale"
               >
-                <q-date v-model="cookingDate" mask="YYYY-MM-DD HH:mm">
+                <q-date
+                  v-model="cookingDate"
+                  mask="YYYY-MM-DD HH:mm"
+                >
                   <div class="row items-center justify-end">
-                    <q-btn v-close-popup label="Close" color="primary" flat />
+                    <q-btn
+                      v-close-popup
+                      label="Close"
+                      color="primary"
+                      flat
+                    />
                   </div>
                 </q-date>
               </q-popup-proxy>
             </q-icon>
           </template>
 
-          <template v-slot:append>
-            <q-icon name="access_time" class="cursor-pointer">
+          <template #append>
+            <q-icon
+              name="access_time"
+              class="cursor-pointer"
+            >
               <q-popup-proxy
                 cover
                 transition-show="scale"
                 transition-hide="scale"
               >
-                <q-time v-model="cookingDate" mask="YYYY-MM-DD HH:mm" format24h>
+                <q-time
+                  v-model="cookingDate"
+                  mask="YYYY-MM-DD HH:mm"
+                  format24h
+                >
                   <div class="row items-center justify-end">
-                    <q-btn v-close-popup label="Close" color="primary" flat />
+                    <q-btn
+                      v-close-popup
+                      label="Close"
+                      color="primary"
+                      flat
+                    />
                   </div>
                 </q-time>
               </q-popup-proxy>
@@ -197,8 +242,17 @@ const handleFiles = (files: any) => [
       </div>
 
       <div>
-        <q-btn label="保存" type="submit" color="primary" />
-        <q-btn label="重置" type="reset" color="red" class="q-ml-sm" />
+        <q-btn
+          label="保存"
+          type="submit"
+          color="primary"
+        />
+        <q-btn
+          label="重置"
+          type="reset"
+          color="red"
+          class="q-ml-sm"
+        />
       </div>
     </q-form>
   </div>

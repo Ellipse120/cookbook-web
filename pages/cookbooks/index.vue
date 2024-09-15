@@ -1,64 +1,68 @@
 <script lang="ts" setup>
-import type { Cookbook } from "~/types";
+import type { Cookbook } from '~/types'
 
 definePageMeta({
-  middleware: "auth",
-});
+  middleware: 'auth'
+})
 
-const $q = useQuasar();
+const $q = useQuasar()
 
-const selection = ref([]);
-const { data, pending, refresh } = await useLazyFetch("/api/cookbooks", {
+const selection = ref([])
+const { data, pending, refresh } = await useLazyFetch('/api/cookbooks', {
   transform: (t: Cookbook[]) => {
     return t
       .map((o: Cookbook) => ({
         ...o,
-        checked: false,
+        checked: false
       }))
-      .filter((t) => !t.deleted);
-  },
-});
+      .filter(t => !t.deleted)
+  }
+})
 
 async function batchDelete(ids: (string | number)[]) {
-  const { error } = await useFetch("/api/cookbooks", {
-    method: "delete",
-    body: ids,
-  });
+  const { error } = await useFetch('/api/cookbooks', {
+    method: 'delete',
+    body: ids
+  })
 
   if (error.value) {
     $q.notify({
-      color: "negative",
-      textColor: "white",
-      icon: "delete",
-      message: "删除失败",
-    });
+      color: 'negative',
+      textColor: 'white',
+      icon: 'delete',
+      message: '删除失败'
+    })
 
-    return;
+    return
   }
 
   $q.notify({
-    color: "positive",
-    textColor: "white",
-    icon: "done_all",
-    message: "删除成功",
-  });
+    color: 'positive',
+    textColor: 'white',
+    icon: 'done_all',
+    message: '删除成功'
+  })
 
-  refresh();
+  refresh()
 }
 </script>
 
 <template>
   <div>
     <div class="px-4 py-2">
-      <q-btn-group push class="mb-2">
+      <q-btn-group
+        push
+        class="mb-2"
+      >
         <q-btn
           push
           icon="refresh"
           color="primary"
           :loading="pending"
           @click="refresh()"
-          >刷新 {{ data?.length || 0 }}</q-btn
         >
+          刷新 {{ data?.length || 0 }}
+        </q-btn>
         <q-btn-dropdown
           auto-close
           rounded
@@ -70,9 +74,16 @@ async function batchDelete(ids: (string | number)[]) {
           @click="batchDelete(selection)"
         >
           <q-list class="w-160px">
-            <q-item clickable @click="batchDelete(data!.map((o) => o.id))">
+            <q-item
+              clickable
+              @click="batchDelete(data!.map((o) => o.id))"
+            >
               <q-item-section avatar>
-                <q-avatar icon="delete" color="negative" text-color="white" />
+                <q-avatar
+                  icon="delete"
+                  color="negative"
+                  text-color="white"
+                />
               </q-item-section>
               <q-item-section>
                 <q-item-label>全部删除</q-item-label>
@@ -82,16 +93,23 @@ async function batchDelete(ids: (string | number)[]) {
         </q-btn-dropdown>
       </q-btn-group>
 
-      <q-list bordered padding>
+      <q-list
+        bordered
+        padding
+      >
         <q-item
-          tag="label"
-          v-ripple
           v-for="item in data"
           :key="`item-${item.id}`"
+          v-ripple
+          tag="label"
           class="border-b-2 border-red-500"
         >
           <q-item-section side>
-            <q-checkbox v-model="selection" :val="item.id" toggle-order="ft" />
+            <q-checkbox
+              v-model="selection"
+              :val="item.id"
+              toggle-order="ft"
+            />
           </q-item-section>
 
           <q-item-section>
@@ -111,8 +129,7 @@ async function batchDelete(ids: (string | number)[]) {
                 color-selected="negative"
                 icon="favorite"
                 readonly
-              >
-              </q-rating>
+              />
             </q-item-label>
 
             <q-item-label>
@@ -136,7 +153,10 @@ async function batchDelete(ids: (string | number)[]) {
               size="0.8rem"
             >
               {{ formatDate(item.updatedAt) }}
-              <q-tooltip class="bg-negative" :offset="[10, 10]">
+              <q-tooltip
+                class="bg-negative"
+                :offset="[10, 10]"
+              >
                 更新时间: {{ formatDate(item.updatedAt) }}
               </q-tooltip>
             </q-chip>
@@ -148,7 +168,10 @@ async function batchDelete(ids: (string | number)[]) {
               size="0.8rem"
             >
               {{ formatDate(item.createdAt) }}
-              <q-tooltip class="bg-positive" :offset="[10, 10]">
+              <q-tooltip
+                class="bg-positive"
+                :offset="[10, 10]"
+              >
                 创建时间: {{ formatDate(item.createdAt) }}
               </q-tooltip>
             </q-chip>
@@ -158,7 +181,10 @@ async function batchDelete(ids: (string | number)[]) {
     </div>
 
     <q-inner-loading :showing="pending">
-      <q-spinner-gears size="50px" color="positive" />
+      <q-spinner-gears
+        size="50px"
+        color="positive"
+      />
     </q-inner-loading>
   </div>
 </template>

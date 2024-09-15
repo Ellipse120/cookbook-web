@@ -1,37 +1,38 @@
-import formidable from "formidable";
-import fs from "fs";
-import path from "path";
+import fs from 'fs'
+import path from 'path'
+import formidable from 'formidable'
 
 export default defineEventHandler(async (event) => {
-  let files;
-  let oldPath = "";
-  let newPath = "";
-  let fileName = "";
-  let fileUrl = "";
+  let files
+  let oldPath = ''
+  let newPath = ''
+  let fileName = ''
+  let fileUrl = ''
 
   const form = formidable({
     multiples: false,
-    keepExtensions: true,
-  });
+    keepExtensions: true
+  })
 
   try {
-    [, files] = await form.parse(event.node.req);
+    [, files] = await form.parse(event.node.req)
 
     fileName = `${Date.now()}_${Math.round(Math.random() * 100000)}_${
       files.file?.[0].originalFilename
-    }`;
+    }`
 
-    oldPath = files.file?.[0]?.filepath;
-    newPath = `${path.join("public", "uploads", fileName)}`;
-    fileUrl = "/uploads/" + fileName;
+    oldPath = files.file?.[0]?.filepath
+    newPath = `${path.join('public', 'uploads', fileName)}`
+    fileUrl = '/uploads/' + fileName
 
-    fs.copyFileSync(oldPath, newPath);
-  } catch (error: any) {
-    throw createError(error);
+    fs.copyFileSync(oldPath, newPath)
+  }
+  catch (error: any) {
+    throw createError(error)
   }
 
   return {
     fileName,
-    url: fileUrl,
-  };
-});
+    url: fileUrl
+  }
+})
