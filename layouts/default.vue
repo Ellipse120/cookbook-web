@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { user, clear }: { user: any, clear: Function } = useUserSession()
+const { user }: { user: any } = useUserSession()
 
 const leftDrawerOpen = ref(false)
 const rightDrawerOpen = ref(false)

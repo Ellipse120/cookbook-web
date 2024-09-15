@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import Highcharts from 'highcharts'
 import { Chart } from 'highcharts-vue'
 import HighchartsA11y from 'highcharts/modules/accessibility'
@@ -20,7 +20,7 @@ variablepie(Highcharts)
 treemap(Highcharts)
 bubble(Highcharts)
 
-const highchartsRef = ref<any>()
+const highchartsRef = ref()
 
 const props = defineProps({
   options: {
@@ -33,7 +33,7 @@ const props = defineProps({
   }
 })
 
-const chartOptions: any = computed(() => ({
+const chartOptions = computed(() => ({
   ...{
     credits: {
       enabled: false

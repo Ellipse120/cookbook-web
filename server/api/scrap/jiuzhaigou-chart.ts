@@ -1,7 +1,7 @@
 import { access, constants } from 'node:fs/promises'
 import { chromium } from 'playwright'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   const appConfig = useAppConfig()
 
   const today = new Date().toISOString().split('T')[0]
@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
   try {
     await access(screenshotUrl, constants.F_OK)
   }
-  catch (error) {
+  catch {
     const browser = await chromium.launch()
     const page = await browser.newPage()
 

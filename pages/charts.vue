@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TooltipFormatterContextObject, TooltipOptions } from 'highcharts'
+import type { TooltipOptions } from 'highcharts'
 import type { WombT } from '~/types'
 
 const data = ref<WombT[]>([
@@ -159,7 +159,8 @@ const chartOption = computed(() => ({
 
   tooltip: {
     formatter() {
-      // @ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       return '日期: <b>' + this.point.rawData.date + '</b> <br> 大小: <b>' + this.point.rawData.value + '</b>'
     }
   } as TooltipOptions,

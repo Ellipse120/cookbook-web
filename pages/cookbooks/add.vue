@@ -55,7 +55,7 @@ function handleUploadSuccess(o: any) {
     const res = JSON.parse(o.xhr.response)
     previewImg.value = res.url
   }
-  catch {}
+  catch { /* empty */ }
 }
 
 function removePreviewImg() {

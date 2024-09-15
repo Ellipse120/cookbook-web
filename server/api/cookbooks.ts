@@ -19,6 +19,6 @@ export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   updatedAt: new Date()
 }))
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   return mockData
 })

@@ -1,7 +1,8 @@
 import { RequestMethod } from '~/constant'
 
 declare global {
-  var jsonpAbaTourKc: Function
+  // eslint-disable-next-line no-var
+  var jsonpAbaTourKc: (o: any) => void
 }
 
 export const cachedGHStars = defineCachedFunction(

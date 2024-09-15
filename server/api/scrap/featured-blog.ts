@@ -42,7 +42,7 @@ export default defineEventHandler(async () => {
       updateDate: today
     }
   }
-  catch (error) {
+  catch {
     const browser = await chromium.launch()
     const page = await browser.newPage()
     await page.goto('https://coolshell.cn/featured')

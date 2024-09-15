@@ -12,7 +12,8 @@ const reader = response.body?.getReader()
 const decoder = new TextDecoder()
 
 const readData = async () => {
-  while (1) {
+  while (true) {
+    // eslint-disable-next-line no-unsafe-optional-chaining
     const { done, value }: any = await reader?.read()
 
     if (done) {
