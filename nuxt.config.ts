@@ -61,22 +61,9 @@ export default defineNuxtConfig({
   // Development config
   eslint: {
     config: {
-      stylistic: {
-        quotes: 'single',
-        commaDangle: 'never'
-      }
+      stylistic: true
     }
   },
-
-  // supabase: {
-  //   redirectOptions: {
-  //     login: "/login",
-  //     callback: "/confirm",
-  //     include: undefined,
-  //     exclude: ["/jiuzhaigou", "/dynamic-form"],
-  //     cookieRedirect: false,
-  //   },
-  // },
 
   formkit: {
     autoImport: true
@@ -86,7 +73,7 @@ export default defineNuxtConfig({
     '/api/**': {
       cors: true,
       headers: {
-        ls: 'lusai-server'
+        ls: 'cookbook-web-server'
       }
     }
   },
