@@ -7,14 +7,14 @@ export default defineNuxtConfig({
   app: {
     pageTransition: {
       name: 'page',
-      mode: 'out-in'
-    }
+      mode: 'out-in',
+    },
   },
 
   runtimeConfig: {
     public: {
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000'
-    }
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    },
   },
 
   modules: [
@@ -26,11 +26,11 @@ export default defineNuxtConfig({
     'nuxt-lodash',
     '@formkit/nuxt',
     'nuxt-auth-utils',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
   ],
 
   image: {
-    dir: '/public/uploads'
+    dir: '/public/uploads',
   },
 
   quasar: {
@@ -38,45 +38,49 @@ export default defineNuxtConfig({
     config: {
       brand: {
         positive: '#32bf1e',
-        negative: 'rgb(242,83,84)'
-      }
-    }
+        negative: 'rgb(242,83,84)',
+      },
+    },
   },
 
   unocss: {
-    transformers: [transformerDirectives()]
+    transformers: [transformerDirectives()],
   },
 
   security: {
     rateLimiter: {
       tokensPerInterval: 100,
-      interval: 300000
+      interval: 300000,
     },
     headers: {
       crossOriginEmbedderPolicy:
-        process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp'
-    }
+        process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+    },
   },
 
   // Development config
   eslint: {
     config: {
-      stylistic: true
-    }
+      stylistic: true,
+    },
   },
 
   formkit: {
-    autoImport: true
+    autoImport: true,
   },
 
   routeRules: {
     '/api/**': {
       cors: true,
       headers: {
-        ls: 'cookbook-web-server'
-      }
-    }
+        ls: 'cookbook-web-server',
+      },
+    },
   },
 
-  compatibilityDate: '2024-07-11'
+  future: {
+    compatibilityVersion: 4,
+  },
+
+  compatibilityDate: '2024-07-11',
 })

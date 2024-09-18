@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
    * Read file stream to page
    */
   const stream = createReadStream('poems1.json', {
-    encoding: 'utf-8'
+    encoding: 'utf-8',
     // start: 50,
     // end: 2048,
     // highWaterMark: 32,
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     .on('error', (error) => {
       throw createError({
         statusCode: 500,
-        message: error.message
+        message: error.message,
       })
     })
 

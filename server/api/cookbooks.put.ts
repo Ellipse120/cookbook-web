@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (!body.id) {
     throw createError({
       statusCode: 422,
-      message: 'id不能为空'
+      message: 'id不能为空',
     })
   }
 
@@ -14,12 +14,12 @@ export default defineEventHandler(async (event) => {
   mockData[targetIndex] = {
     ...mockData[targetIndex],
     ...body,
-    updatedAt: new Date()
+    updatedAt: new Date(),
   }
 
   return {
     statusCode: 200,
     statusMessage: '成功',
-    data: mockData[targetIndex]
+    data: mockData[targetIndex],
   }
 })

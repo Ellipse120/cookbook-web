@@ -7,8 +7,8 @@ const logger = createConsola({
     columns: 80,
     colors: true,
     compact: false,
-    date: true
-  }
+    date: true,
+  },
 })
 
 type D = Date | number | string | null | undefined
@@ -36,7 +36,7 @@ const showNotify = (message?: string, notifyOptions = {}) => {
   Notify.create({
     message: message || 'occurred some error',
     color: 'negative',
-    ...notifyOptions
+    ...notifyOptions,
   })
 }
 

@@ -1,11 +1,11 @@
 <script setup>
 const props = defineProps({
-  error: Object
+  error: Object,
 })
 
 const message = computed(() => String(props.error?.message || ''))
 const is404 = computed(
-  () => props.error?.statusCode === 404 || message.value?.includes('404')
+  () => props.error?.statusCode === 404 || message.value?.includes('404'),
 )
 const isDev = import.meta.dev
 

@@ -15,19 +15,19 @@ const data = ref<WombT[]>([
         width: 70,
         thickness: 57,
         endometrium_thickness: 5,
-        cervical_length: 35
-      }
+        cervical_length: 35,
+      },
     },
     ovary: {
       leftSide: {
         long: 28,
-        width: 16
+        width: 16,
       },
       rightSide: {
         long: 30,
-        width: 23
-      }
-    }
+        width: 23,
+      },
+    },
   },
   {
     id: '2',
@@ -42,19 +42,19 @@ const data = ref<WombT[]>([
         width: 58,
         thickness: 45,
         endometrium_thickness: 10,
-        cervical_length: 31
-      }
+        cervical_length: 31,
+      },
     },
     ovary: {
       leftSide: {
         long: 31,
-        width: 20
+        width: 20,
       },
       rightSide: {
         long: null,
-        width: null
-      }
-    }
+        width: null,
+      },
+    },
   },
   {
     id: '3',
@@ -68,19 +68,19 @@ const data = ref<WombT[]>([
         width: 65,
         thickness: 61,
         endometrium_thickness: 4,
-        cervical_length: 35
-      }
+        cervical_length: 35,
+      },
     },
     ovary: {
       leftSide: {
         long: 28,
-        width: 18
+        width: 18,
       },
       rightSide: {
         long: 27,
-        width: 16
-      }
-    }
+        width: 16,
+      },
+    },
   },
   {
     id: '4',
@@ -94,20 +94,20 @@ const data = ref<WombT[]>([
         width: 43,
         thickness: 53,
         endometrium_thickness: 11,
-        cervical_length: 28
-      }
+        cervical_length: 28,
+      },
     },
     ovary: {
       leftSide: {
         long: 26,
-        width: 20
+        width: 20,
       },
       rightSide: {
         long: 30,
-        width: 20
-      }
-    }
-  }
+        width: 20,
+      },
+    },
+  },
 ])
 
 const chartOption = computed(() => ({
@@ -115,21 +115,21 @@ const chartOption = computed(() => ({
     type: 'bubble',
     plotBorderWidth: 1,
     zooming: {
-      type: 'xy'
+      type: 'xy',
     },
-    height: (9 / 16 * 80) + '%'
+    height: (9 / 16 * 80) + '%',
   },
 
   legend: {
-    enabled: false
+    enabled: false,
   },
 
   title: {
-    text: 'Bubble of womb'
+    text: 'Bubble of womb',
   },
 
   subtitle: {
-    text: 'Using faking data'
+    text: 'Using faking data',
   },
 
   xAxis: {
@@ -138,23 +138,23 @@ const chartOption = computed(() => ({
     gridLineWidth: 1,
     type: 'datetime',
     title: {
-      text: 'Date'
+      text: 'Date',
     },
     labels: {
-      format: '{value:%Y-%m-%d}'
-    }
+      format: '{value:%Y-%m-%d}',
+    },
   },
 
   yAxis: {
     startOnTick: false,
     endOnTick: false,
     title: {
-      text: 'Size'
+      text: 'Size',
     },
     labels: {
-      format: '{value} mm'
+      format: '{value} mm',
     },
-    maxPadding: 0.2
+    maxPadding: 0.2,
   },
 
   tooltip: {
@@ -162,16 +162,16 @@ const chartOption = computed(() => ({
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
       return '日期: <b>' + this.point.rawData.date + '</b> <br> 大小: <b>' + this.point.rawData.value + '</b>'
-    }
+    },
   } as TooltipOptions,
 
   plotOptions: {
     series: {
       dataLabels: {
         enabled: false,
-        format: '{point.name}'
-      }
-    }
+        format: '{point.name}',
+      },
+    },
   },
 
   series: [{
@@ -185,13 +185,13 @@ const chartOption = computed(() => ({
         z: Math.max(...values),
         name: o.date,
         country: o.date,
-        rawData: o
+        rawData: o,
       }
     }),
     sizeBy: 'width',
     sizeByAbsoluteValue: true,
-    colorByPoint: true
-  }]
+    colorByPoint: true,
+  }],
 }))
 </script>
 

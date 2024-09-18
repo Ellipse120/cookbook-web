@@ -2,13 +2,13 @@
 import type { BlogUpdateT } from '~/types'
 
 definePageMeta({
-  middleware: 'auth'
+  middleware: 'auth',
 })
 
 const $q = useQuasar()
 
 const { data, status, refresh } = useLazyFetch<BlogUpdateT>(
-  '/api/scrap/featured-blog'
+  '/api/scrap/featured-blog',
 )
 
 let blobUrl: string
@@ -23,8 +23,8 @@ const getCapture = async (link: string) => {
   const { data, error } = await useFetch(`/api/scrap/blog-snapshot`, {
     method: 'post',
     body: {
-      link
-    }
+      link,
+    },
   })
 
   toggleImgLoading()
@@ -35,7 +35,7 @@ const getCapture = async (link: string) => {
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-      message: '添加成功'
+      message: '添加成功',
     })
 
     return

@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (!Array.isArray(ids)) {
     throw createError({
       statusCode: 400,
-      message: '参数`ids`类型为数组'
+      message: '参数`ids`类型为数组',
     })
   }
 
@@ -18,6 +18,6 @@ export default defineEventHandler(async (event) => {
   return {
     statusCode: 200,
     statusMessage: '删除成功',
-    data: mockData
+    data: mockData,
   }
 })

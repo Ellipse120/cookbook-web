@@ -16,7 +16,7 @@ watch(
       return navigateTo('/')
     }
   },
-  { immediate: true }
+  { immediate: true },
 )
 </script>
 

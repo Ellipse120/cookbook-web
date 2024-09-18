@@ -8,8 +8,8 @@ const fetchData = async () => {
   const { data } = await $fetch('/api/tiktok', {
     method: 'post',
     body: {
-      link: 'https://www.douyin.com/user/MS4wLjABAAAAZ6md5WKki8PiQ4aJYk8JN7zuzDRea6u9ZAw3LMcYntg'
-    }
+      link: 'https://www.douyin.com/user/MS4wLjABAAAAZ6md5WKki8PiQ4aJYk8JN7zuzDRea6u9ZAw3LMcYntg',
+    },
   })
 
   imgData.value = data

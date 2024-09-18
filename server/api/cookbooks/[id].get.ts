@@ -6,7 +6,7 @@ export default defineEventHandler((event) => {
   if (!id) {
     throw createError({
       statusCode: 422,
-      message: 'id不能为空'
+      message: 'id不能为空',
     })
   }
 
@@ -15,6 +15,6 @@ export default defineEventHandler((event) => {
   return {
     statusCode: 200,
     statusMessage: '成功',
-    data: targetItem
+    data: targetItem,
   }
 })

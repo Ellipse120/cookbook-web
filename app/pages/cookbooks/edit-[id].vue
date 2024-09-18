@@ -46,8 +46,8 @@ async function onSubmit() {
       consuming,
       cookingDate,
       comments,
-      categories
-    }
+      categories,
+    },
   })
 
   if (!error.value) {
@@ -55,7 +55,7 @@ async function onSubmit() {
       color: 'green-4',
       textColor: 'white',
       icon: 'cloud_done',
-      message: '修改成功'
+      message: '修改成功',
     })
 
     navigateTo('/')

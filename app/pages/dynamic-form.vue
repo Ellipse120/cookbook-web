@@ -14,18 +14,18 @@ const schema = [
       options: [
         { value: 10000, label: '<10000' },
         { value: 20000, label: '10000 - 20000' },
-        { value: 40000, label: '20000 - 40000' }
+        { value: 40000, label: '20000 - 40000' },
       ],
       validation: 'required|min:20000',
       validationVisible: 'dirty',
       validationMessages: {
-        min: 'need >= 20000'
+        min: 'need >= 20000',
       },
       classes: {
         fieldset: 'border-4 border-gray-500 text-2xl',
-        label: 'text-xl text-red-600'
-      }
-    }
+        label: 'text-xl text-red-600',
+      },
+    },
   },
   {
     $cmp: 'FormKit',
@@ -39,13 +39,13 @@ const schema = [
         { value: '1', label: '1' },
         { value: '2', label: '2' },
         { value: '3', label: '3' },
-        { value: '4', label: '4' }
+        { value: '4', label: '4' },
       ],
       classes: {
         label: 'text-xl text-red-600',
-        input: 'w-1/6 border-4 border-red-500 text-xl rounded-lg'
-      }
-    }
+        input: 'w-1/6 border-4 border-red-500 text-xl rounded-lg',
+      },
+    },
   },
   {
     $cmp: 'FormKit',
@@ -53,17 +53,17 @@ const schema = [
     props: {
       id: 'c',
       name: 'c',
-      label: 'C Input'
-    }
+      label: 'C Input',
+    },
   },
   {
     $cmp: 'FormKit',
     props: {
       id: 'd',
       name: 'd',
-      label: '😬D Input'
-    }
-  }
+      label: '😬D Input',
+    },
+  },
 ]
 
 const handleSubmit = () => {

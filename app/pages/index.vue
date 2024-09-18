@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 definePageMeta({
-  middleware: 'auth'
+  middleware: 'auth',
 })
 
 const $q = useQuasar()
@@ -16,7 +16,7 @@ if (error.value) {
     color: 'negative',
     textColor: 'white',
     icon: 'delete',
-    message: error.value.message
+    message: error.value.message,
   })
 }
 
@@ -32,7 +32,7 @@ const deleteItem = (item: any) => {
 const confirmDelete = async () => {
   const { error } = await useFetch('/api/cookbooks', {
     method: 'delete',
-    body: [currentItem.value.id]
+    body: [currentItem.value.id],
   })
 
   if (error.value) {
@@ -40,7 +40,7 @@ const confirmDelete = async () => {
       color: 'negative',
       textColor: 'white',
       icon: 'delete',
-      message: '删除失败'
+      message: '删除失败',
     })
 
     return
@@ -52,7 +52,7 @@ const confirmDelete = async () => {
     color: 'positive',
     textColor: 'white',
     icon: 'done_all',
-    message: '删除成功'
+    message: '删除成功',
   })
 
   refresh()
@@ -61,7 +61,7 @@ const confirmDelete = async () => {
 async function downloadImg(item: any) {
   await useFetch(`/api/download`, {
     query: {
-      fileName: item.previewImg
+      fileName: item.previewImg,
     },
     retry: 0,
     onResponse({ response, options }) {
@@ -75,7 +75,7 @@ async function downloadImg(item: any) {
             || decodeURIComponent(response.headers.get('fileName') || '')
           )
             ?.split('/')
-            ?.pop()
+            ?.pop(),
         )
       }
       else {
@@ -83,10 +83,10 @@ async function downloadImg(item: any) {
           color: 'negative',
           textColor: 'white',
           icon: 'sms_failed',
-          message: response?._data.message
+          message: response?._data.message,
         })
       }
-    }
+    },
   })
 }
 </script>
@@ -179,7 +179,7 @@ async function downloadImg(item: any) {
                 'sentiment_dissatisfied',
                 'sentiment_neutral',
                 'sentiment_satisfied',
-                'sentiment_very_satisfied'
+                'sentiment_very_satisfied',
               ]"
               size="32px"
             />

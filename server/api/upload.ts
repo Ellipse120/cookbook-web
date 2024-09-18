@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   const form = formidable({
     multiples: false,
-    keepExtensions: true
+    keepExtensions: true,
   })
 
   try {
@@ -33,6 +33,6 @@ export default defineEventHandler(async (event) => {
 
   return {
     fileName,
-    url: fileUrl
+    url: fileUrl,
   }
 })

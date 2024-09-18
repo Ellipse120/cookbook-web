@@ -4,7 +4,7 @@ import {
   writeFile,
   readFile,
   readdir,
-  rm
+  rm,
 } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { Buffer } from 'node:buffer'
@@ -39,7 +39,7 @@ export default defineEventHandler(async () => {
 
     return {
       data: JSON.parse(content) || [],
-      updateDate: today
+      updateDate: today,
     }
   }
   catch {
@@ -57,23 +57,23 @@ export default defineEventHandler(async () => {
           date: (dateEl as HTMLSpanElement).innerText,
           link: (aLink as HTMLAnchorElement).href,
           title: (aLink as HTMLAnchorElement).innerText,
-          views: (views as HTMLSpanElement).innerText
+          views: (views as HTMLSpanElement).innerText,
         }
-      })
+      }),
     )
 
     const controller = new AbortController()
     const { signal } = controller
 
     await writeFile(jsonPath, Buffer.from(JSON.stringify(texts)), {
-      signal
+      signal,
     })
 
     controller.abort()
 
     return {
       data: texts,
-      updateDate: today
+      updateDate: today,
     }
   }
 })

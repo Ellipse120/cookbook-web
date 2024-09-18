@@ -16,12 +16,12 @@ export default defineEventHandler(async () => {
     const page = await browser.newPage()
 
     await page.goto(appConfig.jiuzhaigouPageUrl, {
-      timeout: 0
+      timeout: 0,
     })
 
     await page.screenshot({
       path: screenshotUrl,
-      fullPage: true
+      fullPage: true,
     })
 
     browser.close()
@@ -30,6 +30,6 @@ export default defineEventHandler(async () => {
   return {
     statusCode: 200,
     statusMessage: '获取快照成功',
-    data: screenshotUrl.replace('public', '')
+    data: screenshotUrl.replace('public', ''),
   }
 })

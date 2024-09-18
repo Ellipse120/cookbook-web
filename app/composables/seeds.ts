@@ -8,6 +8,6 @@ export const useCategoriesInitData = () => {
     '火锅',
     '面食',
     '豆制品',
-    '水产'
+    '水产',
   ])
 }

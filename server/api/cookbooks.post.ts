@@ -8,13 +8,13 @@ export default defineEventHandler(async (event) => {
     ...body,
     deleted: false,
     createdAt: new Date(),
-    updatedAt: new Date()
+    updatedAt: new Date(),
   }
   mockData.push(newItem)
 
   return {
     statusCode: 200,
     statusMessage: '成功',
-    data: newItem
+    data: newItem,
   }
 })

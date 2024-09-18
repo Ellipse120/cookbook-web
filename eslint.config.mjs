@@ -5,7 +5,7 @@ export default withNuxt(
   // Your custom configs here
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off'
-    }
-  }
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 )

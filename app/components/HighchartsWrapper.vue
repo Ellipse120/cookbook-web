@@ -25,31 +25,31 @@ const highchartsRef = ref()
 const props = defineProps({
   options: {
     type: Object,
-    default: () => ({})
+    default: () => ({}),
   },
   loading: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const chartOptions = computed(() => ({
   ...{
     credits: {
-      enabled: false
+      enabled: false,
     },
 
     title: {
-      text: '当日游客'
+      text: '当日游客',
     },
 
     series: [
       {
-        data: [12, 3, 4, 5, 5, 4]
-      }
-    ]
+        data: [12, 3, 4, 5, 5, 4],
+      },
+    ],
   },
-  ...props.options
+  ...props.options,
 }))
 
 onMounted(() => {
@@ -64,8 +64,8 @@ onMounted(() => {
       }
     },
     {
-      immediate: true
-    }
+      immediate: true,
+    },
   )
 })
 </script>

@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     return {
       statusCode: 500,
       statusMessage: 'Must have link param',
-      data: ''
+      data: '',
     }
   }
 
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     if (error) {
       throw createError({
         statusCode: 422,
-        message: error.toString()
+        message: error.toString(),
       })
     }
 
@@ -31,13 +31,13 @@ export default defineEventHandler(async (event) => {
     const page = await browser.newPage()
 
     await page.goto(link, {
-      timeout: 0
+      timeout: 0,
     })
 
     await page.evaluate('document.getElementById(\'masthead\').remove()')
 
     await page.locator('.post-content').screenshot({
-      path: screenshotUrl
+      path: screenshotUrl,
     })
 
     await browser.close()
@@ -46,6 +46,6 @@ export default defineEventHandler(async (event) => {
   return {
     statusCode: 200,
     statusMessage: '获取快照成功',
-    data: screenshotUrl.replace('public', '')
+    data: screenshotUrl.replace('public', ''),
   }
 })

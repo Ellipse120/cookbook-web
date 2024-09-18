@@ -22,8 +22,8 @@ export default defineEventHandler(async (event) => {
     statusMessage: '获取快照成功',
     data: {
       count,
-      img: 'data:image/png;base64, ' + buffer.toString('base64')
-    }
+      img: 'data:image/png;base64, ' + buffer.toString('base64'),
+    },
   }
 
   // return 'xxx'
