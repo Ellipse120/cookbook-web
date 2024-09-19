@@ -96,18 +96,16 @@ const option2 = computed(() => {
   const temp = data?.value?.find((o: any) => o?.category === '票型售检票')
 
   const allCategories = [
-    ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name)),
+    ...new Set(temp?.data?.series[0]?.data?.map((s: o2) => s.name) as string[]),
   ]
   const displayCategories = allCategories.filter(
-    (o: any) => !o.includes('OTA'),
+    o => !o.includes('OTA'),
   )
 
-  type ResultT = Record<string, Array<any>>
+  const result: any = displayCategories.reduce((acc, cur: string) => {
+    const t = allCategories.filter(o => o.includes(cur))
 
-  const result: any = displayCategories.reduce<ResultT>((acc, cur) => {
-    const t = allCategories.filter((o: any) => o.includes(cur))
-
-    t.forEach((e: any) => {
+    t.forEach((e) => {
       const unuse
         = temp?.data?.series[0]?.data?.find(
           (b: o2) => b.name === e && b.isuse === '未使用',
@@ -117,16 +115,14 @@ const option2 = computed(() => {
           (b: o2) => b.name === e && b.isuse === '已消费',
         )?.value || 0
 
-      // @ts-expect-error don't know how to do FIXME
       acc[cur] = {
         [e]: [unuse, used, unuse + used],
-        // @ts-expect-error don't know how to do FIXME
         ...acc[cur],
       }
     })
 
     return acc
-  }, {})
+  }, {} as Record<string, Record<string, Array<any>>>)
 
   return {
     chart: {
@@ -277,7 +273,7 @@ const option4 = computed(() => {
         colorByPoint: true,
         data: t?.data?.series?.[0]?.datalist?.[0]?.data?.map((s: o4) => ({
           ...s,
-          y: s.value - 0,
+          y: s.value,
         })),
       },
     ],
@@ -349,7 +345,7 @@ const option6 = computed(() => {
   const t = data?.value?.find((o: any) => o?.category === '九寨沟游客团散比')
   const r = t?.data?.series?.[0]?.datalist?.[0]?.data?.map((m: o3) => ({
     ...m,
-    y: m.value - 0,
+    y: m.value,
   }))
 
   return {
