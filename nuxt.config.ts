@@ -27,7 +27,14 @@ export default defineNuxtConfig({
     '@formkit/nuxt',
     'nuxt-auth-utils',
     '@nuxt/eslint',
+    '@nuxt/test-utils/module',
   ],
+
+  // vue: {
+  //   compilerOptions: {
+  //     isCustomElement: (tag) => tag.startsWith("FormKit")
+  //   }
+  // },
 
   image: {
     dir: '/public/uploads',
