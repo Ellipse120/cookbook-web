@@ -2,8 +2,6 @@
 const { loggedIn } = useUserSession()
 
 watch(loggedIn, () => {
-  console.log(loggedIn.value)
-
   if (!loggedIn.value) {
     navigateTo('/login')
   }

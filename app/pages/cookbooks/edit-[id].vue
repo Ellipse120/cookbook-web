@@ -13,8 +13,8 @@ const categories = ref([])
 const cookingDate = ref(formatDate(new Date()))
 const categoryOptions = useCategoriesInitData()
 
-const { data, pending } = await useFetch(`/api/cookbooks/${route.params.id}`)
-
+const { data, status } = await useFetch(`/api/cookbooks/${route.params.id}`)
+const pending = computed(() => status.value === 'pending')
 const d: any = data.value!.data
 
 if (d) {

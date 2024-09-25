@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Cookbook } from '~/types'
+import type { Cookbook } from '~~/types'
 
 definePageMeta({
   middleware: 'auth',
@@ -8,7 +8,7 @@ definePageMeta({
 const $q = useQuasar()
 
 const selection = ref([])
-const { data, pending, refresh } = await useLazyFetch('/api/cookbooks', {
+const { data, status, refresh } = await useLazyFetch('/api/cookbooks', {
   transform: (t: Cookbook[]) => {
     return t
       .map((o: Cookbook) => ({
@@ -18,6 +18,8 @@ const { data, pending, refresh } = await useLazyFetch('/api/cookbooks', {
       .filter(t => !t.deleted)
   },
 })
+
+const pending = computed(() => status.value === 'pending')
 
 async function batchDelete(ids: (string | number)[]) {
   const { error } = await useFetch('/api/cookbooks', {
