@@ -1,9 +1,28 @@
 <template>
   <div class="px-4">
-    <Chart
-      ref="highchartsRef"
-      :options="chartOptions"
-    />
+    <NuxtErrorBoundary>
+      <Chart
+        ref="highchartsRef"
+        :options="chartOptions"
+      />
+
+      <template #error="{ error, clearError }">
+        <q-card>
+          <q-card-section>
+            Error info: {{ error }}
+          </q-card-section>
+
+          <q-card-actions>
+            <q-btn
+              type="primary"
+              @click="clearError"
+            >
+              Clear error.
+            </q-btn>
+          </q-card-actions>
+        </q-card>
+      </template>
+    </NuxtErrorBoundary>
   </div>
 </template>
 

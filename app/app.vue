@@ -10,8 +10,27 @@ watch(loggedIn, () => {
 
 <template>
   <NuxtLoadingIndicator />
+  <NuxtRouteAnnouncer />
   <NuxtLayout>
-    <NuxtPage />
+    <NuxtErrorBoundary>
+      <NuxtPage />
+      <template #error="{ error, clearError }">
+        <q-card>
+          <q-card-section>
+            Error info: {{ error }}
+          </q-card-section>
+
+          <q-card-actions>
+            <q-btn
+              type="primary"
+              @click="clearError"
+            >
+              Clear the error.
+            </q-btn>
+          </q-card-actions>
+        </q-card>
+      </template>
+    </NuxtErrorBoundary>
   </NuxtLayout>
 </template>
 

@@ -13,10 +13,12 @@
               color="positive"
               size="lg"
             >
-              <nuxt-link
+              <NuxtLink
                 to="/api/auth/github"
                 external
-              >Login with Github</nuxt-link>
+              >
+                Login with Github
+              </NuxtLink>
               <q-tooltip> Login with Github </q-tooltip>
             </q-btn>
           </q-btn-group>

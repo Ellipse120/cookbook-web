@@ -40,7 +40,7 @@ const option1 = computed(() => {
     (province: string, index: number) => {
       return {
         name: province,
-        y: t.data.series[0].data[index],
+        y: Number(t.data.series[0].data[index]),
       }
     },
   )
@@ -185,7 +185,7 @@ const option2 = computed(() => {
         data: temp?.data?.series[0]?.data?.map((o: any) => ({
           ...o,
           name: `${o.name} ${o.isuse}`,
-          y: o.value,
+          y: Number(o.value),
         })),
         size: '80%',
         innerSize: '80%',
@@ -219,7 +219,7 @@ const option3 = computed(() => {
       {
         data: t?.data?.series[0]?.data?.map((o: o3) => ({
           ...o,
-          y: o.value,
+          y: Number(o.value),
         })),
       },
     ],
@@ -273,7 +273,7 @@ const option4 = computed(() => {
         colorByPoint: true,
         data: t?.data?.series?.[0]?.datalist?.[0]?.data?.map((s: o4) => ({
           ...s,
-          y: s.value,
+          y: Number(s.value),
         })),
       },
     ],
@@ -345,7 +345,7 @@ const option6 = computed(() => {
   const t = data?.value?.find((o: any) => o?.category === '九寨沟游客团散比')
   const r = t?.data?.series?.[0]?.datalist?.[0]?.data?.map((m: o3) => ({
     ...m,
-    y: m.value,
+    y: Number(m.value),
   }))
 
   return {
