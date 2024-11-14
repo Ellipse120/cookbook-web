@@ -51,7 +51,7 @@ export type WombT = {
       /** 厚 */
       thickness: number
       /** 内膜厚 */
-      endometrium_thickness: number
+      endometrium_thickness?: number
       /** 宫颈长 */
       cervical_length: number
     }

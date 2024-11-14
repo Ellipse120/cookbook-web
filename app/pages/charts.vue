@@ -1,8 +1,58 @@
 <script setup lang="ts">
 import type { TooltipOptions } from 'highcharts'
-import type { WombT } from '~/types'
+import type { WombT } from '~~/types'
 
 const data = ref<WombT[]>([
+  {
+    id: '0',
+    date: '2021-03-27',
+    value: '54*47',
+    unit: 'mm',
+    womb: {
+      position: '前位',
+      size: {
+        long: 68,
+        width: 76,
+        thickness: 45,
+        cervical_length: 35,
+      },
+    },
+    ovary: {
+      leftSide: {
+        long: 23,
+        width: 15,
+      },
+      rightSide: {
+        long: 26,
+        width: 17,
+      },
+    },
+  },
+  {
+    id: '01',
+    date: '2021-04-10',
+    value: '68*59',
+    unit: 'mm',
+    womb: {
+      position: '前位',
+      size: {
+        long: 69,
+        width: 65,
+        thickness: 49,
+        cervical_length: 36,
+      },
+    },
+    ovary: {
+      leftSide: {
+        long: 28,
+        width: 18,
+      },
+      rightSide: {
+        long: 27,
+        width: 16,
+      },
+    },
+  },
   {
     id: '1',
     date: '2021-08-31',
@@ -177,7 +227,6 @@ const chartOption = computed(() => ({
   series: [{
     data: data.value.map((o: WombT) => {
       const values = (o.fixedValue || o.value).split('*').map(o => Number(o))
-      // const values = (o.fixedValue || o.value).split('*').reduce((acc, curr) => acc * Number(curr), 1)
 
       return {
         x: new Date(o.date),
