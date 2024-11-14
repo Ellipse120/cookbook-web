@@ -9,9 +9,11 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
+    "update-content": "zx ./scripts/update-content.js",
     "test": "vitest run"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.13.4",
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/image": "^1.6.0",
@@ -21,13 +23,14 @@
     "@vitest/ui": "^2.1.1",
     "@vue/test-utils": "^2.4.6",
     "happy-dom": "^15.7.4",
-    "nuxt": "^3.13.1",
+    "nuxt": "^3.14.159",
     "nuxt-auth-utils": "0.3.8",
     "nuxt-lodash": "^2.5.3",
     "nuxt-quasar-ui": "^2.1.6",
     "nuxt-security": "2.0.0-rc.9",
     "playwright-core": "^1.47.2",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.1",
+    "zx": "^8.1.9"
   },
   "dependencies": {
     "@formkit/core": "^1.6.5",

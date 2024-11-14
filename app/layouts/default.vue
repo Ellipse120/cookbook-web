@@ -141,7 +141,16 @@ const toggleRightDrawer = () => {
       side="right"
       bordered
     >
-      评分详情
+      <div class="flex align-center justify-center p-4">
+        <NuxtLink
+          to="/code-snippets"
+          class="text-gray-400 no-underline"
+        >
+          <q-btn color="primary">
+            Code Snippets
+          </q-btn>
+        </NuxtLink>
+      </div>
     </q-drawer>
 
     <q-page-container>

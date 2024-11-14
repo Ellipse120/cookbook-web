@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
+    '@nuxt/content',
   ],
 
   // vue: {
@@ -76,12 +77,41 @@ export default defineNuxtConfig({
     autoImport: true,
   },
 
+  content: {
+    // api: {
+    // baseURL: '/api/content',
+    // },
+    highlight: {
+      theme: 'andromeeda',
+      langs: [
+        'cmd',
+        'xml',
+        'js',
+        'bash',
+        'zsh',
+        'html',
+        'css',
+        'json',
+        'vue',
+        'ts',
+      ],
+    },
+    // documentDriven: true,
+  },
+
   routeRules: {
     '/api/**': {
       cors: true,
       headers: {
         ls: 'cookbook-web-server',
       },
+    },
+  },
+
+  nitro: {
+    compressPublicAssets: {
+      gzip: true,
+      brotli: true,
     },
   },
 
