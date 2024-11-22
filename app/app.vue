@@ -35,13 +35,6 @@ watch(loggedIn, () => {
 </template>
 
 <style>
-.router-link-active {
-  @apply text-white;
-}
-.router-link-exact-active {
-  @apply text-white;
-}
-
 .page-enter-active,
 .page-leave-active {
   transition: all 0.4s;

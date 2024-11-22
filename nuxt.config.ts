@@ -48,6 +48,7 @@ export default defineNuxtConfig({
         positive: '#32bf1e',
         negative: 'rgb(242,83,84)',
       },
+      dark: 'auto',
     },
   },
 
@@ -82,7 +83,7 @@ export default defineNuxtConfig({
     // baseURL: '/api/content',
     // },
     highlight: {
-      theme: 'andromeeda',
+      theme: 'vitesse-light',
       langs: [
         'cmd',
         'xml',
@@ -109,6 +110,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    experimental: {
+      tasks: true,
+    },
     compressPublicAssets: {
       gzip: true,
       brotli: true,
