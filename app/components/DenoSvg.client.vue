@@ -25,14 +25,25 @@ onMounted(() => {
 
 const refresh = (val) => {
   Array.from(headWearEl.children).forEach((v) => {
-    v.style.display = v.id === useKebabCase(val.headWear) ? 'block' : 'none'
+    if (!val.headWear) {
+      v.style.display = 'none'
+    } else {
+      v.style.display = v.id === useKebabCase(val.headWear) ? 'block' : 'none'
+    }
   })
 
   Array.from(neckWearEl.children).forEach((v) => {
-    v.style.display = v.id === useKebabCase(val.neckWear) ? 'block' : 'none'
+    if (!val.neckWear) {
+      v.style.display = 'none'
+    } else {
+      v.style.display = v.id === useKebabCase(val.neckWear) ? 'block' : 'none'
+    }
   })
 
   accessoryEls.forEach((v) => {
+    if (!val.accessory.length) {
+      v.style.display = 'none'
+    }
     v.style.display = val.accessory.includes(v.id) ? 'block' : 'none'
   })
 }
@@ -41,7 +52,7 @@ watch(
   props.editorModel,
   (newVal) => {
     refresh(newVal)
-  }
+  },
 )
 
 const cssVars = computed(() => {

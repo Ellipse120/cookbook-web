@@ -27,14 +27,13 @@ const randomAll = () => {
 }
 
 const clearAll = () => {
-  editorModel.value = {
-    headWear: '',
-    headWearColor: colors[0],
-    neckWear: '',
-    neckWearColor: colors[0],
-    accessory: [],
-    accessoryColor: colors[0],
-  }
+  editorModel.value.headWearColor = colors[0]
+  editorModel.value.neckWearColor = colors[0]
+  editorModel.value.accessoryColor = colors[0]
+
+  editorModel.value.headWear = ''
+  editorModel.value.neckWear = ''
+  editorModel.value.accessory = []
 }
 
 const saveDino = () => {
