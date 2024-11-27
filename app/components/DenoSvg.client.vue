@@ -7,7 +7,7 @@ const props = defineProps({
     neckWear: '',
     neckWearColor: '',
     accessory: () => [],
-    accessoryColor: ''
+    accessoryColor: '',
   },
 })
 
@@ -18,8 +18,7 @@ let accessoryEls = []
 onMounted(() => {
   headWearEl = document.getElementById('headwear')
   neckWearEl = document.getElementById('neckwear')
-  accessoryEls = useAttrs().accessories.map(accessory => document.getElementById(accessory)
-  )
+  accessoryEls = useAttrs().accessories.map(accessory => document.getElementById(accessory))
 
   refresh(props.editorModel)
 })
@@ -122,5 +121,4 @@ const cssVars = computed(() => {
   background-position: right 0.5em top 50%;
   background-repeat: no-repeat;
 }
-//#accessories #balloons{display: block !important;}
 </style>

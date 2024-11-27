@@ -7,5 +7,6 @@ export default withNuxt(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
     },
+    ignores: ['app/components/DenoSvg.client.vue'],
   },
 )

@@ -107,6 +107,15 @@ export default defineNuxtConfig({
         ls: 'cookbook-web-server',
       },
     },
+    'custom-deno-logo': {
+      security: {
+        headers: {
+          contentSecurityPolicy: {
+            'img-src': false,
+          },
+        },
+      },
+    },
   },
 
   nitro: {
