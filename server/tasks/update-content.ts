@@ -13,7 +13,7 @@ export default defineTask({
 
     if (v) {
       if (statSync(folder + '.git')) {
-        const a = await spinner('Updating CodeSnippets Repo:', () => $`git pull`)
+        const a = await spinner('Updating CodeSnippets Repo:', () => $`git -c credential.helper= -c core.quotepath=false -c log.showSignature=false pull --no-stat -v --progress origin master`)
         result = a.stdout
       }
       else {

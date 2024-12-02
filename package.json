@@ -13,7 +13,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.13.4",
+    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/image": "^1.6.0",
