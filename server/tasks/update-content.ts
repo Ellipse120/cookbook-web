@@ -1,5 +1,5 @@
 import { existsSync, statSync } from 'fs'
-import { $, chalk, spinner } from 'zx'
+import { $, cd, chalk, spinner, within } from 'zx'
 
 export default defineTask({
   meta: {
@@ -13,7 +13,7 @@ export default defineTask({
 
     if (v) {
       if (statSync(folder + '.git')) {
-        const a = await spinner('Updating CodeSnippets Repo:', () => $`git -c credential.helper= -c core.quotepath=false -c log.showSignature=false pull --no-stat -v --progress origin master`)
+        const a = await spinner('Updating CodeSnippets Repo:', () => $`cd content/;git pull --rebase`)
         result = a.stdout
       }
       else {

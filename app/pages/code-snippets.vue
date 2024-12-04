@@ -21,6 +21,7 @@ const updateContentRepo = async () => {
     })
 
   showNotify(val?.result, {
+    color: 'positive',
     actions: [
       { icon: 'close', color: 'white', round: true, handler: () => { /* ... */ } },
     ],
