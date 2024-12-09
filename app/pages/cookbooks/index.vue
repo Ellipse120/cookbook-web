@@ -6,9 +6,10 @@ definePageMeta({
 })
 
 const $q = useQuasar()
+const { $api } = useNuxtApp()
 
 const selection = ref([])
-const { data, status, refresh } = await useLazyFetch('/api/cookbooks', {
+const { data, status, refresh } = await useAPI('/api/cookbooks', {
   transform: (t: Cookbook[]) => {
     return t
       .map((o: Cookbook) => ({
@@ -22,12 +23,12 @@ const { data, status, refresh } = await useLazyFetch('/api/cookbooks', {
 const pending = computed(() => status.value === 'pending')
 
 async function batchDelete(ids: (string | number)[]) {
-  const { error } = await useFetch('/api/cookbooks', {
+  const { error } = await $api('/api/cookbooks', {
     method: 'delete',
     body: ids,
   })
 
-  if (error.value) {
+  if (error?.value) {
     $q.notify({
       color: 'negative',
       textColor: 'white',
@@ -45,7 +46,7 @@ async function batchDelete(ids: (string | number)[]) {
     message: '删除成功',
   })
 
-  refresh()
+  await refresh()
 }
 </script>
 

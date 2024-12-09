@@ -7,6 +7,7 @@ definePageMeta({
   },
 })
 
+const { $api } = useNuxtApp()
 const currentTab = ref('/')
 const splitterModel = ref(30)
 
@@ -51,7 +52,7 @@ const { data: content, status } = await useAsyncData<ParsedContent>(
   currentTab.value as string,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  () => $fetch(`/api/_content/query?_params={"first":true,"where":[{"_path":"${currentTab.value}"}],"sort":[{"_stem":1,"$numeric":true}]}`),
+  () => $api(`/api/_content/query?_params={"first":true,"where":[{"_path":"${currentTab.value}"}],"sort":[{"_stem":1,"$numeric":true}]}`),
   {
     watch: [currentTab],
   },

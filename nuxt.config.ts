@@ -116,6 +116,15 @@ export default defineNuxtConfig({
         },
       },
     },
+    'cookbooks/**': {
+      security: {
+        headers: {
+          contentSecurityPolicy: {
+            'img-src': false,
+          },
+        },
+      },
+    },
   },
 
   nitro: {

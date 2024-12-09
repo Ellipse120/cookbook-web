@@ -153,13 +153,22 @@ const isDarkMode = computed(() => $q.dark.isActive)
         side="right"
         bordered
       >
-        <div class="flex align-center justify-center p-4">
+        <div class="flex align-center justify-center p-4 gap-4">
           <NuxtLink
             to="/code-snippets"
             class="text-gray-400 no-underline"
           >
             <q-btn color="primary">
               Code Snippets
+            </q-btn>
+          </NuxtLink>
+
+          <NuxtLink
+            to="/async-child-communication"
+            class="text-gray-400 no-underline"
+          >
+            <q-btn color="positive">
+              Async Child Communication
             </q-btn>
           </NuxtLink>
         </div>

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const result = ref([])
 definePageMeta({
   middleware: 'auth',
 })
+const { $api } = useNuxtApp()
 
-const response = await $fetch.raw('/api/stream-demo', {
+const result = ref([])
+
+const response = await $api.raw('/api/stream-demo', {
   responseType: 'stream',
 })
 

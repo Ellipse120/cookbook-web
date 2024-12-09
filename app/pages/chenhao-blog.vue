@@ -20,7 +20,7 @@ const isLoading = computed(() => status.value === 'pending')
 const getCapture = async (link: string) => {
   toggleImgLoading()
 
-  const { data, error } = await useFetch(`/api/scrap/blog-snapshot`, {
+  const { data, error } = await useAPI(`/api/scrap/blog-snapshot`, {
     method: 'post',
     body: {
       link,

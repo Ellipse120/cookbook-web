@@ -13,7 +13,7 @@ const categories = ref([])
 const cookingDate = ref(formatDate(new Date()))
 const categoryOptions = useCategoriesInitData()
 
-const { data, status } = await useFetch(`/api/cookbooks/${route.params.id}`)
+const { data, status } = await useAPI(`/api/cookbooks/${route.params.id}`)
 const pending = computed(() => status.value === 'pending')
 const d: any = data.value!.data
 
@@ -34,7 +34,7 @@ function handleFormField(files: any) {
 }
 
 async function onSubmit() {
-  const { error } = await useFetch('/api/cookbooks', {
+  const { error } = await useAPI('/api/cookbooks', {
     method: 'put',
     body: {
       id: route.params.id,

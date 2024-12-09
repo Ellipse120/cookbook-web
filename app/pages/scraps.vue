@@ -1,19 +1,22 @@
 <script setup>
+const { $api } = useNuxtApp()
+
 // tiktok
 const imgData = ref()
 const pending = ref(false)
 
 const fetchData = async () => {
   pending.value = true
-  const { data } = await $fetch('/api/tiktok', {
+  const { data } = await $api('/api/tiktok', {
     method: 'post',
     body: {
       link: 'https://www.douyin.com/user/MS4wLjABAAAAZ6md5WKki8PiQ4aJYk8JN7zuzDRea6u9ZAw3LMcYntg',
     },
+  }).finally(() => {
+    pending.value = false
   })
 
   imgData.value = data
-  pending.value = false
 }
 </script>
 

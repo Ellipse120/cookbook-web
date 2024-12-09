@@ -30,7 +30,7 @@ const deleteItem = (item: any) => {
 }
 
 const confirmDelete = async () => {
-  const { error } = await useFetch('/api/cookbooks', {
+  const { error } = await useAPI('/api/cookbooks', {
     method: 'delete',
     body: [currentItem.value.id],
   })
@@ -55,11 +55,11 @@ const confirmDelete = async () => {
     message: '删除成功',
   })
 
-  refresh()
+  await refresh()
 }
 
 async function downloadImg(item: any) {
-  await useFetch(`/api/download`, {
+  await useAPI(`/api/download`, {
     query: {
       fileName: item.previewImg,
     },

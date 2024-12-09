@@ -13,7 +13,7 @@ const cookingDate = ref(formatDate(new Date()))
 const categoryOptions = useCategoriesInitData()
 
 async function onSubmit() {
-  const { error } = await useFetch('/api/cookbooks', {
+  const { error } = await useAPI('/api/cookbooks', {
     method: 'post',
     body: {
       title,

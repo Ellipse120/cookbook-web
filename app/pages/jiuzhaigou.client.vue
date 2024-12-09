@@ -10,7 +10,7 @@ const query = ref({
   invalid: true,
 })
 
-const { data, status, refresh } = await useFetch<any>(
+const { data, status, refresh } = await useAPI<any>(
   '/api/jiuzhaigou', // use real api
   {
     query,
