@@ -80,6 +80,12 @@ function handleUploadSuccess(o: any) {
   catch { /* empty */ }
 }
 
+function onUploadError({ xhr }: { xhr: XMLHttpRequest }) {
+  const errorMessage = JSON.parse(xhr.response)?.message
+  // xhr.response?.data?.error?.message
+  showNotify(errorMessage)
+}
+
 function removePreviewImg() {
   previewImg.value = ''
 }
@@ -111,10 +117,11 @@ function removePreviewImg() {
             <q-uploader
               url="/api/upload"
               field-name="file"
-              :multiple="false"
+              :multiple="true"
               :form-fields="handleFormField"
               @removed="removePreviewImg"
               @uploaded="handleUploadSuccess"
+              @failed="onUploadError"
             />
             <q-img
               :src="previewImg"
