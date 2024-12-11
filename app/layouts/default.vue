@@ -171,6 +171,15 @@ const isDarkMode = computed(() => $q.dark.isActive)
               Async Child Communication
             </q-btn>
           </NuxtLink>
+
+          <NuxtLink
+            to="/custom-deno-logo"
+            class="text-gray-400 no-underline"
+          >
+            <q-btn color="red">
+              Async Child Communication
+            </q-btn>
+          </NuxtLink>
         </div>
       </q-drawer>
 

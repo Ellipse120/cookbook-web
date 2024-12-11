@@ -6,7 +6,16 @@ const neckWears = ['(No neckwear)', 'Bowtie', 'Necktie', 'Scarf', 'Necklace', 'C
 const colors = ['#70ffaf', '#ffdb1e', '#ff8a01', '#00a341', '#01c2ff', '#1d4ed8', '#613092', '#f472b6', '#dc2626', '#25272b']
 const accessories = ['balloons', 'handlebars', 'mustache', 'sunglasses', 'glasses', 'mascara', 'eyelashes', 'skateboard', 'tattoo', 'fangs', 'ferris']
 
-const editorModel = ref({
+interface T {
+  headWear: string
+  headWearColor?: string
+  neckWear?: string
+  neckWearColor?: string
+  accessory?: (string | null)[]
+  accessoryColor?: string
+}
+
+const editorModel = ref<T>({
   headWear: 'Headphones',
   headWearColor: colors[0],
   neckWear: 'Bowtie',
@@ -21,8 +30,8 @@ const randomAll = () => {
   editorModel.value.neckWearColor = randomColor
   editorModel.value.accessoryColor = randomColor
 
-  editorModel.value.headWear = headWears[Math.floor(Math.random() * headWears.length)]
-  editorModel.value.neckWear = neckWears[Math.floor(Math.random() * neckWears.length)]
+  editorModel.value.headWear = headWears[Math.floor(Math.random() * headWears.length)]!
+  editorModel.value.neckWear = neckWears[Math.floor(Math.random() * neckWears.length)]!
   editorModel.value.accessory = accessories.map(r => Math.floor(Math.random() * 2) ? r : null).filter(Boolean)
 }
 
@@ -37,7 +46,7 @@ const clearAll = () => {
 }
 
 const saveDino = () => {
-  const dinoEl = document.getElementById('my-dino')
+  const dinoEl = document.getElementById('my-dino')!
   const canvas = document.createElement('canvas')
   const img = new Image()
   const r = new XMLSerializer().serializeToString(dinoEl)
@@ -47,12 +56,12 @@ const saveDino = () => {
   const url = URL.createObjectURL(blob)
 
   img.onload = () => {
-    const bbox = dinoEl.getBBox()
+    const bbox = dinoEl.getBoundingClientRect()
     canvas.width = bbox.width
     canvas.height = bbox.height
 
     const ctx = canvas.getContext('2d')
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+    ctx?.drawImage(img, 0, 0, canvas.width, canvas.height)
 
     URL.revokeObjectURL(url)
 
