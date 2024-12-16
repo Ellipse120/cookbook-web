@@ -40,21 +40,6 @@ export default defineEventHandler(async (event) => {
     })
   }
   try {
-    // formData?.forEach((file) => {
-    //   fileName = `${Date.now()}_${Math.round(Math.random() * 100000)}_${
-    //     file?.filename
-    //   }`
-    //
-    //   const newPath = `${path.join('public', 'uploads', fileName)}`
-    //
-    //   fileUrl = path.join('/uploads', fileName)
-    //   fs.writeFileSync(newPath, file?.data as Buffer)
-    //
-    //   result.push({
-    //     fileName,
-    //     url: fileUrl,
-    //   })
-    // })
     const file = formData.get('file') as File
     fileName = `${Date.now()}_${Math.round(Math.random() * 100000)}_${file?.name}`
 

@@ -3,6 +3,9 @@ useSeoMeta({
   title: 'async-child-communication',
 })
 
+provide('timer', ref())
+provide('count', ref(0))
+
 const childComp = defineComponent({
   props: {
     msg: {
@@ -25,10 +28,6 @@ const childComp = defineComponent({
     <q-separator class="my-4" />
 
     <NuxtPage foobar="this is child component" />
-
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis eaque ipsa. Aliquam blanditiis culpa harum quos sunt tenetur. Corporis cupiditate dolores eius est eveniet ex laborum laudantium, nemo omnis.
-    </div>
   </div>
 </template>
 
