@@ -40,6 +40,4 @@ export default defineEventHandler(async (event) => {
       img: 'data:image/png;base64, ' + buffer.toString('base64'),
     },
   }
-
-  // return 'xxx'
 })

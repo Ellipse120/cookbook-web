@@ -9,6 +9,7 @@ import {
 import { resolve } from 'node:path'
 import { Buffer } from 'node:buffer'
 import { chromium } from 'playwright'
+import type { HTMLAnchorElement, HTMLSpanElement } from 'happy-dom'
 
 export default defineEventHandler(async () => {
   const today = new Date().toISOString().split('T')[0]
