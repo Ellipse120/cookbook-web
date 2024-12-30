@@ -1,10 +1,25 @@
 import { chromium } from 'playwright'
+import random from 'lodash/random'
+
+const uaList = [
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+]
+const oneMinute = 60 * 1000
 
 export default defineEventHandler(async (event) => {
   const { link } = await readBody(event)
 
   const browser = await chromium.launch()
-  const page = await browser.newPage()
+  const context = await browser.newContext({
+    userAgent: uaList[random(0, uaList.length - 1)],
+  })
+
+  context.setDefaultTimeout(oneMinute)
+  const page = await context.newPage()
 
   await page.goto(link)
 
