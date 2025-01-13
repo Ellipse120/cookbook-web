@@ -180,6 +180,15 @@ const isDarkMode = computed(() => $q.dark.isActive)
               Custom deno logo
             </q-btn>
           </NuxtLink>
+
+          <NuxtLink
+            to="/custom-state"
+            class="text-green-400 no-underline"
+          >
+            <q-btn color="green">
+              Custom Nuxt UseState
+            </q-btn>
+          </NuxtLink>
         </div>
       </q-drawer>
 
