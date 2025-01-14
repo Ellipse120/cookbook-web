@@ -77,13 +77,13 @@ const columns = [
       >
         <template #body-cell-linkurl="props">
           <q-td class="text-center text-red-500">
-            <NuxtLink
-              :to="props.row.linkurl"
+            <RainbowLink
+              :to="decodeURIComponent(props.row.linkurl)"
               external
               target="_blank"
             >
               {{ props.row.card_title }}
-            </NuxtLink>
+            </RainbowLink>
           </q-td>
         </template>
       </q-table>

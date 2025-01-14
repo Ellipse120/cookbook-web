@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <NuxtLink
-      v-bind="$attrs"
-      class="rainbow-link"
-    >
-      <slot />
-    </NuxtLink>
-  </div>
+  <NuxtLink
+    class="rainbow-link"
+    v-bind="$attrs"
+  >
+    <slot />
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

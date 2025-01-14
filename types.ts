@@ -67,3 +67,10 @@ export type WombT = {
     }
   }
 }
+
+export type MockUser = {
+  id: number
+  name: string
+  age: number
+  email: string
+}

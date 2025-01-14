@@ -57,7 +57,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
               <RainbowLink
                 to="/"
               >
-                <span>全部</span>
+                <span>菜谱维护</span>
               </RainbowLink>
               <RainbowLink
                 to="/cookbooks"
@@ -72,7 +72,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
               <RainbowLink
                 to="/chenhao-blog"
               >
-                <span>左耳听风优质博客备份</span>
+                <span>左耳听风Blog</span>
               </RainbowLink>
               <RainbowLink
                 to="/jiuzhaigou"
@@ -82,7 +82,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
               <RainbowLink
                 to="/stream-demo"
               >
-                <span>Stream Demo</span>
+                <span>Stream Data</span>
               </RainbowLink>
               <RainbowLink
                 to="/dynamic-form"
@@ -92,7 +92,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
               <RainbowLink
                 to="/scraps"
               >
-                <span>Scraps</span>
+                <span>Scrap Site</span>
               </RainbowLink>
             </q-toolbar-title>
 
