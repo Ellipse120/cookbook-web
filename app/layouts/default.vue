@@ -189,6 +189,15 @@ const isDarkMode = computed(() => $q.dark.isActive)
               Custom Nuxt UseState
             </q-btn>
           </NuxtLink>
+
+          <NuxtLink
+            to="/sqlite-seeds"
+            class="text-green-400 no-underline"
+          >
+            <q-btn color="green">
+              Sqlite3 Seeds
+            </q-btn>
+          </NuxtLink>
         </div>
       </q-drawer>
 

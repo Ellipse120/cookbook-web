@@ -1,5 +1,5 @@
 import { existsSync, statSync } from 'fs'
-import { $, cd, chalk, spinner, within } from 'zx'
+import { $, chalk, spinner } from 'zx'
 
 export default defineTask({
   meta: {
