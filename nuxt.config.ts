@@ -9,6 +9,27 @@ export default defineNuxtConfig({
       name: 'page',
       mode: 'out-in',
     },
+    head: {
+      title: 'Cookbook Web',
+    },
+  },
+
+  $development: {
+    app: {
+      head: {
+        title: 'Cookbook Web (Dev)',
+      },
+    },
+  },
+
+  $env: {
+    staging: {
+      app: {
+        head: {
+          title: 'Cookbook Web (Dev2)',
+        },
+      },
+    },
   },
 
   runtimeConfig: {
