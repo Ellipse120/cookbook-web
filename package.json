@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^9.3.0",
-    "@nuxt/content": "npm:@nuxt/content-edge@latest",
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/image": "^1.6.0",
@@ -43,6 +42,7 @@
     "@formkit/nuxt": "^1.6.5",
     "@formkit/vue": "^1.6.5",
     "@libsql/client": "^0.14.0",
+    "@nuxt/content": "^3.0.0",
     "@quasar/extras": "^1.16.9",
     "@vueuse/nuxt": "^10.7.1",
     "consola": "^3.2.3",

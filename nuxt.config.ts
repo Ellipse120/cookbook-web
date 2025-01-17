@@ -20,6 +20,11 @@ export default defineNuxtConfig({
         title: 'Cookbook Web (Dev)',
       },
     },
+    security: {
+      headers: {
+        crossOriginEmbedderPolicy: 'unsafe-none',
+      },
+    },
   },
 
   $env: {
@@ -83,12 +88,10 @@ export default defineNuxtConfig({
       interval: 300000,
     },
     headers: {
-      crossOriginEmbedderPolicy:
-        process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+      crossOriginEmbedderPolicy: 'require-corp',
     },
   },
 
-  // Development config
   eslint: {
     config: {
       stylistic: true,
@@ -103,22 +106,25 @@ export default defineNuxtConfig({
     // api: {
     // baseURL: '/api/content',
     // },
-    highlight: {
-      theme: 'vitesse-light',
-      langs: [
-        'cmd',
-        'xml',
-        'js',
-        'bash',
-        'zsh',
-        'html',
-        'css',
-        'json',
-        'vue',
-        'ts',
-      ],
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'vitesse-light',
+          langs: [
+            'cmd',
+            'xml',
+            'js',
+            'bash',
+            'zsh',
+            'html',
+            'css',
+            'json',
+            'vue',
+            'ts',
+          ],
+        },
+      },
     },
-    // documentDriven: true,
   },
 
   routeRules: {
@@ -133,6 +139,15 @@ export default defineNuxtConfig({
         headers: {
           contentSecurityPolicy: {
             'img-src': false,
+          },
+        },
+      },
+    },
+    'code-snippets': {
+      security: {
+        headers: {
+          contentSecurityPolicy: {
+            'script-src': false,
           },
         },
       },
