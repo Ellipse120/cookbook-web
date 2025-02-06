@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import type { MockUser } from '~~/types'
 
-const [studioDialog, toggleStudioDialog] = useToggle()
+const { $api } = useNuxtApp()
+const $q = useQuasar()
 
-const { data, status } = await useAPI<MockUser[]>('/api/sqlite', {
-  default: () => ref([]),
-}).finally(() => {
-})
+const { data, status, refresh } = await useAPI<MockUser[]>('/api/sqlite')
 const isLoading = computed(() => status.value === 'pending')
 
 const userColumns = [
@@ -16,26 +14,28 @@ const userColumns = [
   { name: 'Email', label: 'Email', field: 'email' },
 ]
 
-const columns = [
-  { name: 'Id', label: 'Id', field: 'id' },
-  { name: 'name', label: 'Dessert (100g serving)', align: 'left', field: 'name' },
-  { name: 'calories', align: 'center', label: 'Calories', field: 'calories', sortable: true },
-  { name: 'fat', label: 'Fat (g)', field: 'fat', sortable: true },
-  { name: 'carbs', label: 'Carbs (g)', field: 'carbs' },
-  { name: 'protein', label: 'Protein (g)', field: 'protein' },
-  { name: 'sodium', label: 'Sodium (mg)', field: 'sodium' },
-  { name: 'calcium', label: 'Calcium (%)', field: 'calcium' },
-  { name: 'iron', label: 'Iron (%)', field: 'iron' },
-]
-
-const rows = ref([])
 const paginationOfUsers = ref({
   rowsPerPage: 5,
 })
-const pagination = ref({
-  rowsPerPage: 0,
-})
-const handleDbSeed = () => {}
+
+const handleDbSeed = async () => {
+  const { data } = await $api('/api/sqlite', {
+    method: 'post',
+    body: {
+      name: 'User1',
+      age: 30,
+      email: 'user1@gmail.com',
+    },
+  })
+
+  $q.notify({
+    color: 'success',
+    textColor: 'primary',
+    icon: 'face',
+    message: `增加用户ID: ${data?.[0]?.id}`,
+  })
+  await refresh()
+}
 </script>
 
 <template>
@@ -47,47 +47,7 @@ const handleDbSeed = () => {}
       >
         Seeds Mock Users
       </q-btn>
-
-      <q-btn
-        color="negative"
-        @click="toggleStudioDialog()"
-      >
-        Drizzle Studio
-      </q-btn>
     </div>
-
-    <q-dialog v-model="studioDialog">
-      <q-card style="width: 80vw;height: 80vh;">
-        <q-card-section>
-          <div class="text-h6">
-            Drizzle Studio
-          </div>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-section>
-          <iframe
-            class="w-full h-80vh"
-            src="https://local.drizzle.studio/"
-            title="Drizzle Studio"
-          >
-            <h1>Loading</h1>
-          </iframe>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions align="right">
-          <q-btn
-            v-close-popup
-            flat
-            label="Close"
-            color="negative"
-          />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
 
     <q-table
       v-model:pagination="paginationOfUsers"
@@ -98,19 +58,6 @@ const handleDbSeed = () => {}
       :loading="isLoading"
       :columns="userColumns"
       row-key="index"
-      :rows-per-page-options="[0]"
-    />
-
-    <q-table
-      v-model:pagination="pagination"
-      class="h-200px"
-      flat
-      bordered
-      title="Cookbook"
-      :rows="rows"
-      :columns="columns"
-      row-key="index"
-      virtual-scroll
       :rows-per-page-options="[0]"
     />
   </div>
