@@ -52,52 +52,83 @@ const isDarkMode = computed(() => $q.dark.isActive)
             <!--            </q-toolbar-title> -->
           </q-toolbar>
 
-          <q-toolbar>
-            <q-toolbar-title class="flex p-2 gap-4">
-              <RainbowLink
-                to="/"
-              >
-                <span>菜谱维护</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/cookbooks"
-              >
-                <span>菜谱列表</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/charts"
-              >
-                <span>统计</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/chenhao-blog"
-              >
-                <span>左耳听风Blog</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/jiuzhaigou"
-              >
-                <span>九寨沟</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/stream-demo"
-              >
-                <span>Stream Data</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/dynamic-form"
-              >
-                <span>Dynamic Form</span>
-              </RainbowLink>
-              <RainbowLink
-                to="/scraps"
-              >
-                <span>Scrap Site</span>
-              </RainbowLink>
-            </q-toolbar-title>
+          <q-toolbar class="grid grid-flow-col grid-cols-fr">
+            <q-tabs
+              shrink
+              stretch
+              inline-label
+              outside-arrows
+              mobile-arrows
+            >
+              <q-tab>
+                <RainbowLink
+                  to="/"
+                >
+                  <span>菜谱维护</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/cookbooks"
+                >
+                  <span>菜谱列表</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/charts"
+                >
+                  <span>统计</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/chenhao-blog"
+                >
+                  <span>左耳听风Blog</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/jiuzhaigou"
+                >
+                  <span>九寨沟</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/stream-demo"
+                >
+                  <span>Stream Data</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/dynamic-form"
+                >
+                  <span>Dynamic Form</span>
+                </RainbowLink>
+              </q-tab>
+
+              <q-tab>
+                <RainbowLink
+                  to="/scraps"
+                >
+                  <span>Scrap Site</span>
+                </RainbowLink>
+              </q-tab>
+            </q-tabs>
 
             <DevOnly>
-              <span class="text-positive text-xl font-bold">开发模式</span>
+              <div class="text-positive text-xl font-bold">
+                开发模式
+              </div>
             </DevOnly>
 
             <q-btn
