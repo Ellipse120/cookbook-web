@@ -92,7 +92,10 @@ const { data: testData } = await useAsyncData(
       </q-card-section>
     </q-card>
 
-    <q-splitter v-model="splitterModel">
+    <q-splitter
+      v-model="splitterModel"
+      class="w-screen"
+    >
       <template #before>
         <q-btn
           color="primary"

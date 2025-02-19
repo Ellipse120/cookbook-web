@@ -19,18 +19,19 @@ const paginationOfUsers = ref({
 })
 
 const handleDbSeed = async () => {
+  const mockUserId = useRandom(2, 100)
   const { data } = await $api('/api/sqlite', {
     method: 'post',
     body: {
-      name: 'User1',
-      age: 30,
-      email: 'user1@gmail.com',
+      name: `User ${mockUserId}`,
+      age: mockUserId,
+      email: `user${mockUserId}@gmail.com`,
     },
   })
 
   $q.notify({
     color: 'success',
-    textColor: 'primary',
+    textColor: 'positive',
     icon: 'face',
     message: `增加用户ID: ${data?.[0]?.id}`,
   })

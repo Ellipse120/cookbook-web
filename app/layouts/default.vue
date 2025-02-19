@@ -54,10 +54,13 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
           <q-toolbar class="grid grid-flow-col grid-cols-fr">
             <q-tabs
+              :breakpoint="300"
               shrink
               stretch
               inline-label
               outside-arrows
+              narrow-indicator
+              indicator-color="transparent"
               mobile-arrows
             >
               <q-tab>
