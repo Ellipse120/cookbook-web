@@ -54,7 +54,7 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
-    '@nuxt/content',
+    // '@nuxt/content',
   ],
 
   // vue: {

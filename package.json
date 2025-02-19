@@ -53,6 +53,7 @@
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.40.1",
     "quasar": "^2.17.0",
+    "vue-data-ui": "^2.6.3",
     "zod": "^3.23.8"
   }
 }

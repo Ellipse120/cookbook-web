@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import { z } from 'zod'
-import { sizeInMB } from '~/utils'
 
 export default defineEventHandler(async (event) => {
   let fileName = ''
