@@ -1,24 +1,4 @@
-import { createConsola } from 'consola/core'
-import { date, Notify } from 'quasar'
-
-const logger = createConsola({
-  level: 4,
-  formatOptions: {
-    columns: 80,
-    colors: true,
-    compact: false,
-    date: true,
-  },
-})
-
-type D = Date | number | string | null | undefined
-
-const formatDate = (value: D, formatter = 'YYYY-MM-DD HH:mm:ss') => {
-  const emptySymbol = '---'
-  if (value === null) return emptySymbol
-
-  return date.formatDate(value, formatter) || emptySymbol
-}
+import { Notify } from 'quasar'
 
 const downloadFile = (res: Blob, fileName = '') => {
   const blob = new Blob([res], { type: 'application/octet-stream' })
@@ -40,11 +20,4 @@ const showNotify = (message?: string, notifyOptions = {}) => {
   })
 }
 
-const sizeInMB = (sizeInBytes: number, decimalsNum: number = 2) => {
-  if (!sizeInBytes) return 0
-
-  const result = sizeInBytes / (1024 * 1024)
-  return +result.toFixed(decimalsNum)
-}
-
-export { logger, formatDate, downloadFile, showNotify, sizeInMB }
+export { downloadFile, showNotify }

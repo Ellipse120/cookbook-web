@@ -1,4 +1,4 @@
-import type { Cookbook } from '~~/types'
+import type { Cookbook } from '~~/shared/types/types'
 
 export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   id: `${index + 1}`,

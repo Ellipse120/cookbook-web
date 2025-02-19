@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Cookbook } from '~~/types'
+import type { Cookbook } from '~~/shared/types/types'
 
 definePageMeta({
   middleware: 'auth',

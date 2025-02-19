@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BlogUpdateT } from '~~/types'
+import type { BlogUpdateT } from '~~/shared/types/types'
 
 definePageMeta({
   middleware: 'auth',

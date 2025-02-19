@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { MockUser } from '~~/types'
+import type { MockUser } from '~~/shared/types/types'
 
 const { $api } = useNuxtApp()
 const $q = useQuasar()

@@ -1,6 +1,6 @@
 import { useDb } from '~/utils/db'
 import { users } from '~~/server/database/schema'
-import type { MockUser } from '~~/types'
+import type { MockUser } from '~~/shared/types/types'
 
 export default eventHandler(async (event) => {
   const userData: MockUser = await readBody(event)

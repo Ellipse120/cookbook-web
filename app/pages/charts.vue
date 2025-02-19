@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { TooltipOptions } from 'highcharts'
-import type { WombT } from '~~/types'
+import type { WombT } from '~~/shared/types/types'
 
 const data = ref<WombT[]>([
   {
