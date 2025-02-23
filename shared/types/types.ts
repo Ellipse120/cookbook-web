@@ -57,13 +57,15 @@ export type WombT = {
     }
   }
   ovary: {
-    leftSide: {
+    leftSide?: {
       long: number | null
       width: number | null
+      height?: number | null
     }
-    rightSide: {
+    rightSide?: {
       long: number | null
       width: number | null
+      height?: number | null
     }
   }
 }
