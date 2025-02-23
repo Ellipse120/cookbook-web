@@ -48,12 +48,10 @@
     "@vueuse/nuxt": "^10.7.1",
     "consola": "^3.2.3",
     "drizzle-orm": "^0.38.3",
-    "formidable": "^3.5.1",
     "highcharts": "^11.4.1",
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.40.1",
     "quasar": "^2.17.0",
-    "vue-data-ui": "^2.6.3",
     "zod": "^3.23.8"
   }
 }
