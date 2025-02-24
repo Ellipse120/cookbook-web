@@ -54,40 +54,53 @@ const { data: navigation } = await useLazyAsyncData('navigation', () =>
 //   })
 // })
 
-const { data: content, status } = await useAsyncData(
-  currentTab.value,
-  () => queryCollection('content').path(currentTab.value).first(),
-  {
-    watch: [currentTab],
-    immediate: true,
-  },
-)
-
-const isLoading = computed(() => status.value === 'pending')
-
-const { data: testData } = await useAsyncData(
-  'test',
-  () => queryCollection('test').select('meta').all(),
-  {
-    transform: (v) => {
-      return v.map(s => JSON.parse(s.meta.body as string))
+const v = await Promise.all([
+  useAsyncData(
+    currentTab.value,
+    () => queryCollection('TestDemo').path(currentTab.value).first(),
+    {
+      watch: [currentTab],
+      immediate: true,
     },
-  },
-)
+  ),
+  useAsyncData(
+    'TestDemo',
+    () => {
+      return queryCollection('hackernews')
+        .select('meta')
+        .all()
+    },
+    {
+    // transform: (v) => {
+    //   return v.map(s => JSON.parse(s.meta.body as string))
+    // },
+    },
+  ),
+
+])
+console.log(v)
+
+const [{ data: testData, refresh }, { data: content, status }] = v
+const isLoading = computed(() => status.value === 'pending')
 </script>
 
 <template>
   <div class="grid gap-4">
     <q-card>
       <q-card-section>
-        <div>Custom Content Query Source</div>
+        <div
+          class="cursor-pointer"
+          @click="refresh()"
+        >
+          Custom Content Query Source
+        </div>
       </q-card-section>
 
       <q-separator />
 
       <q-card-section>
-        <div>
-          {{ testData }}
+        <div class="text-green-500 text-2xl">
+          <b>TestData🌈</b> {{ testData }}
         </div>
       </q-card-section>
     </q-card>
