@@ -30,6 +30,7 @@ const hackernewsSource = defineCollectionSource({
   },
 })
 
+// !FIXME bug
 const hackernews = defineCollection({
   type: 'data',
   source: hackernewsSource,

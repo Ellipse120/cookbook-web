@@ -54,6 +54,7 @@ const { data: navigation } = await useLazyAsyncData('navigation', () =>
 //   })
 // })
 
+// !FIXME doesn't work
 const v = await Promise.all([
   useAsyncData(
     currentTab.value,
