@@ -19,15 +19,13 @@ const apiHost = 'http://localhost:3002/api'
 const hackernewsSource = defineCollectionSource({
   getKeys: async () => {
     const res = await fetch(`${apiHost}/hackernews-mock/topstories`)
-    console.log(res)
     const data = await res.json()
     return data.map((key: string) => `${key}.json`)
   },
-  getItem: (key: string) => {
+  getItem: async (key: string) => {
     const id = key.split('.')[0]
-    return fetch(`${apiHost}/hackernews-mock/story/${id}`).then(res =>
-      res.json(),
-    )
+    const res = await fetch(`${apiHost}/hackernews-mock/story/${id}`)
+    return await res.json()
   },
 })
 
