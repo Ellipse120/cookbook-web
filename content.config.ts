@@ -15,12 +15,13 @@ const demoJsonSource = defineCollectionSource({
   },
 })
 
-const apiHost = 'http://localhost:3000/api'
+const apiHost = 'http://localhost:3002/api'
 const hackernewsSource = defineCollectionSource({
-  getKeys: () => {
-    return fetch(`${apiHost}/hackernews-mock/topstories`)
-      .then(res => res.json())
-      .then(data => data.map((key: string) => `${key}.json`))
+  getKeys: async () => {
+    const res = await fetch(`${apiHost}/hackernews-mock/topstories`)
+    console.log(res)
+    const data = await res.json()
+    return data.map((key: string) => `${key}.json`)
   },
   getItem: (key: string) => {
     const id = key.split('.')[0]
@@ -46,13 +47,13 @@ const hackernews = defineCollection({
 
 export default defineContentConfig({
   collections: {
-    // hackernews,
+    hackernews,
 
     content: defineCollection({
       type: 'page',
       source: '**/*.md',
     }),
-    TestDemo: defineCollection({
+    test: defineCollection({
       type: 'data',
       source: demoJsonSource,
       schema: z.object({

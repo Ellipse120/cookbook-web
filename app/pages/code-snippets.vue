@@ -54,34 +54,47 @@ const { data: navigation } = await useLazyAsyncData('navigation', () =>
 //   })
 // })
 
-// !FIXME doesn't work
+// !FIXME only 3.0.0 work
 const v = await Promise.all([
   useAsyncData(
+    'test',
+    () => {
+      return queryCollection('test')
+        .select('meta')
+        .all()
+    },
+    {
+      transform: (v) => {
+        return v.map(s => JSON.parse(s.meta.body as string))
+      },
+    },
+  ),
+  useAsyncData(
     currentTab.value,
-    () => queryCollection('TestDemo').path(currentTab.value).first(),
+    () => queryCollection('content').path(currentTab.value).first(),
     {
       watch: [currentTab],
       immediate: true,
     },
   ),
+
   useAsyncData(
-    'TestDemo',
+    'hackernews',
     () => {
       return queryCollection('hackernews')
-        .select('meta')
-        .all()
-    },
-    {
-    // transform: (v) => {
-    //   return v.map(s => JSON.parse(s.meta.body as string))
-    // },
+        .select('title',
+          'date',
+          'type',
+          'score',
+          'url',
+          'by')
+        .first()
     },
   ),
-
 ])
 console.log(v)
 
-const [{ data: testData, refresh }, { data: content, status }] = v
+const [{ data: testData, refresh }, { data: content, status }, { data: hackernews }] = v
 const isLoading = computed(() => status.value === 'pending')
 </script>
 
@@ -102,6 +115,14 @@ const isLoading = computed(() => status.value === 'pending')
       <q-card-section>
         <div class="text-green-500 text-2xl">
           <b>TestData🌈</b> {{ testData }}
+        </div>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-section>
+        <div class="text-red-500 text-2xl">
+          <b>Hackernews</b> {{ hackernews }}
         </div>
       </q-card-section>
     </q-card>
