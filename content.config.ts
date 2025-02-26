@@ -15,37 +15,36 @@ const demoJsonSource = defineCollectionSource({
   },
 })
 
-const apiHost = 'http://localhost:3002/api'
-const hackernewsSource = defineCollectionSource({
-  getKeys: async () => {
-    const res = await fetch(`${apiHost}/hackernews-mock/topstories`)
-    const data = await res.json()
-    return data.map((key: string) => `${key}.json`)
-  },
-  getItem: async (key: string) => {
-    const id = key.split('.')[0]
-    const res = await fetch(`${apiHost}/hackernews-mock/story/${id}`)
-    return await res.json()
-  },
-})
+// const apiHost = 'http://localhost:3002/api'
+// const hackernewsSource = defineCollectionSource({
+//   getKeys: async () => {
+//     const res = await fetch(`${apiHost}/hackernews-mock/topstories`)
+//     const data = await res.json()
+//     return data.map((key: string) => `${key}.json`)
+//   },
+//   getItem: async (key: string) => {
+//     const id = key.split('.')[0]
+//     const res = await fetch(`${apiHost}/hackernews-mock/story/${id}`)
+//     return await res.json()
+//   },
+// })
 
-// !FIXME bug
-const hackernews = defineCollection({
-  type: 'data',
-  source: hackernewsSource,
-  schema: z.object({
-    title: z.string(),
-    date: z.date(),
-    type: z.string(),
-    score: z.number(),
-    url: z.string(),
-    by: z.string(),
-  }),
-})
+// const hackernews = defineCollection({
+//   type: 'data',
+//   source: hackernewsSource,
+//   schema: z.object({
+//     title: z.string(),
+//     date: z.date(),
+//     type: z.string(),
+//     score: z.number(),
+//     url: z.string(),
+//     by: z.string(),
+//   }),
+// })
 
 export default defineContentConfig({
   collections: {
-    hackernews,
+    // hackernews,
 
     content: defineCollection({
       type: 'page',

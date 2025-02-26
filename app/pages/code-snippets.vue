@@ -37,24 +37,6 @@ const { data: navigation } = await useLazyAsyncData('navigation', () =>
   queryCollectionNavigation('content'),
 )
 
-// const { result } = await runTask('update-content', { payload: { a: 1234 } })
-// console.log(result, ' ==')
-
-// const content = ref()
-// const { isLoading, start, finish } = useLoadingIndicator({
-//   duration: 2000,
-//   throttle: 200,
-//   estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50),
-// })
-//
-// watchEffect(async () => {
-//   start()
-//   content.value = await useAsyncData(`${currentTab.value}`, () => queryContent(currentTab.value).findOne()).finally(() => {
-//     finish()
-//   })
-// })
-
-// !FIXME only 3.0.0 work
 const v = await Promise.all([
   useAsyncData(
     'test',
@@ -78,19 +60,19 @@ const v = await Promise.all([
     },
   ),
 
-  useAsyncData(
-    'hackernews',
-    () => {
-      return queryCollection('hackernews')
-        .select('title',
-          'date',
-          'type',
-          'score',
-          'url',
-          'by')
-        .first()
-    },
-  ),
+  // useAsyncData(
+  //   'hackernews',
+  //   () => {
+  //     return queryCollection('hackernews')
+  //       .select('title',
+  //         'date',
+  //         'type',
+  //         'score',
+  //         'url',
+  //         'by')
+  //       .first()
+  //   },
+  // ),
 ])
 console.log(v)
 
