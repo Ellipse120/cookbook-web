@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 const $q = useQuasar()
+const { $api } = useNuxtApp()
 
 const title = ref(null)
 const content = ref(null)
@@ -13,31 +14,31 @@ const cookingDate = ref(formatDate(new Date()))
 const categoryOptions = useCategoriesInitData()
 
 async function onSubmit() {
-  const { error } = await useAPI('/api/cookbooks', {
+  const data = {
+    title: title.value,
+    content: content.value,
+    previewImg: previewImg.value,
+    satisfaction: satisfaction.value,
+    difficulty: difficulty.value,
+    consuming: consuming.value,
+    cookingDate: cookingDate.value,
+    comments: comments.value.toString(),
+    categories: categories.value.toString(),
+  }
+
+  await $api('/api/cookbooks', {
     method: 'post',
-    body: {
-      title,
-      content,
-      previewImg,
-      satisfaction,
-      difficulty,
-      consuming,
-      cookingDate,
-      comments,
-      categories,
-    },
+    body: data,
   })
 
-  if (!error.value) {
-    $q.notify({
-      color: 'green-4',
-      textColor: 'white',
-      icon: 'cloud_done',
-      message: '添加成功',
-    })
+  $q.notify({
+    color: 'green-4',
+    textColor: 'white',
+    icon: 'cloud_done',
+    message: '添加成功',
+  })
 
-    navigateTo('/')
-  }
+  navigateTo('/')
 }
 
 function onReset() {

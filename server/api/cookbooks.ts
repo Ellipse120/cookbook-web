@@ -1,4 +1,5 @@
 import type { Cookbook } from '~~/shared/types/types'
+import { useDb } from '~/utils/db'
 
 export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   id: `${index + 1}`,
@@ -19,6 +20,13 @@ export const mockData: Cookbook[] = new Array(10).fill(0).map((_, index) => ({
   updatedAt: new Date(),
 }))
 
-export default defineEventHandler(() => {
-  return mockData
+export default defineEventHandler(async () => {
+  const db = useDb()
+  const result = await db.query.cookbooks.findMany({
+    with: {
+      comments: true,
+    },
+  })
+
+  return result
 })

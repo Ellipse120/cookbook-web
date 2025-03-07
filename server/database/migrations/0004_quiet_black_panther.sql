@@ -1,0 +1,1 @@
+ALTER TABLE `cookbooks` RENAME COLUMN "cooking" TO "cookingDate";

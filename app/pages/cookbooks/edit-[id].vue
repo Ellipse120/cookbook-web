@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 const route = useRoute()
 const $q = useQuasar()
+const { $api } = useNuxtApp()
 
+const id = ref()
 const title = ref()
 const content = ref()
 const previewImg = ref()
@@ -15,9 +17,10 @@ const categoryOptions = useCategoriesInitData()
 
 const { data, status } = await useAPI(`/api/cookbooks/${route.params.id}`)
 const pending = computed(() => status.value === 'pending')
-const d: any = data.value!.data
+const d = data.value!.data
 
 if (d) {
+  id.value = d.id
   title.value = d.title
   content.value = d.content
   previewImg.value = d.previewImg
@@ -25,8 +28,8 @@ if (d) {
   difficulty.value = d.difficulty
   consuming.value = d.consuming
   cookingDate.value = formatDate(d.cookingDate)
-  comments.value = d?.comments
-  categories.value = d?.categories
+  comments.value = d?.comments?.split(',')
+  categories.value = d?.categories?.split(',')
 }
 
 function handleFormField(files: any) {
@@ -34,35 +37,34 @@ function handleFormField(files: any) {
 }
 
 async function onSubmit() {
-  const { error } = await useAPI('/api/cookbooks', {
+  await $api('/api/cookbooks', {
     method: 'put',
     body: {
-      id: route.params.id,
-      title,
-      content,
-      previewImg,
-      satisfaction,
-      difficulty,
-      consuming,
-      cookingDate,
-      comments,
-      categories,
+      id: id.value,
+      title: title.value,
+      content: content.value,
+      previewImg: previewImg.value,
+      satisfaction: satisfaction.value,
+      difficulty: difficulty.value,
+      consuming: consuming.value,
+      cookingDate: cookingDate.value,
+      comments: comments.value?.toString(),
+      categories: categories.value?.toString(),
     },
   })
 
-  if (!error.value) {
-    $q.notify({
-      color: 'green-4',
-      textColor: 'white',
-      icon: 'cloud_done',
-      message: '修改成功',
-    })
+  $q.notify({
+    color: 'green-4',
+    textColor: 'white',
+    icon: 'cloud_done',
+    message: '修改成功',
+  })
 
-    navigateTo('/')
-  }
+  navigateTo('/')
 }
 
 function onReset() {
+  id.value = null
   title.value = null
   content.value = null
   previewImg.value = ''
@@ -70,6 +72,8 @@ function onReset() {
   difficulty.value = 1
   consuming.value = null
   cookingDate.value = formatDate(new Date())
+  comments.value = []
+  categories.value = []
 }
 
 function handleUploadSuccess(o: any) {

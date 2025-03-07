@@ -195,7 +195,7 @@ async function downloadImg(item: any) {
                 class="h-2.2rem"
               >
                 <q-chip
-                  v-for="(ca, caIndex) in item.categories"
+                  v-for="(ca, caIndex) in item.categories?.split(',')"
                   :key="`category-${caIndex}`"
                   :label="ca"
                   color="positive"

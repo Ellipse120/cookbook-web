@@ -1,20 +1,26 @@
-import { mockData } from './cookbooks'
+import { useDb } from '~/utils/db'
+import { cookbooks } from '~~/server/database/schema'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
+  const db = useDb()
 
   const newItem = {
-    id: `${mockData.length + 1}`,
     ...body,
-    deleted: false,
+    deleted: 0,
     createdAt: new Date(),
     updatedAt: new Date(),
   }
-  mockData.push(newItem)
+
+  const v = await db
+    .insert(cookbooks)
+    .values(newItem)
+    .onConflictDoNothing()
+    .returning()
 
   return {
     statusCode: 200,
     statusMessage: '成功',
-    data: newItem,
+    data: v,
   }
 })

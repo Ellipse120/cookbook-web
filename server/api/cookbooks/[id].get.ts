@@ -1,7 +1,10 @@
-import { mockData } from '../cookbooks'
+import { eq } from 'drizzle-orm'
+import { useDb } from '~/utils/db'
+import { cookbooks } from '~~/server/database/schema'
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
+  const db = useDb()
 
   if (!id) {
     throw createError({
@@ -10,7 +13,12 @@ export default defineEventHandler((event) => {
     })
   }
 
-  const targetItem = mockData.find(o => o.id === id)
+  const targetItem = await db.query.cookbooks.findFirst({
+    where: eq(cookbooks.id, Number(id)),
+    with: {
+      comments: true,
+    },
+  })
 
   return {
     statusCode: 200,

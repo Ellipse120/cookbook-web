@@ -8,6 +8,48 @@
       "when": 1736776849545,
       "tag": "0000_young_ares",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1741324054039,
+      "tag": "0001_handy_polaris",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1741333100502,
+      "tag": "0002_flat_shatterstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1741335903733,
+      "tag": "0003_lowly_blue_marvel",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1741336008371,
+      "tag": "0004_quiet_black_panther",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1741338570366,
+      "tag": "0005_boring_makkari",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1741348036529,
+      "tag": "0006_powerful_jack_flag",
+      "breakpoints": true
     }
   ]
 }
