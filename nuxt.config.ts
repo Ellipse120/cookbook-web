@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     staging: {
       app: {
         head: {
-          title: 'Cookbook Web (Dev2)',
+          title: 'Cookbook Web (Staging)',
         },
       },
     },
@@ -171,6 +171,12 @@ export default defineNuxtConfig({
     compressPublicAssets: {
       gzip: true,
       brotli: true,
+    },
+  },
+
+  vite: {
+    server: {
+      allowedHosts: [process.env.VPN_HOST!],
     },
   },
 
