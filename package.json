@@ -29,7 +29,7 @@
     "@vue/test-utils": "^2.4.6",
     "drizzle-kit": "^0.30.4",
     "happy-dom": "^15.7.4",
-    "nuxt": "^3.15.0",
+    "nuxt": "^3.16.0",
     "nuxt-auth-utils": "0.3.8",
     "nuxt-lodash": "^2.5.3",
     "nuxt-quasar-ui": "^2.1.6",
@@ -62,5 +62,6 @@
       "sharp",
       "vue-demi"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.1.2+sha1.907f57a52517de34399d66401bf220a549e47b57"
 }
