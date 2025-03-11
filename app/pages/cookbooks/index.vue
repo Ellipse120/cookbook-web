@@ -23,21 +23,10 @@ const { data, status, refresh } = await useAPI('/api/cookbooks', {
 const pending = computed(() => status.value === 'pending')
 
 async function batchDelete(ids: (string | number)[]) {
-  const { error } = await $api('/api/cookbooks', {
+  await $api('/api/cookbooks', {
     method: 'delete',
     body: ids,
   })
-
-  if (error?.value) {
-    $q.notify({
-      color: 'negative',
-      textColor: 'white',
-      icon: 'delete',
-      message: '删除失败',
-    })
-
-    return
-  }
 
   $q.notify({
     color: 'positive',

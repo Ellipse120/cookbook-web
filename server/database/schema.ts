@@ -33,8 +33,8 @@ export const cookbooks = sqliteTable('cookbooks', {
   categories: text().notNull(),
   deleted: integer({ mode: 'boolean' }).default(false),
   cookingDate: text().notNull(),
-  created: text().default(sql`(CURRENT_DATE)`),
-  updated: text().default(sql`(CURRENT_DATE)`),
+  createdAt: text().default(sql`(CURRENT_DATE)`),
+  updatedAt: text().default(sql`(CURRENT_DATE)`),
 })
 
 export const cookbooksRelations = relations(cookbooks, ({ many }) => ({

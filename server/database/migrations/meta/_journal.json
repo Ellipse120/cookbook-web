@@ -50,6 +50,13 @@
       "when": 1741348036529,
       "tag": "0006_powerful_jack_flag",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1741701065395,
+      "tag": "0007_tranquil_loa",
+      "breakpoints": true
     }
   ]
 }
