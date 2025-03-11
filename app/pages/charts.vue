@@ -180,6 +180,22 @@ const data = ref<WombT[]>([
       },
     },
   },
+  {
+    id: '6',
+    date: '2025-03-10',
+    value: '95*90*68',
+    unit: 'mm',
+    womb: {
+      position: '前位',
+      size: {
+        long: 95,
+        width: 90,
+        thickness: 68,
+        cervical_length: 0,
+      },
+    },
+    ovary: {},
+  },
 ])
 
 const chartOption = computed(() => ({
