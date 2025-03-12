@@ -76,7 +76,7 @@ const v = await Promise.all([
 ])
 console.log(v)
 
-const [{ data: testData, refresh }, { data: content, status }, { data: hackernews }] = v
+const [{ data: testData, refresh }, { data: content, status }] = v
 const isLoading = computed(() => status.value === 'pending')
 </script>
 
@@ -104,7 +104,7 @@ const isLoading = computed(() => status.value === 'pending')
 
       <q-card-section>
         <div class="text-red-500 text-2xl">
-          <b>Hackernews</b> {{ hackernews }}
+          <b>Hackernews</b>
         </div>
       </q-card-section>
     </q-card>
