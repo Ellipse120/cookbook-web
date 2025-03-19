@@ -6,6 +6,20 @@ watch(loggedIn, () => {
     navigateTo('/login')
   }
 })
+
+const { siteName } = useAppConfig()
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  title: siteName,
+  meta: [
+    { name: 'description', content: 'Cookbook website, includes useful snippets and cool usage about nuxt, nuxt-content, etc' },
+    { name: 'twitter:creator', content: '@ellipse_120' },
+    { name: 'twitter:site', content: '@ellipse_120' },
+  ],
+})
 </script>
 
 <template>

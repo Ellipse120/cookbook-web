@@ -1,4 +1,6 @@
 export default defineAppConfig({
+  siteName: 'Cookbook Web',
+
   ui: {
     primary: 'lime',
     gray: 'neutral',
