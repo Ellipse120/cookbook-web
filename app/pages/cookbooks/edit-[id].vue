@@ -28,7 +28,7 @@ if (d) {
   difficulty.value = d.difficulty
   consuming.value = d.consuming
   cookingDate.value = formatDate(d.cookingDate)
-  comments.value = d?.comments?.split(',')
+  comments.value = d?.comments
   categories.value = d?.categories?.split(',')
 }
 
