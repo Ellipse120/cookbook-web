@@ -4,6 +4,10 @@ import transformerDirectives from '@unocss/transformer-directives'
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  extends: [
+    '@lusai/base-api-layer',
+  ],
+
   app: {
     pageTransition: {
       name: 'page',
