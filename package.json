@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^9.6.0",
-    "@lusai/base-api-layer": "^0.0.1",
+    "@lusai/base-api-layer": "^0.0.2",
     "@nuxt/devtools": "^1.2.0",
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/image": "^1.6.0",
@@ -30,7 +30,7 @@
     "@vue/test-utils": "^2.4.6",
     "drizzle-kit": "^0.30.4",
     "happy-dom": "^15.7.4",
-    "nuxt": "^3.16.2",
+    "nuxt": "^3.17.0",
     "nuxt-auth-utils": "0.3.8",
     "nuxt-lodash": "^2.5.3",
     "nuxt-quasar-ui": "^2.1.6",
