@@ -39,17 +39,16 @@ const { data: navigation } = await useLazyAsyncData('navigation', () =>
 
 const v = await Promise.all([
   useAsyncData(
-    'test',
+    'testA',
     () => {
-      return queryCollection('test')
-        .select('meta')
+      return queryCollection('testA')
         .all()
     },
-    {
-      transform: (v) => {
-        return v.map(s => JSON.parse(s.meta.body as string))
-      },
-    },
+    // {
+    //   transform: (v) => {
+    //     return v.map(s => JSON.parse(s.meta.body as string))
+    //   },
+    // },
   ),
   useAsyncData(
     currentTab.value,
@@ -74,8 +73,8 @@ const v = await Promise.all([
   //   },
   // ),
 ])
-console.log(v)
 
+console.log(v)
 const [{ data: testData, refresh }, { data: content, status }] = v
 const isLoading = computed(() => status.value === 'pending')
 </script>
@@ -86,25 +85,14 @@ const isLoading = computed(() => status.value === 'pending')
       <q-card-section>
         <div
           class="cursor-pointer"
+          title="click for refresh data"
           @click="refresh()"
         >
-          Custom Content Query Source
-        </div>
-      </q-card-section>
+          <b>Custom Content Query Source</b>
 
-      <q-separator />
-
-      <q-card-section>
-        <div class="text-green-500 text-2xl">
-          <b>TestData🌈</b> {{ testData }}
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-section>
-        <div class="text-red-500 text-2xl">
-          <b>Hackernews</b>
+          <div class="text-green-500 text-2xl">
+            <b>TestData🌈</b> {{ testData }}
+          </div>
         </div>
       </q-card-section>
     </q-card>

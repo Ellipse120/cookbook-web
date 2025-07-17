@@ -2,16 +2,13 @@ import { defineContentConfig, defineCollection, defineCollectionSource, z } from
 
 const demoJsonSource = defineCollectionSource({
   getKeys: async () => {
-    return ['a', 'b']
+    return ['a', 'content'].map(i => `${i}.json`)
   },
   getItem: async (key: string) => {
-    const v = {
-      a: {
-        c: 'test data',
-      },
-      b: '22222222',
-    }
-    return JSON.stringify(v[key as keyof typeof v])
+    return JSON.stringify({
+      a: 1,
+      content: `${key}`,
+    })
   },
 })
 
@@ -50,12 +47,13 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
     }),
-    test: defineCollection({
+
+    testA: defineCollection({
       type: 'data',
       source: demoJsonSource,
       schema: z.object({
         a: z.string(),
-        b: z.number(),
+        content: z.string(),
       }),
     }),
   },
