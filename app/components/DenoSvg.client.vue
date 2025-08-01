@@ -1,4 +1,6 @@
 <script setup>
+import { kebabCase } from 'es-toolkit'
+
 const props = defineProps({
   // eslint-disable-next-line vue/require-prop-types
   editorModel: {
@@ -28,7 +30,7 @@ const refresh = (val) => {
     if (!val.headWear) {
       v.style.display = 'none'
     } else {
-      v.style.display = v.id === useKebabCase(val.headWear) ? 'block' : 'none'
+      v.style.display = v.id === kebabCase(val.headWear) ? 'block' : 'none'
     }
   })
 
@@ -36,7 +38,7 @@ const refresh = (val) => {
     if (!val.neckWear) {
       v.style.display = 'none'
     } else {
-      v.style.display = v.id === useKebabCase(val.neckWear) ? 'block' : 'none'
+      v.style.display = v.id === kebabCase(val.neckWear) ? 'block' : 'none'
     }
   })
 

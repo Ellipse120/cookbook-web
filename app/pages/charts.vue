@@ -284,8 +284,6 @@ const chartOption = computed(() => ({
 
 <template>
   <div class="px-4">
-    <client-only>
-      <HighchartsWrapper :options="chartOption" />
-    </client-only>
+    <HighchartsWrapper :options="chartOption" />
   </div>
 </template>

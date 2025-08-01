@@ -28,6 +28,7 @@ useHead({
   <NuxtLayout>
     <NuxtErrorBoundary>
       <NuxtPage />
+
       <template #error="{ error, clearError }">
         <q-card>
           <q-card-section>

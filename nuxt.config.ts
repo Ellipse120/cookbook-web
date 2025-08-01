@@ -53,7 +53,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-security',
-    'nuxt-lodash',
     '@formkit/nuxt',
     'nuxt-auth-utils',
     '@nuxt/eslint',
@@ -165,6 +164,12 @@ export default defineNuxtConfig({
           },
         },
       },
+    },
+    'jiuzhaigou': {
+      ssr: false,
+    },
+    'charts': {
+      ssr: false,
     },
   },
 

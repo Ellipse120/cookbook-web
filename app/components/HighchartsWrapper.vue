@@ -27,17 +27,13 @@
 </template>
 
 <script setup>
-import Highcharts from 'highcharts'
+// import * as Highcharts from 'highcharts'
 import { Chart } from 'highcharts-vue'
-import HighchartsA11y from 'highcharts/modules/accessibility'
-import variablepie from 'highcharts/modules/variable-pie'
-import treemap from 'highcharts/modules/treemap'
-import bubble from 'highcharts/highcharts-more'
-
-HighchartsA11y(Highcharts)
-variablepie(Highcharts)
-treemap(Highcharts)
-bubble(Highcharts)
+import 'highcharts/modules/accessibility'
+import 'highcharts/modules/variable-pie'
+import 'highcharts/modules/treemap'
+import 'highcharts/highcharts-more'
+// import bubble from 'highcharts/highcharts-more'
 
 const highchartsRef = ref()
 

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { sum, sumBy } from 'es-toolkit'
+
 definePageMeta({
   middleware: 'auth',
 })
@@ -149,7 +151,7 @@ const option2 = computed(() => {
         data: Object.keys(result)?.map((r: any) => {
           return {
             name: r,
-            y: useSum(Object.keys(result[r]).map(s => result[r][s][2])),
+            y: sum(Object.keys(result[r]).map(s => result[r][s][2])),
           }
         }),
         size: '45%',
@@ -170,7 +172,7 @@ const option2 = computed(() => {
 
           return {
             name: s,
-            y: useSumBy(_t, 'y'),
+            y: sumBy(_t, x => x.y),
           }
         }),
         size: '60%',
