@@ -32,7 +32,7 @@
     "happy-dom": "^15.7.4",
     "nuxt": "^4.0.0",
     "nuxt-auth-utils": "0.3.8",
-    "nuxt-quasar-ui": "^2.1.6",
+    "nuxt-quasar-ui": "^2.1.13",
     "nuxt-security": "2.0.0-rc.9",
     "vitest": "^2.1.1",
     "zx": "^8.1.9"
@@ -47,13 +47,13 @@
     "@vueuse/nuxt": "^10.7.1",
     "better-sqlite3": "^12.2.0",
     "consola": "^3.2.3",
-    "drizzle-orm": "^0.38.4",
+    "drizzle-orm": "^0.44.7",
     "es-toolkit": "^1.39.8",
     "highcharts": "^12.3.0",
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.52.0",
-    "quasar": "^2.17.0",
-    "zod": "^3.23.8"
+    "quasar": "^2.18.6",
+    "zod": "^4.1.12"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -81,7 +81,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
               <q-tab>
                 <RainbowLink
-                  to="/app/pages/charts"
+                  to="/charts"
                 >
                   <span>统计</span>
                 </RainbowLink>
