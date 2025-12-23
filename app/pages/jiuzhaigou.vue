@@ -13,7 +13,7 @@ const query = ref({
 })
 
 const { data, status, refresh } = await useAPI<any>(
-  '/api/jiuzhaigou', // use real api
+  '/api/jiuzhaigou-mock', // use real api
   {
     query,
   },
@@ -300,7 +300,7 @@ const option5 = computed(() => {
     },
     xAxis: [
       {
-        categories: t?.data?.map((o: o5) => o.date),
+        categories: t?.data.value?.map((o: o5) => o?.date),
         crosshair: true,
       },
     ],
@@ -324,7 +324,7 @@ const option5 = computed(() => {
       {
         name: '人数',
         type: 'column',
-        data: t?.data?.map((o: o5) => o.y),
+        data: t?.data.value?.map((o: o5) => o.y),
         tooltip: {
           valueSuffix: ' 人',
         },

@@ -1,4 +1,4 @@
-import { cachedGHStars } from '~/utils/cachedJiuzhaigou'
+import { cachedGHStars } from '~~/server/utils/cachedJiuzhaigou'
 
 export default defineEventHandler(async (event) => {
   const { iscenicid } = getQuery(event) ?? useAppConfig().CONSTANT.ScenicSpots.九寨沟
