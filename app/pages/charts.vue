@@ -283,7 +283,7 @@ const chartOption = computed(() => ({
 </script>
 
 <template>
-  <div class="px-4">
+  <div>
     <HighchartsWrapper :options="chartOption" />
   </div>
 </template>

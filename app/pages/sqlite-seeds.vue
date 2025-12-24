@@ -40,7 +40,7 @@ const handleDbSeed = async () => {
 </script>
 
 <template>
-  <div class="grid gap-4 p-4">
+  <div class="grid gap-4">
     <div class="flex gap-2">
       <q-btn
         color="primary"

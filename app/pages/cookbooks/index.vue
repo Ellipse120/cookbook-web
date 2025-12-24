@@ -41,7 +41,7 @@ async function batchDelete(ids: (string | number)[]) {
 
 <template>
   <div>
-    <div class="px-4 py-2">
+    <div>
       <q-btn-group
         push
         class="mb-2"

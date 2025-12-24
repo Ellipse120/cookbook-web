@@ -78,7 +78,7 @@ const saveDino = () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-2 p-4">
+  <div class="grid grid-cols-2">
     <div>
       <div>
         <q-select

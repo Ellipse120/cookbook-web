@@ -74,7 +74,6 @@ const v = await Promise.all([
   // ),
 ])
 
-console.log(v)
 const [{ data: testData, refresh }, { data: content, status }] = v
 const isLoading = computed(() => status.value === 'pending')
 </script>

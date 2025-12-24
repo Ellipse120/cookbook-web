@@ -31,7 +31,7 @@ readData()
 </script>
 
 <template>
-  <div class="px-4">
+  <div>
     <div class="p-2">
       {{ result.length }}
       <q-virtual-scroll

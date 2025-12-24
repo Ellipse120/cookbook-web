@@ -190,7 +190,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
         <div class="flex align-center justify-center p-4 gap-4">
           <NuxtLink
             to="/code-snippets"
-            class="text-gray-400 no-underline"
+            class="no-underline"
           >
             <q-btn color="primary">
               Code Snippets
@@ -199,7 +199,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
           <NuxtLink
             to="/async-child-communication/child"
-            class="text-gray-400 no-underline"
+            class="no-underline"
           >
             <q-btn color="positive">
               Async Child Communication
@@ -208,7 +208,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
           <NuxtLink
             to="/custom-deno-logo"
-            class="text-gray-400 no-underline"
+            class="no-underline"
           >
             <q-btn color="red">
               Custom deno logo
@@ -217,7 +217,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
           <NuxtLink
             to="/custom-state"
-            class="text-green-400 no-underline"
+            class="no-underline"
           >
             <q-btn color="green">
               Custom Nuxt UseState
@@ -226,16 +226,25 @@ const isDarkMode = computed(() => $q.dark.isActive)
 
           <NuxtLink
             to="/sqlite-seeds"
-            class="text-green-400 no-underline"
+            class="no-underline"
           >
             <q-btn color="green">
               Sqlite3 Seeds
             </q-btn>
           </NuxtLink>
+
+          <NuxtLink
+            to="/meetyou"
+            class="no-underline"
+          >
+            <q-btn color="orange">
+              美柚
+            </q-btn>
+          </NuxtLink>
         </div>
       </q-drawer>
 
-      <q-page-container>
+      <q-page-container class="m-4">
         <NuxtPage />
       </q-page-container>
 

@@ -195,7 +195,7 @@ const vCapitalizedText = {
 </script>
 
 <template>
-  <div class="p-4 bg-pink-300 text-xl rounded-lg">
+  <div class="bg-pink-300 text-xl rounded-lg">
     child comp, {{ props.foobar }}
 
     <q-separator />

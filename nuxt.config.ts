@@ -165,6 +165,16 @@ export default defineNuxtConfig({
         },
       },
     },
+    'meetyou/**': {
+      security: {
+        headers: {
+          contentSecurityPolicy: {
+            'img-src': false,
+            // 'img-src': ['*', 'blob:', 'data:'],
+          },
+        },
+      },
+    },
     'jiuzhaigou': {
       ssr: false,
     },
