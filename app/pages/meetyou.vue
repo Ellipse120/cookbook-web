@@ -1,11 +1,33 @@
 <script setup>
-const { data } = await useAPI('/api/meetyou/list')
+const splitterModel = ref(50)
+const currentDates = ref([])
+const expanded = ref({})
+
+const { data, refresh } = await useAPI('/api/meetyou/list', {
+  query: {
+    dates: currentDates,
+  },
+})
+
 const { data: babyRecord } = await useAPI('/api/meetyou/baby_record')
+const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
+  transform: (v) => {
+    return v.reverse()
+  },
+})
 
 const babyInfo = computed(() => data.value?.baby_info)
 const list = computed(() => data.value?.list)
 const babyBodyRecords = computed(() => babyRecord.value.records)
-const splitterModel = ref(50)
+
+const handleQuery = async () => {
+  expanded.value = {}
+  await refresh()
+}
+
+const getSummary = (date) => {
+  return list.value.find(item => item.date === date)?.summary
+}
 </script>
 
 <template>
@@ -28,41 +50,87 @@ const splitterModel = ref(50)
             喂养记录
           </div>
 
-          <q-intersection
-            v-for="item in list"
-            :key="item.date"
+          <q-select
+            v-model="currentDates"
+            outlined
+            rounded
+            dense
+            label="喂养日期"
+            multiple
+            clearable
+            :options="babyRecordDates"
+            class="p-2"
           >
-            <q-expansion-item
-              :label="item.date"
+            <template #prepend>
+              <q-icon name="event" />
+            </template>
+
+            <template #after>
+              <q-btn
+                round
+                outline
+                color="primary"
+                icon="search"
+                @click="handleQuery"
+              />
+            </template>
+          </q-select>
+
+          <div class="grid grid-cols-auto lg:grid-cols-4 gap-2">
+            <q-card
+              v-for="list_item in list"
+              :key="list_item.date"
             >
-              <q-card>
-                <q-card-section>
-                  <q-list
-                    bordered
-                  >
-                    <q-item
-                      v-for="detail in item.records"
-                      :key="detail.id"
-                    >
-                      <q-item-section>
-                        {{ detail.record_type_name }}
-                      </q-item-section>
+              <q-card-section>
+                {{ list_item.date }}
+              </q-card-section>
 
-                      <q-item-section>
-                        {{ detail.record_content }}
-                      </q-item-section>
+              <q-card-actions>
+                <div class="pl-2">
+                  {{ getSummary(list_item.date)?.detail?.length ?? 0 }} 个事件
+                </div>
 
-                      <q-item-section>
-                        <q-item-label caption>
-                          {{ detail.start_at }}
-                        </q-item-label>
-                      </q-item-section>
-                    </q-item>
-                  </q-list>
-                </q-card-section>
-              </q-card>
-            </q-expansion-item>
-          </q-intersection>
+                <q-space />
+
+                <q-btn
+                  color="grey"
+                  round
+                  flat
+                  dense
+                  :icon="expanded[list_item.date] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                  @click="expanded[list_item.date] = !!!expanded[list_item.date]"
+                />
+              </q-card-actions>
+
+              <q-slide-transition>
+                <div v-show="expanded[list_item.date]">
+                  <q-separator />
+                  <q-card-section class="text-subtitle2">
+                    <div v-if="getSummary(list_item.date)?.detail">
+                      <div
+                        v-for="detail in getSummary(list_item.date)?.detail"
+                        :key="detail.uni"
+                      >
+                        <div class="flex gap-2">
+                          <div>{{ detail.name }}, </div>
+                          <div v-if="detail.count">
+                            {{ detail.count }}次
+                          </div>
+                          <div v-if="detail.time">
+                            , {{ detail.time }}s
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div v-else>
+                      No Data
+                    </div>
+                  </q-card-section>
+                </div>
+              </q-slide-transition>
+            </q-card>
+          </div>
         </template>
 
         <template #after>

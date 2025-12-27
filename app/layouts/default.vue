@@ -31,15 +31,15 @@ const isDarkMode = computed(() => $q.dark.isActive)
         <div class="grid grid-flow-col grid-cols-fr">
           <q-toolbar
             elavated
-            class="q-gutter-md"
+            class="q-gutter-md pl-4"
           >
-            <q-btn
+            <!-- <q-btn
               dense
               flat
               round
               icon="menu"
               @click="toggleLeftDrawer()"
-            />
+            /> -->
             <q-img
               src="/logo.drawio.svg"
               height="40px"
