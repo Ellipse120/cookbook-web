@@ -1,7 +1,10 @@
+import { writeFile, access, constants, readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
 const mock = {
   code: 0,
   data: {
-    server_time: '2025-12-24 19:12:25',
+    server_time: '2026-01-01 22:51:46',
     baby: {
       id: 124116844,
       nickname: '小满',
@@ -32,8 +35,8 @@ const mock = {
       baby_id: 124116844,
       relation: 2,
       relation_name: '爸爸',
-      come_number: 2144,
-      come_time: '2025-12-24 18:45:12',
+      come_number: 2309,
+      come_time: '2026-01-01 21:43:24',
       role: 100,
       open_dynamic: true,
       last_footprint_at: '2025-09-22 23:51:03',
@@ -56,6 +59,75 @@ const mock = {
     own_line_record_id: 1,
     records: [
       {
+        id: 2276602072,
+        user_id: 409898538,
+        user_name: '妈妈',
+        content: '',
+        look_limit: 1,
+        mark: 0,
+        record_date: '2025-12-26',
+        create_at: '2025-12-26 15:49:19',
+        is_owner: false,
+        can_edit: true,
+        can_share: true,
+        type: 0,
+        comment_limit: false,
+        pregnant_photo: false,
+        app: 3,
+        baby_type: 0,
+        guid: 'yQUlSqpk4jj4RME6A191d7aiQzku76Vs9ex-zS-UE-lvz7KAXF3Iigjbg0rgaTHh',
+        is_privacy: false,
+        record_detail: null,
+        growth_detail: {
+          id: 51612121,
+          weight: 6.55,
+          background: 'https://sc.seeyouyima.com/bbj/img/hw/bg_m.png',
+          uri: 'meiyou:///tools/height_weight_curve',
+        },
+        comments: [
+          {
+            id: 164659985,
+            content: '今天剃胎毛了',
+            user_id: 409898538,
+            user_name: '妈妈',
+            user_header: '',
+            reply_id: 0,
+            reply_to: 0,
+            reply_to_name: '',
+            reply_to_header: '',
+            create_at: '2025-12-26 15:51:22',
+          },
+          {
+            id: 164692439,
+            content: '圆滚滚的哈哈',
+            user_id: 608367633,
+            user_name: '爸爸',
+            user_header: '',
+            reply_id: 0,
+            reply_to: 0,
+            reply_to_name: '',
+            reply_to_header: '',
+            create_at: '2025-12-26 18:58:30',
+          },
+        ],
+        likes: [
+          {
+            id: 164692406,
+            content: '',
+            user_id: 608367633,
+            user_name: '爸爸',
+            user_header: '',
+            reply_id: 0,
+            reply_to: 0,
+            reply_to_name: '',
+            reply_to_header: '',
+            create_at: '2025-12-26 18:58:19',
+          },
+        ],
+        geo: null,
+        tags: [],
+      },
+      {
         id: 2268948806,
         user_id: 608367633,
         user_name: '爸爸',
@@ -77,6 +149,7 @@ const mock = {
         record_detail: null,
         growth_detail: {
           id: 51281870,
+          height: 62,
           weight: 6.5,
           head: 41,
           background: 'https://sc.seeyouyima.com/bbj/img/hw/bg_m.png',
@@ -673,7 +746,7 @@ const mock = {
         uri: 'meiyou:///seeyoubaby/photo/select',
         picture: 'http://pic-ybb.seeyouyima.com/qa_activity/tools/66500d583f9a6_678_380.gif',
         type: 3,
-        timeline_day: 97,
+        timeline_day: 105,
         small_picture: '',
         title: '',
         sub_title: '',
@@ -698,6 +771,60 @@ const mock = {
   message: '',
 }
 
+const filePath = 'public/meetyou/'
+const fileName = 'baby_records.json'
+const jsonPath = filePath + fileName
+const url = 'https://api-bbj.meiyou.com/v3/baby/my_baby_record?common_baby_id=266913376&guide_position=7&page_size=20'
+const authorization = 'XDS 7.u7Ii3wNnLBUbNFKKMWyjrgADd0tbVSaW_mL309JXJr0'
+
 export default defineEventHandler(async () => {
+  try {
+    await access(jsonPath, constants.F_OK)
+
+    const content = await readFile(resolve(jsonPath), { encoding: 'utf-8' })
+
+    return JSON.parse(content) || []
+  }
+  catch {
+    const res: { code: number, data: any, message: string } = await $fetch(url, {
+      headers: {
+        'Host': 'api-bbj.meiyou.com',
+        'source': 'IMYHomeRelativeContainerVC',
+        'lang': 'zh',
+        'User-Agent': 'Seeyou/8.99.0 (iPhone; iOS 18.6.2; Scale/3.00)',
+        'isol': '1372-2-82-1,1374-2-82-1,1379-2-82-1,1383-2-82-1,1384-2-82-1,1392-2-82-1',
+        'sv': 'KK77',
+        'session-id': 1766573174134,
+        'myclient': '0120899000000000',
+        'recomm': 0,
+        'bbid': 266913376,
+        'exp': '105-267,175-889,256-704,304-836,309-846,319-871,336-914,337-1082,368-1022,381-1061,412-1143,441-1294,512-1487,513-1490,524-1520,530-1535,536-1551,540-1578,550-1621,586-1772,620-1902,646-1980,648-1988,680-2101,686-2118,704-2197,705-2199,724-2286,771-2561,776-2582,777-2585,806-2685,835-2794,846-2867,848-2876,849-2879,853-2955,856-2906,861-2928,863-2932,865-2940,887-3129,890-3139,892-3151,893-3153,896-3165,898-3169,915-3224,927-3292,942-3398,949-3453,953-3463,959-3486,967-3584,968-3586,969-3588,979-3645,981-3659,984-3699,997-3837,1001-3841,1002-3846,1007-4030,1015-4000,1022-4102,1029-4208,1033-4201,1064-4405,1073-4476,1080-4507,1081-4509,1101-4611,1108-4651,1117-4882,1118-4694,1123-4783,1134-5080,1152-4978,1160-5050,1163-5056,1164-5061,1166-5069,1169-5098,1189-5267,1190-5271,1191-5275,1192-5279,1198-5372,1199-5375,1204-5403,1209-5450,1244-5867,1253-5567,1265-5650,1273-5724,1287-6170,1289-5884,1296-5942,1298-5961,1304-6270,1307-6022,1312-6140,1323-6155,1329-6188,1341-6323,1345-6349,1348-6361,1353-6394,1354-6400,1377-6807,1380-6835,1382-6860,1389-6963,1394-7075,1410-7381,1422-7612,1423-7632,1427-7708,1436-7818,1438-7850,1439-7870,1450-8030,1451-8056,1454-8099,1479-8813,1480-8378,1485-8455,1487-8461,1490-8511,1491-8542,1497-8630,1507-8702,1508-8704,1511-8746,1523-9120,1528-8906,1541-9002,1547-9072,1553-9136,1559-9223,1566-9264,1571-9428,1577-9454,1578-9468,1579-9471,1589-9609,1591-9655,1594-9672,1598-9705,1605-9789,1613-9869,1616-9926,1619-9975,1625-9997,1630-10016,1640-10101,1646-10223,1648-10247,1658-10385,1660-10416,1670-10527,1676-10582,1677-10585,1687-10634,1689-10645,1702-10742,1706-10780,1711-10820,1712-10824,1717-10867,1718-10874,1720-10888,1722-10914,1731-11028,1732-11032,1734-11048,1742-11093,1743-11159,1751-11142,1752-11152,1757-11190,1758-11195,1759-11203,1760-11208,1775-11288,1778-11312,1783-11423,1787-11450,1796-11488,1797-11499,1800-11948,1804-11539,1807-11571,1809-11852,1810-11613,1811-11615,1814-11638,1816-11644,1819-11652,1821-11667,1823-11689,1828-11720,1832-11755,1833-11759,1837-11777,1838-11786,1840-11800,1846-11833,1848-11857,1853-11872,1854-11876,1855-11880,1861-11906,1864-11916,1865-11920,1866-11929,1870-11956,1877-11976,1878-11980,1881-11989,1882-11992,1885-12004,1892-12033,1894-12050,1899-12070,1902-12083,1903-12088,1904-12089,1919-12149,1922-12161,1923-12164,1938-12223,1952-12279,1956-12298,1974-12383,1983-12411,1987-12435,1995-12473',
+        'statinfo': 'bR5QoBSXTFmhKTdgY01mg2NFTs+ZrKZPh2xyerr+dgETXwYCYMD/gMmFE/NZToRMTvIrmuAwFt0IVFUgZhH0Q2IvnDrj9uS3U2BGtzI0FfQ1GMFfqALIQLOUnPw9L7MsvGKa/TIgVtqE4QXnk3MZRyMgdEp9X/u6ZKWhNFjSYgTD3yKCecMt8do6DIFqqa8crmy9UekNY7cJNVnNo9SbZJA3kxkmREVM2ct718l2tZN13P2ZwhJ2TTEL/eG8MiGd3GPmQWSX6PJ3LCyv3ZdLEAq/icfTXuD98U1FSYxaZeVcDqdS5UqSXpRfGAdo9cGxoOnP4jTXbJbu59RhZ1/i7by010/RxoqqUlKAd/PPtxFUNhpt6mg/wVb4qC0qQ9oGjRIsQn7Lp5apAj98opLqx0p6fm824n1ZCHs3Jno09HrZYuMiQD3/+e5WqQeN5roIn6WHHon5ylkaeiI1VISnqR4bhPeZBLha3Ot3Wi8LQWtV7NSbRsx7LOuJ0eF10mkLK6JOytu1SuOqy3o3/F47wfDFq2H4rv55lZEvw5MCC462VG16KvG6RwBfyUViPbKLUBaAW83RRJ4jnpkLv6R7IfI99B1wtob5mfe2XPi1GtaVRL/SVHjmVXOSGvdGP9uS8AY5D045+Vrdye98jXcKBwLeU1pmR9CPDMPKsOqEjJW+RxMEdCCUlTBhKcXWQhhtJdmoDQYvA5Vu6FFdcxoDWIss/tuK3Qewpmt40Bj9y+vuhEUF9gmN9fLlmUKCfysU3H+Nj/RiF/sQUAQJDrom3cQ8Myaau+Hte8lHvnPmj/FJnV3A6ky6Ay2OnnzM1hPBvEoxvLkVo057GPDOduXAYiCjULTgJmgC4XINSQT7mtXwRS4Ady+srIO+Hqtu15cL7VCy378dPq0LCdKC2lRLgxdaRrYlvTRpB0zvAsBDTpy3JSf/FOt1ZGaEwfyi6QkOb1kV6DKVuX4OJ9+ZLkBl74ycpbMT34d+3X/bV6U1rek=',
+        'open-person-search-recom': 2,
+        'open-person-eb-recomm': 2,
+        'myappinfo': '01-2-8.99.0.0-0000-0',
+        'x-visit-mode': 1,
+        'bbday': 20250919,
+        'Authorization': authorization,
+        'scale': '3.0',
+        'Accept-Language': 'zh-Hans-CN;q=1, en-CN;q=0.9',
+        'open-person-ad': 2,
+        'Connection': 'keep-alive',
+        'themeid': 0,
+        'Accept': '*/*',
+        'mode': 10,
+        'Accept-Encoding': 'gzip, deflate, br',
+      },
+    })
+
+    await writeFile(jsonPath, JSON.stringify(res.data, null, 2), {
+      flag: 'wx',
+    }).catch(() => {
+      writeFile(jsonPath, '', {
+        flag: 'wx',
+      })
+    })
+  }
+
   return mock.data
 })

@@ -9,7 +9,7 @@ const { data, refresh } = await useAPI('/api/meetyou/list', {
   },
 })
 
-const { data: babyRecord } = await useAPI('/api/meetyou/baby_record')
+const { data: babyRecord, refresh: refreshBabyRecord } = await useAPI('/api/meetyou/baby_record')
 const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
   transform: (v) => {
     return v.reverse()
@@ -32,7 +32,7 @@ const getSummary = (date) => {
 
 <template>
   <div>
-    <div>
+    <div class="pl-2">
       <q-avatar
         color="red"
         text-color="white"
@@ -76,10 +76,11 @@ const getSummary = (date) => {
             </template>
           </q-select>
 
-          <div class="grid grid-cols-auto lg:grid-cols-4 gap-2">
+          <div class="q-pa-md row items-start q-gutter-md">
             <q-card
               v-for="list_item in list"
               :key="list_item.date"
+              class="w-40"
             >
               <q-card-section>
                 {{ list_item.date }}
@@ -135,7 +136,9 @@ const getSummary = (date) => {
 
         <template #after>
           <div class="text-md pl-4">
-            身高体重
+            <div @click="refreshBabyRecord">
+              身高体重
+            </div>
             <q-list
               separator
             >
