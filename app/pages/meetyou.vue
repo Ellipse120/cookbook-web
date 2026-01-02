@@ -28,6 +28,10 @@ const handleQuery = async () => {
 const getSummary = (date) => {
   return list.value.find(item => item.date === date)?.summary
 }
+
+const getTodayDetail = (date) => {
+  //
+}
 </script>
 
 <template>
@@ -38,7 +42,11 @@ const getSummary = (date) => {
         text-color="white"
         size="48px"
       >
-        <img :src="babyInfo.header">
+        <NuxtImg
+          :src="babyInfo.header"
+          :placeholder="[48, 48]"
+          :alt="babyInfo.nickname"
+        />
       </q-avatar>
       {{ babyInfo.nickname }}
     </div>
@@ -46,7 +54,7 @@ const getSummary = (date) => {
     <div class="max-h-75vh overflow-y-auto my-4">
       <q-splitter v-model="splitterModel">
         <template #before>
-          <div class="text-md pl-4">
+          <div class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200 pl-4">
             喂养记录
           </div>
 
@@ -76,40 +84,49 @@ const getSummary = (date) => {
             </template>
           </q-select>
 
-          <div class="q-pa-md row items-start q-gutter-md">
+          <div class="q-pa-md row items-start q-gutter-md max-h-65vh overflow-y-auto mt-4">
             <q-card
-              v-for="list_item in list"
-              :key="list_item.date"
-              class="w-40"
+              v-for="list_item in babyRecordDates"
+              :key="list_item"
+              class="w-1/4"
             >
               <q-card-section>
-                {{ list_item.date }}
+                {{ list_item }}
               </q-card-section>
 
               <q-card-actions>
                 <div class="pl-2">
-                  {{ getSummary(list_item.date)?.detail?.length ?? 0 }} 个事件
+                  {{ getSummary(list_item)?.detail?.length ?? 0 }} 个事件
                 </div>
 
                 <q-space />
+
+                <q-btn
+                  color="primary"
+                  round
+                  flat
+                  dense
+                  icon="refresh"
+                  @click="getTodayDetail(list_item)"
+                />
 
                 <q-btn
                   color="grey"
                   round
                   flat
                   dense
-                  :icon="expanded[list_item.date] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded[list_item.date] = !!!expanded[list_item.date]"
+                  :icon="expanded[list_item] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                  @click="expanded[list_item] = !!!expanded[list_item]"
                 />
               </q-card-actions>
 
               <q-slide-transition>
-                <div v-show="expanded[list_item.date]">
+                <div v-show="expanded[list_item]">
                   <q-separator />
                   <q-card-section class="text-subtitle2">
-                    <div v-if="getSummary(list_item.date)?.detail">
+                    <div v-if="getSummary(list_item)?.detail">
                       <div
-                        v-for="detail in getSummary(list_item.date)?.detail"
+                        v-for="detail in getSummary(list_item)?.detail"
                         :key="detail.uni"
                       >
                         <div class="flex gap-2">
@@ -136,7 +153,10 @@ const getSummary = (date) => {
 
         <template #after>
           <div class="text-md pl-4">
-            <div @click="refreshBabyRecord">
+            <div
+              class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200"
+              @click="refreshBabyRecord"
+            >
               身高体重
             </div>
             <q-list
