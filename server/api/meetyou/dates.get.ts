@@ -146,15 +146,20 @@ const headers = {
 }
 
 export default defineEventHandler(async () => {
-  try {
-    await access(jsonPath, constants.F_OK)
+  const today: string = new Date().toISOString().split('T')[0]
 
-    const content = await readFile(resolve(jsonPath), { encoding: 'utf-8' })
+  await access(jsonPath, constants.F_OK).catch(async () => {
+    await writeFile(jsonPath, '')
+  })
 
-    return JSON.parse(content) || []
+  const content = await readFile(resolve(jsonPath), { encoding: 'utf-8' })
+  const dates = JSON.parse(content) || []
+
+  if (dates.includes(today)) {
+    return dates
   }
-  catch {
-    const [data25, data26] = await Promise.all(
+  else {
+    const [data2025, data2026] = await Promise.all(
       years.map(year => $fetch<{ code: number, data: any, message: string }>(url, {
         params: {
           common_baby_id: commonBabyId,
@@ -163,16 +168,10 @@ export default defineEventHandler(async () => {
         headers,
       })),
     )
-    const mergeDates = [...data25.data.dates, ...data26.data.dates]
+    const mergeDates = [...data2025.data.dates, ...data2026.data.dates]
 
-    await writeFile(jsonPath, JSON.stringify(mergeDates, null, 2), {
-      flag: 'wx',
-    }).catch(() => {
-      writeFile(jsonPath, '', {
-        flag: 'wx',
-      })
-    })
+    await writeFile(jsonPath, JSON.stringify(mergeDates, null, 2))
+
+    return mergeDates
   }
-
-  return mock.data.dates
 })

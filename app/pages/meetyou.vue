@@ -3,6 +3,12 @@ const splitterModel = ref(50)
 const currentDates = ref([])
 const expanded = ref({})
 
+const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
+  transform: (v) => {
+    return v.reverse()
+  },
+})
+
 const { data, refresh } = await useAPI('/api/meetyou/list', {
   query: {
     dates: currentDates,
@@ -10,15 +16,11 @@ const { data, refresh } = await useAPI('/api/meetyou/list', {
 })
 
 const { data: babyRecord, refresh: refreshBabyRecord } = await useAPI('/api/meetyou/baby_record')
-const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
-  transform: (v) => {
-    return v.reverse()
-  },
-})
 
-const babyInfo = computed(() => data.value?.baby_info)
-const list = computed(() => data.value?.list)
+const babyInfo = computed(() => babyRecord.value?.baby)
+const list = computed(() => data.value)
 const babyBodyRecords = computed(() => babyRecord.value.records)
+const babyAvatar = computed(() => babyInfo.value.header)
 
 const handleQuery = async () => {
   expanded.value = {}
@@ -29,8 +31,8 @@ const getSummary = (date) => {
   return list.value.find(item => item.date === date)?.summary
 }
 
-const getTodayDetail = (date) => {
-  //
+const getTodayDetail = async (date) => {
+  currentDates.value = [date]
 }
 </script>
 
@@ -43,7 +45,7 @@ const getTodayDetail = (date) => {
         size="48px"
       >
         <NuxtImg
-          :src="babyInfo.header"
+          :src="babyAvatar"
           :placeholder="[48, 48]"
           :alt="babyInfo.nickname"
         />
@@ -55,7 +57,7 @@ const getTodayDetail = (date) => {
       <q-splitter v-model="splitterModel">
         <template #before>
           <div class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200 pl-4">
-            喂养记录
+            喂养记录（{{ babyRecordDates.length }}条）
           </div>
 
           <q-select
