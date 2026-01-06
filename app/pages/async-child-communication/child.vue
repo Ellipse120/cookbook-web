@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TreeItem from '~/pages/async-child-communication/TreeItem.vue'
+import TreeItem from './components/TreeItem.vue'
 
 const props = defineProps(['foobar'])
 

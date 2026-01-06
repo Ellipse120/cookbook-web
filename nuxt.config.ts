@@ -41,6 +41,10 @@ export default defineNuxtConfig({
     },
   },
 
+  pages: {
+    pattern: ['**/*/*.vue', '!**/components/**'],
+  },
+
   runtimeConfig: {
     public: {
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
