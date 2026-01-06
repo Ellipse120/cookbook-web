@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   },
 
   pages: {
-    pattern: ['**/*/*.vue', '!**/components/**'],
+    pattern: ['**/*.vue', '!**/components/**'],
   },
 
   runtimeConfig: {

@@ -62280,5 +62280,1042 @@
         }
       ]
     }
+  },
+  {
+    "date": "2026-01-06",
+    "records": [
+      {
+        "id": 4833688523,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-06 08:30:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 08:44:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4833152071,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-06 06:23:00",
+        "end_at": "2026-01-06 06:29:00",
+        "record_detail": {
+          "bottle_feed_capacity": 90
+        },
+        "quantity": 90,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 06:29:09",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "90ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4833158699,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-06 05:32:00",
+        "end_at": "2026-01-06 06:23:00",
+        "record_detail": {
+          "last_side": "right",
+          "left": 2220,
+          "right": 960,
+          "time_source": 1
+        },
+        "quantity": 3180,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 06:25:52",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "左37分钟->右16分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4832771624,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-06 03:30:00",
+        "end_at": "2026-01-06 03:35:00",
+        "record_detail": {
+          "bottle_feed_capacity": 90
+        },
+        "quantity": 90,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 03:36:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "90ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4832749457,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-06 03:20:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 03:20:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4832793728,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-06 02:38:00",
+        "end_at": "2026-01-06 03:32:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 1740,
+          "right": 1440,
+          "time_source": 2
+        },
+        "quantity": 3180,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 03:41:52",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右24分钟->左29分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4832402397,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-06 00:20:00",
+        "end_at": "2026-01-06 00:24:00",
+        "record_detail": {
+          "bottle_feed_capacity": 70
+        },
+        "quantity": 70,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 00:24:16",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "70ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4832684922,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-06 00:00:00",
+        "end_at": "2026-01-06 02:47:31",
+        "record_detail": {
+          "relation_id": 4832684921,
+          "time_source": 1
+        },
+        "quantity": 10051,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 02:47:31",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时48分钟",
+        "unit_type": 1,
+        "draft_id": 113236264
+      }
+    ],
+    "summary": {
+      "date": "2026-01-06",
+      "detail": [
+        {
+          "uni": "1_11",
+          "name": "母乳",
+          "record_type": 1,
+          "count": 2,
+          "time": 6360,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "1_13",
+          "name": "配方奶",
+          "record_type": 1,
+          "count": 3,
+          "time": 0,
+          "milliliter": 250,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 1,
+          "time": 10051,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 2,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-01-05",
+    "records": [
+      {
+        "id": 4832684921,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 23:45:42",
+        "end_at": "2026-01-05 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 857,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 02:47:31",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了14分钟",
+        "unit_type": 1,
+        "draft_id": 113236264
+      },
+      {
+        "id": 4832434376,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 23:40:00",
+        "end_at": "2026-01-06 00:20:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 300,
+          "right": 1860,
+          "time_source": 2
+        },
+        "quantity": 2160,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-06 00:36:16",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右31分钟->左5分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4832306720,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 22:35:43",
+        "end_at": "2026-01-05 23:40:35",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 3892,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 23:40:35",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时5分钟",
+        "unit_type": 1,
+        "draft_id": 113216771
+      },
+      {
+        "id": 4832258706,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-05 21:10:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 23:23:15",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4831590630,
+        "user_id": 409898538,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 20:38:00",
+        "end_at": "2026-01-05 20:43:00",
+        "record_detail": {
+          "bottle_feed_capacity": 95
+        },
+        "quantity": 95,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 20:43:21",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "95ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4831590421,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 20:01:00",
+        "end_at": "2026-01-05 20:38:30",
+        "record_detail": {
+          "last_side": "right",
+          "left": 720,
+          "right": 1080,
+          "time_source": 1
+        },
+        "quantity": 1800,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 20:38:30",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "左12分钟->右18分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4831413898,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 18:13:41",
+        "end_at": "2026-01-05 20:01:13",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 6452,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 20:01:13",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时48分钟",
+        "unit_type": 1,
+        "draft_id": 113087775
+      },
+      {
+        "id": 4832263225,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-05 16:35:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 23:24:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4830366581,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 15:58:00",
+        "end_at": "2026-01-05 16:03:00",
+        "record_detail": {
+          "bottle_feed_capacity": 95
+        },
+        "quantity": 95,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 16:03:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "95ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4830449403,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 15:14:00",
+        "end_at": "2026-01-05 15:57:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 780,
+          "right": 1740,
+          "time_source": 2
+        },
+        "quantity": 2520,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 16:18:20",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右29分钟->左13分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4830158268,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 14:07:00",
+        "end_at": "2026-01-05 15:07:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 3600,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 15:08:01",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4829827435,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 12:55:19",
+        "end_at": "2026-01-05 13:48:05",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 3166,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 13:48:07",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了53分钟",
+        "unit_type": 1,
+        "draft_id": 112963226
+      },
+      {
+        "id": 4829499926,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-05 12:23:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 12:40:10",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4829174845,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 11:28:00",
+        "end_at": "2026-01-05 11:33:00",
+        "record_detail": {
+          "bottle_feed_capacity": 95
+        },
+        "quantity": 95,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 11:33:07",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "95ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4829176297,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-01-05 11:27:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 11:30:23",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4829210137,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 10:45:00",
+        "end_at": "2026-01-05 11:27:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 720,
+          "right": 1440,
+          "time_source": 2
+        },
+        "quantity": 2160,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 11:38:13",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右24分钟->左12分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4829212562,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-05 09:56:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 11:38:34",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4828097309,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 07:28:00",
+        "end_at": "2026-01-05 07:34:00",
+        "record_detail": {
+          "bottle_feed_capacity": 90
+        },
+        "quantity": 90,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 07:35:55",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "90ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4828573581,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 06:50:00",
+        "end_at": "2026-01-05 08:55:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7500,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 09:14:06",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时5分钟",
+        "unit_type": 1,
+        "draft_id": 112847569
+      },
+      {
+        "id": 4828090875,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 06:47:00",
+        "end_at": "2026-01-05 07:26:50",
+        "record_detail": {
+          "last_side": "left",
+          "left": 660,
+          "right": 1500,
+          "time_source": 1
+        },
+        "quantity": 2160,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 07:26:50",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右25分钟->左11分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4827966190,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 04:42:00",
+        "end_at": "2026-01-05 06:46:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7440,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 06:49:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时4分钟",
+        "unit_type": 1,
+        "draft_id": 112817398
+      },
+      {
+        "id": 4827661498,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 04:38:00",
+        "end_at": "2026-01-05 04:42:00",
+        "record_detail": {
+          "bottle_feed_capacity": 90
+        },
+        "quantity": 90,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 04:42:44",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "90ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4827672671,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 03:58:00",
+        "end_at": "2026-01-05 04:37:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 540,
+          "right": 1800,
+          "time_source": 2
+        },
+        "quantity": 2340,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 04:44:58",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右30分钟->左9分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4827574212,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 01:40:44",
+        "end_at": "2026-01-05 03:58:02",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 8238,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 03:58:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时17分钟",
+        "unit_type": 1,
+        "draft_id": 112792943
+      },
+      {
+        "id": 4827662160,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-01-05 00:55:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 04:40:03",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4827217696,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-01-05 00:53:00",
+        "end_at": "2026-01-05 00:59:00",
+        "record_detail": {
+          "bottle_feed_capacity": 105
+        },
+        "quantity": 105,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 00:59:19",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "105ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4827342420,
+        "user_id": 409898538,
+        "uni": "1_11",
+        "record_type": 1,
+        "record_category": 11,
+        "start_at": "2026-01-05 00:24:00",
+        "end_at": "2026-01-05 00:58:00",
+        "record_detail": {
+          "last_side": "left",
+          "left": 900,
+          "right": 1020,
+          "time_source": 2
+        },
+        "quantity": 1920,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 02:00:41",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "母乳",
+        "record_content": "右17分钟->左15分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 4827162006,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-01-05 00:00:00",
+        "end_at": "2026-01-05 00:25:11",
+        "record_detail": {
+          "relation_id": 4827162005,
+          "time_source": 1
+        },
+        "quantity": 1511,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-01-05 00:25:11",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了25分钟",
+        "unit_type": 1,
+        "draft_id": 112720639
+      }
+    ],
+    "summary": {
+      "date": "2026-01-05",
+      "detail": [
+        {
+          "uni": "1_11",
+          "name": "母乳",
+          "record_type": 1,
+          "count": 7,
+          "time": 15060,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "1_13",
+          "name": "配方奶",
+          "record_type": 1,
+          "count": 6,
+          "time": 0,
+          "milliliter": 570,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 9,
+          "time": 42656,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 5,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        }
+      ]
+    },
+    "append_params": [
+      {
+        "key": "tab",
+        "value": "1"
+      }
+    ]
   }
 ]
