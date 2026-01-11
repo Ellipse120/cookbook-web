@@ -100,8 +100,8 @@ importers:
         specifier: 0.3.8
         version: 0.3.8(magicast@0.5.1)
       nuxt-quasar-ui:
-        specifier: ^2.1.13
-        version: 2.1.13(@quasar/extras@1.17.0)(magicast@0.5.1)(quasar@2.18.6)
+        specifier: ^3.0.0
+        version: 3.0.0(@quasar/extras@1.17.0)(magicast@0.5.1)(quasar@2.18.6)
       nuxt-security:
         specifier: 2.0.0-rc.9
         version: 2.0.0-rc.9(magicast@0.5.1)(rollup@4.55.1)
@@ -4899,6 +4899,10 @@ packages:
     resolution: {integrity: sha512-vqiC06CuhBTUdZH+RYl8sFrL096vA45Ok5ISO6sE/Mr1jRbGH4Csnhi8f3wKVl7x8mO4Au7Ir9D3Oyv1VYMFJw==}
     engines: {node: '>=12'}
 
+  mimic-function@5.0.1:
+    resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
+    engines: {node: '>=18'}
+
   mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
@@ -5083,8 +5087,8 @@ packages:
   nuxt-csurf@1.6.5:
     resolution: {integrity: sha512-/DMNTON8LIVhntamKbBmAuM879B0QnuSJa7ZAkmkZe+21m+1QGcjVUxtSkizaM48NUvkuAGYOG0ncn+kqEgrzw==}
 
-  nuxt-quasar-ui@2.1.13:
-    resolution: {integrity: sha512-uXaz5TzvtQuoG4aqQ0ZRmDmWztEZpOL8IlJwYPvKAsX9jf+RZLDySXSUUw0a65bCeSjFxxJvHA5eAbsW7+q05Q==}
+  nuxt-quasar-ui@3.0.0:
+    resolution: {integrity: sha512-STM4HFt5c57swSR2EwScLGASy67lkV/UJmadkiSsvda4ejpRpAf3AmuwbiE0MWnrouMObDZ8U3CrQ/bTBgQDjA==}
     peerDependencies:
       '@quasar/extras': ^1
       quasar: ^2.8.0
@@ -5201,9 +5205,9 @@ packages:
     resolution: {integrity: sha512-wPrq66Llhl7/4AGC6I+cqxT07LhXvWL08LNXz1fENOw0Ap4sRZZ/gZpTTJ5jpurzzzfS2W/Ge9BY3LgLjCShcw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  p-memoize@7.1.1:
-    resolution: {integrity: sha512-DZ/bONJILHkQ721hSr/E9wMz5Am/OTJ9P6LhLFo2Tu+jL8044tgc9LwHO8g4PiaYePnlVVRAJcKmgy8J9MVFrA==}
-    engines: {node: '>=14.16'}
+  p-memoize@8.0.0:
+    resolution: {integrity: sha512-jdZ10MCxavHoIHwJ5oweOtYy6ElPixEHaMkz0AuaEMovR1MRpVvYFzIEHRxgMEpXYzNpRVByFAniAzwmd1/uug==}
+    engines: {node: '>=20'}
 
   p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
@@ -6147,9 +6151,9 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  type-fest@3.13.1:
-    resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
-    engines: {node: '>=14.16'}
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
+    engines: {node: '>=16'}
 
   type-fest@5.3.1:
     resolution: {integrity: sha512-VCn+LMHbd4t6sF3wfU/+HKT63C9OoyrSIf4b+vtWHpt2U7/4InZG467YDNMFMR70DdHjAdpPWmw2lzRdg0Xqqg==}
@@ -12157,6 +12161,8 @@ snapshots:
 
   mimic-fn@4.0.0: {}
 
+  mimic-function@5.0.1: {}
+
   mimic-response@3.1.0:
     optional: true
 
@@ -12430,14 +12436,14 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-quasar-ui@2.1.13(@quasar/extras@1.17.0)(magicast@0.5.1)(quasar@2.18.6):
+  nuxt-quasar-ui@3.0.0(@quasar/extras@1.17.0)(magicast@0.5.1)(quasar@2.18.6):
     dependencies:
-      '@nuxt/kit': 3.20.2(magicast@0.5.1)
+      '@nuxt/kit': 4.2.2(magicast@0.5.1)
       '@quasar/extras': 1.17.0
       defu: 6.1.4
       magic-string: 0.30.21
       mlly: 1.8.0
-      p-memoize: 7.1.1
+      p-memoize: 8.0.0
       quasar: 2.18.6
       semver: 7.7.3
     transitivePeerDependencies:
@@ -12739,10 +12745,10 @@ snapshots:
     dependencies:
       p-limit: 4.0.0
 
-  p-memoize@7.1.1:
+  p-memoize@8.0.0:
     dependencies:
-      mimic-fn: 4.0.0
-      type-fest: 3.13.1
+      mimic-function: 5.0.1
+      type-fest: 4.41.0
 
   p-try@2.2.0: {}
 
@@ -13817,7 +13823,7 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  type-fest@3.13.1: {}
+  type-fest@4.41.0: {}
 
   type-fest@5.3.1:
     dependencies:
