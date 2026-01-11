@@ -1,5 +1,3 @@
-import transformerDirectives from '@unocss/transformer-directives'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -53,7 +51,6 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-quasar-ui',
-    '@unocss/nuxt',
     '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-security',
@@ -62,6 +59,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/test-utils/module',
     '@nuxt/content',
+    '@unocss/nuxt',
   ],
 
   // vue: {
@@ -83,10 +81,6 @@ export default defineNuxtConfig({
       },
       dark: 'auto',
     },
-  },
-
-  unocss: {
-    transformers: [transformerDirectives()],
   },
 
   security: {
@@ -201,11 +195,9 @@ export default defineNuxtConfig({
     server: {
       allowedHosts: [process.env.VPN_HOST!],
     },
+    plugins: [
+    ],
   },
 
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  compatibilityDate: '2024-07-11',
+  compatibilityDate: '2025-07-15',
 })
