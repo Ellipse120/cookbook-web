@@ -76,3 +76,9 @@ export type MockUser = {
   age: number
   email: string
 }
+
+export type MeetyouResponse = {
+  code: number
+  data: any
+  message: string
+}

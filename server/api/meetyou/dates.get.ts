@@ -158,20 +158,19 @@ export default defineEventHandler(async () => {
   if (dates.includes(today)) {
     return dates
   }
-  else {
-    const [data2025, data2026] = await Promise.all(
-      years.map(year => $fetch<{ code: number, data: any, message: string }>(url, {
-        params: {
-          common_baby_id: commonBabyId,
-          year,
-        },
-        headers,
-      })),
-    )
-    const mergeDates = [...data2025.data.dates, ...data2026.data.dates]
 
-    await writeFile(jsonPath, JSON.stringify(mergeDates, null, 2))
+  const [data2025, data2026] = await Promise.all(
+    years.map(year => $fetch<MeetyouResponse>(url, {
+      params: {
+        common_baby_id: commonBabyId,
+        year,
+      },
+      headers,
+    })),
+  )
+  const mergeDates = [...data2025.data.dates, ...data2026.data.dates]
 
-    return mergeDates
-  }
+  await writeFile(jsonPath, JSON.stringify(mergeDates, null, 2))
+
+  return mergeDates
 })

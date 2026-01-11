@@ -1532,7 +1532,7 @@ export default defineEventHandler(async (event) => {
     return currentData
   }
   else {
-    const { data } = await $fetch<{ code: number, data: any, message: string }>(url, {
+    const { data } = await $fetch<MeetyouResponse>(url, {
       headers,
       params: {
         baby_id: babyId,
