@@ -90,6 +90,10 @@ export default defineNuxtConfig({
     },
     headers: {
       crossOriginEmbedderPolicy: 'require-corp',
+      contentSecurityPolicy: {
+        'img-src': false,
+        'script-src': false,
+      },
     },
   },
 
@@ -158,21 +162,14 @@ export default defineNuxtConfig({
         headers: {
           contentSecurityPolicy: {
             'img-src': false,
-            // 'img-src': ['*', 'blob:', 'data:'],
           },
         },
       },
     },
     'meetyou/**': {
-      security: {
-        headers: {
-          contentSecurityPolicy: {
-            'img-src': false,
-            // 'img-src': ['*', 'blob:', 'data:'],
-          },
-        },
-      },
+      ssr: false,
     },
+
     'jiuzhaigou': {
       ssr: false,
     },

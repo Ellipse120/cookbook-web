@@ -39,11 +39,11 @@ importers:
         specifier: ^1.43.0
         version: 1.43.0
       highcharts:
-        specifier: ^12.4.0
-        version: 12.4.0
+        specifier: ^12.5.0
+        version: 12.5.0
       highcharts-vue:
         specifier: ^2.0.1
-        version: 2.0.1(highcharts@12.4.0)(vue@3.5.26(typescript@5.9.3))
+        version: 2.0.1(highcharts@12.5.0)(vue@3.5.26(typescript@5.9.3))
       playwright:
         specifier: ^1.52.0
         version: 1.57.0
@@ -103,8 +103,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@quasar/extras@1.17.0)(magicast@0.5.1)(quasar@2.18.6)
       nuxt-security:
-        specifier: 2.0.0-rc.9
-        version: 2.0.0-rc.9(magicast@0.5.1)(rollup@4.55.1)
+        specifier: 2.5.1
+        version: 2.5.1(magicast@0.5.1)(rollup@4.55.1)
       unocss:
         specifier: ^66.5.12
         version: 66.5.12(@unocss/webpack@66.5.12(webpack@5.104.1(esbuild@0.19.12)))(postcss@8.5.6)(vite@5.4.21(@types/node@20.19.28)(lightningcss@1.30.2)(terser@5.44.1))
@@ -4229,8 +4229,16 @@ packages:
       highcharts: '>=5.0.0'
       vue: '>=3.0.0'
 
-  highcharts@12.4.0:
-    resolution: {integrity: sha512-o6UxxfChSUrvrZUbWrAuqL1HO/+exhAUPcZY6nnqLsadZQlnP16d082sg7DnXKZCk1gtfkyfkp6g3qkIZ9miZg==}
+  highcharts@12.5.0:
+    resolution: {integrity: sha512-uNSSv1KqRLNvkyXlf1FbeGWB1mJ/8/IYpVeqYiTIop5Wo8peUvNyzUfLa58vILsmXyz+XrETtgKIEOcSgBBKuQ==}
+    peerDependencies:
+      jspdf: ^3.0.0
+      svg2pdf.js: ^2.6.0
+    peerDependenciesMeta:
+      jspdf:
+        optional: true
+      svg2pdf.js:
+        optional: true
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -5093,8 +5101,9 @@ packages:
       '@quasar/extras': ^1
       quasar: ^2.8.0
 
-  nuxt-security@2.0.0-rc.9:
-    resolution: {integrity: sha512-kymOhnPcwhKj8g20GXgrFC6h7Oub7+53yqD0byovCDb50a3hlSRdSLlSBoP2/ca4dtnbu8FWJd5/KuUHBGHWXw==}
+  nuxt-security@2.5.1:
+    resolution: {integrity: sha512-gXUhJiOqgkKkP0FHDAPOuREjoala0p6G/4TIlkti1ZafpJV8TkjjFqCNT6NuiWHxKzVYY00OIR1tbRcZuJ7LmQ==}
+    engines: {node: '>=20.0.0'}
 
   nuxt@4.2.2:
     resolution: {integrity: sha512-n6oYFikgLEb70J4+K19jAzfx4exZcRSRX7yZn09P5qlf2Z59VNOBqNmaZO5ObzvyGUZ308SZfL629/Q2v2FVjw==}
@@ -11326,12 +11335,12 @@ snapshots:
       property-information: 7.1.0
       space-separated-tokens: 2.0.2
 
-  highcharts-vue@2.0.1(highcharts@12.4.0)(vue@3.5.26(typescript@5.9.3)):
+  highcharts-vue@2.0.1(highcharts@12.5.0)(vue@3.5.26(typescript@5.9.3)):
     dependencies:
-      highcharts: 12.4.0
+      highcharts: 12.5.0
       vue: 3.5.26(typescript@5.9.3)
 
-  highcharts@12.4.0: {}
+  highcharts@12.5.0: {}
 
   hookable@5.5.3: {}
 
@@ -12449,13 +12458,13 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-security@2.0.0-rc.9(magicast@0.5.1)(rollup@4.55.1):
+  nuxt-security@2.5.1(magicast@0.5.1)(rollup@4.55.1):
     dependencies:
-      '@nuxt/kit': 3.20.2(magicast@0.5.1)
+      '@nuxt/kit': 4.2.2(magicast@0.5.1)
       basic-auth: 2.0.1
       defu: 6.1.4
       nuxt-csurf: 1.6.5(magicast@0.5.1)
-      pathe: 1.1.2
+      pathe: 2.0.3
       unplugin-remove: 1.0.3(rollup@4.55.1)
       xss: 1.0.15
     transitivePeerDependencies:

@@ -34,7 +34,7 @@
     "nuxt": "^4.2.2",
     "nuxt-auth-utils": "0.3.8",
     "nuxt-quasar-ui": "^3.0.0",
-    "nuxt-security": "2.0.0-rc.9",
+    "nuxt-security": "2.5.1",
     "unocss": "^66.5.12",
     "vitest": "^2.1.1",
     "zx": "^8.1.9"
@@ -50,7 +50,7 @@
     "consola": "^3.2.3",
     "drizzle-orm": "^0.45.1",
     "es-toolkit": "^1.43.0",
-    "highcharts": "^12.4.0",
+    "highcharts": "^12.5.0",
     "highcharts-vue": "^2.0.1",
     "playwright": "^1.52.0",
     "quasar": "^2.18.6",

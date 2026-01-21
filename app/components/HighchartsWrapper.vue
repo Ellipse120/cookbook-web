@@ -35,7 +35,7 @@ import 'highcharts/modules/treemap'
 import 'highcharts/highcharts-more'
 // import bubble from 'highcharts/highcharts-more'
 
-const highchartsRef = ref()
+const highchartsRef = useTemplateRef('highchartsRef')
 
 const props = defineProps({
   options: {

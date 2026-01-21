@@ -1,4 +1,6 @@
 <script setup>
+import Highcharts from 'highcharts'
+
 const splitterModel = ref(50)
 const currentDates = ref([])
 const expanded = ref({})
@@ -15,12 +17,16 @@ const { data, refresh } = await useAPI('/api/meetyou/list', {
   },
 })
 
-const { data: babyRecord, refresh: refreshBabyRecord } = await useAPI('/api/meetyou/baby_record')
+const { data: babyRecord, refresh: refreshBabyRecord } = await useAPI('/api/meetyou/baby_record', {
+  key: 'babyRecord',
+})
 
 const babyInfo = computed(() => babyRecord.value?.baby)
 const list = computed(() => data.value)
 const babyBodyRecords = computed(() => babyRecord.value.records)
 const babyAvatar = computed(() => babyInfo.value.header)
+
+const [babyRecordDialogVisible, toggleBabyRecordDialogVisible] = useToggle()
 
 const handleQuery = async () => {
   expanded.value = {}
@@ -34,6 +40,87 @@ const getSummary = (date) => {
 const getTodayDetail = async (date) => {
   currentDates.value = [date]
 }
+
+const babyRecordOptions = computed(() => {
+  const xAxisCategories = babyBodyRecords.value?.map(r => r.record_date) || []
+
+  return {
+    chart: {
+      type: 'line',
+
+    },
+    title: {
+      text: '身高体重头围',
+    },
+    plotOptions: {
+      line: {
+        dataLabels: {
+          enabled: true,
+        },
+        enableMouseTracking: false,
+      },
+    },
+    xAxis: [{
+      categories: xAxisCategories,
+      reversed: true,
+      crosshair: true,
+    }],
+    yAxis: [
+      {
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[0],
+          },
+        },
+        title: {
+          text: '身高（cm）',
+        },
+      },
+      {
+        gridLineWidth: 0,
+        opposite: true,
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[1],
+          },
+        },
+        title: {
+          text: '体重（kg）',
+        },
+      },
+      {
+        labels: {
+          format: '{value}',
+          style: {
+            color: Highcharts.getOptions().colors[2],
+          },
+        },
+        title: {
+          text: '头围（cm）',
+        },
+      },
+    ],
+    series: [
+      {
+        name: '身高',
+        yAxis: 0,
+        data: babyBodyRecords.value?.map(r => r.growth_detail.height ?? null),
+      },
+      {
+        name: '体重',
+        yAxis: 1,
+        data: babyBodyRecords.value?.map(r => r.growth_detail.weight ?? null),
+      },
+      {
+        name: '头围',
+        yAxis: 2,
+        data: babyBodyRecords.value?.map(r => r.growth_detail.head ?? null),
+      },
+    ],
+  }
+})
 </script>
 
 <template>
@@ -56,8 +143,17 @@ const getTodayDetail = async (date) => {
     <div class="max-h-75vh overflow-y-auto my-4">
       <q-splitter v-model="splitterModel">
         <template #before>
-          <div class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200 pl-4">
-            喂养记录（{{ babyRecordDates.length }}条）
+          <div class="flex gap-2 items-center">
+            <div class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200 pl-4">
+              喂养记录（{{ babyRecordDates.length }}条）
+            </div>
+
+            <RainbowLink to="/meetyou/charts">
+              <q-icon
+                name="insert_chart"
+                size="2em"
+              />
+            </RainbowLink>
           </div>
 
           <q-select
@@ -86,7 +182,7 @@ const getTodayDetail = async (date) => {
             </template>
           </q-select>
 
-          <div class="q-pa-md row items-start q-gutter-md max-h-65vh overflow-y-auto mt-4">
+          <div class="q-pa-md row items-start q-gutter-md max-h-65vh overflow-y-auto mt-2">
             <q-card
               v-for="list_item in babyRecordDates"
               :key="list_item"
@@ -134,10 +230,10 @@ const getTodayDetail = async (date) => {
                         <div class="flex gap-2">
                           <div>{{ detail.name }}, </div>
                           <div v-if="detail.count">
-                            {{ detail.count }}次
+                            {{ detail.count }}次 <span v-if="detail.name === '配方奶'">{{ detail.milliliter }}ml</span>
                           </div>
                           <div v-if="detail.time">
-                            , {{ detail.time }}s
+                            {{ formatSeconds(detail.time) }}
                           </div>
                         </div>
                       </div>
@@ -155,12 +251,22 @@ const getTodayDetail = async (date) => {
 
         <template #after>
           <div class="text-md pl-4">
-            <div
-              class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200"
-              @click="refreshBabyRecord"
-            >
-              身高体重
+            <div class="flex gap-2 items-center">
+              <div
+                class="text-xl font-medium cursor-pointer hover:text-blue-500 transition duration-200"
+                @click="refreshBabyRecord"
+              >
+                身高体重
+              </div>
+
+              <q-icon
+                name="insert_chart"
+                size="2em"
+                class="cursor-pointer hover:text-blue-500 transition duration-200"
+                @click="toggleBabyRecordDialogVisible()"
+              />
             </div>
+
             <q-list
               separator
             >
@@ -221,6 +327,16 @@ const getTodayDetail = async (date) => {
                 </q-item-section>
               </q-item>
             </q-list>
+
+            <q-dialog v-model="babyRecordDialogVisible">
+              <ClientOnly>
+                <HighchartsWrapper
+                  ref="charts"
+                  class="!w-4/5 !max-w-4/5"
+                  :options="babyRecordOptions"
+                />
+              </ClientOnly>
+            </q-dialog>
           </div>
         </template>
       </q-splitter>
