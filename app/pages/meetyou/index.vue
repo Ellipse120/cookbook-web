@@ -1,5 +1,5 @@
 <script setup>
-import Highcharts from 'highcharts'
+const highCharts = inject('Highcharts')
 
 const splitterModel = ref(50)
 const currentDates = ref([])
@@ -70,7 +70,7 @@ const babyRecordOptions = computed(() => {
         labels: {
           format: '{value}',
           style: {
-            color: Highcharts.getOptions().colors[0],
+            color: highCharts.getOptions().colors[0],
           },
         },
         title: {
@@ -83,7 +83,7 @@ const babyRecordOptions = computed(() => {
         labels: {
           format: '{value}',
           style: {
-            color: Highcharts.getOptions().colors[1],
+            color: highCharts.getOptions().colors[1],
           },
         },
         title: {
@@ -94,7 +94,7 @@ const babyRecordOptions = computed(() => {
         labels: {
           format: '{value}',
           style: {
-            color: Highcharts.getOptions().colors[2],
+            color: highCharts.getOptions().colors[2],
           },
         },
         title: {

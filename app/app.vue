@@ -1,4 +1,8 @@
 <script setup>
+import Highcharts from 'highcharts'
+
+provide('Highcharts', Highcharts)
+
 const { loggedIn } = useUserSession()
 
 watch(loggedIn, () => {
