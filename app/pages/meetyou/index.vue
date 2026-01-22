@@ -1,9 +1,10 @@
 <script setup>
 const highCharts = inject('Highcharts')
-
+const { $api } = useNuxtApp()
 const splitterModel = ref(50)
 const currentDates = ref([])
 const expanded = ref({})
+const needRefresh = ref(false)
 
 const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
   transform: (v) => {
@@ -39,6 +40,23 @@ const getSummary = (date) => {
 
 const getTodayDetail = async (date) => {
   currentDates.value = [date]
+}
+
+const refreshNew = async (date) => {
+  await $api('/api/meetyou/need_refresh_list', {
+    method: 'post',
+    body: {
+      dates: date,
+      needRefresh: true,
+    },
+  })
+
+  await getTodayDetail(date)
+}
+
+const showDetail = (date) => {
+  const records = list.value.find(item => item.date === date)?.records
+  console.log(records)
 }
 
 const babyRecordOptions = computed(() => {
@@ -199,14 +217,36 @@ const babyRecordOptions = computed(() => {
 
                 <q-space />
 
-                <q-btn
-                  color="primary"
-                  round
-                  flat
+                <q-btn-dropdown
+                  split
+                  color="positive"
+                  rounded
                   dense
                   icon="refresh"
                   @click="getTodayDetail(list_item)"
-                />
+                >
+                  <q-list>
+                    <q-item
+                      v-close-popup
+                      clickable
+                      @click="refreshNew(list_item)"
+                    >
+                      <q-item-section>
+                        <q-item-label>刷新</q-item-label>
+                      </q-item-section>
+                    </q-item>
+
+                    <q-item
+                      v-close-popup
+                      clickable
+                      @click="showDetail(list_item)"
+                    >
+                      <q-item-section>
+                        <q-item-label>详情</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-btn-dropdown>
 
                 <q-btn
                   color="grey"
