@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
 
   currentData = JSON.parse(content)
 
-  if (needRefresh) {
+  if (needRefresh && dates) {
     remove(currentData, item => item.date === dates)
     await writeFile(jsonPath, JSON.stringify(currentData, null, 2))
   }

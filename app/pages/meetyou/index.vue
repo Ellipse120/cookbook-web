@@ -4,7 +4,6 @@ const { $api } = useNuxtApp()
 const splitterModel = ref(50)
 const currentDates = ref([])
 const expanded = ref({})
-const needRefresh = ref(false)
 
 const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
   transform: (v) => {
@@ -28,6 +27,10 @@ const babyBodyRecords = computed(() => babyRecord.value.records)
 const babyAvatar = computed(() => babyInfo.value.header)
 
 const [babyRecordDialogVisible, toggleBabyRecordDialogVisible] = useToggle()
+const babyRecordPagination = ref({
+  rowsPerPageOptions: 200,
+})
+let babyRecordRows = []
 
 const handleQuery = async () => {
   expanded.value = {}
@@ -54,9 +57,13 @@ const refreshNew = async (date) => {
   await getTodayDetail(date)
 }
 
+const [babyRecordsOfDayDialogVisible, toggleBabyRecordsDialogVisible] = useToggle()
+
 const showDetail = (date) => {
+  currentDates.value = [date]
   const records = list.value.find(item => item.date === date)?.records
-  console.log(records)
+  babyRecordRows = records
+  toggleBabyRecordsDialogVisible()
 }
 
 const babyRecordOptions = computed(() => {
@@ -286,6 +293,21 @@ const babyRecordOptions = computed(() => {
                 </div>
               </q-slide-transition>
             </q-card>
+
+            <q-dialog
+              v-model="babyRecordsOfDayDialogVisible"
+              full-width
+            >
+              <q-table
+                v-model:pagination="babyRecordPagination"
+                class="h-2xl"
+                flat
+                bordered
+                :title="`${currentDates?.toString()} 喂养记录详情`"
+                :rows="babyRecordRows"
+                row-key="id"
+              />
+            </q-dialog>
           </div>
         </template>
 
