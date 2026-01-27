@@ -10,7 +10,7 @@ export default eventHandler(async () => {
     .catch((error) => {
       throw createError({
         message: error.message,
-        statusCode: 500,
+        status: 500,
       })
     })
 })

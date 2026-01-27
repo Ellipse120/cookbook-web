@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
 
   const formData = await readFormData(event).catch(() => {
     throw createError({
-      statusCode: 500,
+      status: 500,
       message: 'Empty Form Data',
     })
   })
@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
 
   if (!validateForm.success) {
     throw createError({
-      statusCode: 500,
+      status: 500,
       message: validateForm.error?.issues.map(c => c.message)?.join(';'),
     })
   }

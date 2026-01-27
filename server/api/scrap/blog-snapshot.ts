@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
   catch (error) {
     if (error) {
       throw createError({
-        statusCode: 422,
+        status: 422,
         message: error.toString(),
       })
     }

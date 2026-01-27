@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
   if (!Array.isArray(ids)) {
     throw createError({
-      statusCode: 400,
+      status: 400,
       message: '参数`ids`类型为数组',
     })
   }

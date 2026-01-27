@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
   const countElement = page.locator('[data-e2e="user-tab-count"]')
   const count = await countElement.evaluate(node => node.innerText).catch((e) => {
     createError({
-      statusCode: 500,
+      status: 500,
       message: (e as Error).message,
     })
   })
@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
 
   const buffer = await page.locator('[data-e2e="user-post-list"] > ul').screenshot().catch((e) => {
     createError({
-      statusCode: 500,
+      status: 500,
       message: (e as Error).message,
     })
   })

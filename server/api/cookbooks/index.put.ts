@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
   if (!body.id) {
     throw createError({
-      statusCode: 422,
+      status: 422,
       message: 'id不能为空',
     })
   }

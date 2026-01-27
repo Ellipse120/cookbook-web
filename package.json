@@ -31,7 +31,7 @@
     "@vue/test-utils": "^2.4.6",
     "drizzle-kit": "^0.30.4",
     "happy-dom": "^15.7.4",
-    "nuxt": "^4.2.2",
+    "nuxt": "^4.3.0",
     "nuxt-auth-utils": "0.3.8",
     "nuxt-quasar-ui": "^3.0.0",
     "nuxt-security": "2.5.1",

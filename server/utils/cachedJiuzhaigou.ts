@@ -70,7 +70,7 @@ export const cachedGHStars = defineCachedFunction(
 
     const responseData = await Promise.allSettled(promises).catch((_) => {
       throw createError({
-        statusCode: 500,
+        status: 500,
         message: 'json parse error or request error',
       })
     })

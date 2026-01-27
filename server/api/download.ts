@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   }
   catch {
     throw createError({
-      statusCode: 500,
+      status: 500,
       message: '文件不存在',
     })
   }

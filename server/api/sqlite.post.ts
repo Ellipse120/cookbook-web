@@ -12,7 +12,7 @@ export default eventHandler(async (event) => {
       id: users.id,
     }).catch((err) => {
       throw createError({
-        statusCode: 500,
+        status: 500,
         message: err.message,
       })
     })
