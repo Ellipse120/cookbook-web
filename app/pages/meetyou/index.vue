@@ -109,6 +109,7 @@ const babyRecordOptions = computed(() => {
           format: '{value}',
           style: {
             color: highCharts.getOptions().colors[1],
+            fontWeight: 900,
           },
         },
         title: {
@@ -211,14 +212,13 @@ const babyRecordOptions = computed(() => {
             <q-card
               v-for="list_item in babyRecordDates"
               :key="list_item"
-              class="w-1/4"
             >
               <q-card-section>
                 {{ list_item }}
               </q-card-section>
 
               <q-card-actions>
-                <div class="pl-2">
+                <div class="pl-2 pr-4">
                   {{ getSummary(list_item)?.detail?.length ?? 0 }} 个事件
                 </div>
 
