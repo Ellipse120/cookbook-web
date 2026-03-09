@@ -306,6 +306,7 @@ const babyRecordOptions = computed(() => {
                 :title="`${currentDates?.toString()} 喂养记录详情`"
                 :rows="babyRecordRows"
                 row-key="id"
+                :rows-per-page-options="[5, 10, 0]"
               />
             </q-dialog>
           </div>
@@ -331,6 +332,7 @@ const babyRecordOptions = computed(() => {
 
             <q-list
               separator
+              class="max-h-80vh overflow-y-auto"
             >
               <q-item>
                 <q-item-section>
