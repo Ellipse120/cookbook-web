@@ -1,5 +1,184 @@
 [
   {
+    "date": "2025-09-19",
+    "records": [
+      {
+        "id": 4793400001,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2025-09-19 13:30:00",
+        "end_at": "2025-09-19 13:35:00",
+        "record_detail": {
+          "bottle_feed_capacity": 10
+        },
+        "quantity": 10,
+        "remark": "第一口配方奶",
+        "status": 1,
+        "update_at": "2025-09-19 13:35:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "10ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4793400002,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2025-09-19 16:00:00",
+        "end_at": "2025-09-19 16:05:00",
+        "record_detail": {
+          "bottle_feed_capacity": 15
+        },
+        "quantity": 15,
+        "remark": "",
+        "status": 1,
+        "update_at": "2025-09-19 16:05:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "15ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4793400003,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2025-09-19 19:00:00",
+        "end_at": "2025-09-19 19:05:00",
+        "record_detail": {
+          "bottle_feed_capacity": 15
+        },
+        "quantity": 15,
+        "remark": "",
+        "status": 1,
+        "update_at": "2025-09-19 19:05:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "15ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4793400004,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2025-09-19 19:17:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2025-09-19 19:17:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 4793400005,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2025-09-19 22:00:00",
+        "end_at": "2025-09-19 22:05:00",
+        "record_detail": {
+          "bottle_feed_capacity": 15
+        },
+        "quantity": 15,
+        "remark": "",
+        "status": 1,
+        "update_at": "2025-09-19 22:05:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "15ml",
+        "unit_type": 2,
+        "draft_id": 0
+      },
+      {
+        "id": 4793400006,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2025-09-19 22:38:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 1,
+          "shit_shape": 1
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2025-09-19 22:38:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭 黑色、糊状",
+        "unit_type": 0,
+        "draft_id": 0
+      }
+    ],
+    "summary": {
+      "date": "2025-09-19",
+      "datail": [
+        {
+          "uni": "1_13",
+          "name": "配方奶",
+          "record_type": 1,
+          "count": 4,
+          "time": 0,
+          "milliliter": 50,
+          "gram": 0,
+          "new_gram": ""
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 2,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": ""
+        }
+      ]
+    }
+  },
+  {
     "date": "2025-12-28",
     "records": [
       {
