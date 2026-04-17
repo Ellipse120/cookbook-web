@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { randomInt } from 'es-toolkit/math'
 import type { MockUser } from '~~/shared/types/types'
 
 const { $api } = useNuxtApp()
@@ -19,7 +20,7 @@ const paginationOfUsers = ref({
 })
 
 const handleDbSeed = async () => {
-  const mockUserId = useRandom(2, 100)
+  const mockUserId = randomInt(2, 100)
   const { data } = await $api('/api/sqlite', {
     method: 'post',
     body: {

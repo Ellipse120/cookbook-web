@@ -1,5 +1,5 @@
 import { chromium } from 'playwright'
-import random from 'lodash/random.js'
+import { randomInt } from 'es-toolkit/math'
 
 const uaList = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     headless: true,
   })
   const context = await browser.newContext({
-    userAgent: uaList[random(0, uaList.length - 1)],
+    userAgent: uaList[randomInt(0, uaList.length - 1)],
   })
 
   context.setDefaultTimeout(timeout)

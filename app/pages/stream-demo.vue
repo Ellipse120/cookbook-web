@@ -4,7 +4,7 @@ definePageMeta({
 })
 const { $api } = useNuxtApp()
 
-const result = ref([])
+const result = ref<string[]>([])
 
 const response = await $api.raw('/api/stream-demo', {
   responseType: 'stream',
