@@ -2,6 +2,7 @@ import { chromium } from 'playwright'
 import { randomInt } from 'es-toolkit/math'
 
 const uaList = [
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
@@ -33,7 +34,17 @@ export default defineEventHandler(async (event) => {
     })
   })
 
-  await page.evaluate('[...document.getElementsByClassName(\'screen-mask login-mask-enter-done\'), ...document.querySelectorAll(\'[id^="login-full-panel"]\')].every(el => el?.remove())')
+  await page.evaluate(`
+    [
+      ...document.getElementsByClassName('screen-mask login-mask-enter-done'),
+      ...document.querySelectorAll('[id^="login-full-panel"]')
+    ].every(el => el?.remove())
+  `)
+  await page.waitForTimeout(3000)
+  await page.evaluate(`
+    const refreshEl = document.querySelector('[data-e2e="user-post-list"] > div > div > span')
+    refreshEl && refreshEl.click()
+  `)
 
   const buffer = await page.locator('[data-e2e="user-post-list"] > ul').screenshot().catch((e) => {
     createError({
