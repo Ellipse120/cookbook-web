@@ -186,8 +186,12 @@ const isDarkMode = computed(() => $q.dark.isActive)
         v-model="rightDrawerOpen"
         side="right"
         bordered
+        show-if-above
       >
-        <div class="flex align-center justify-center p-4 gap-4">
+        <div
+          class="flex align-center justify-center p-4 gap-4"
+          @click="toggleRightDrawer"
+        >
           <NuxtLink
             to="/code-snippets"
             class="no-underline"
