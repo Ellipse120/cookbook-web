@@ -4,6 +4,6 @@ const { data: babyRecord } = useNuxtData('babyRecord')
 
 <template>
   <div>
-    {{ babyRecord.records[0] }}
+    {{ babyRecord?.records[0] }}
   </div>
 </template>
