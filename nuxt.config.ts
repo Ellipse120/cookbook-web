@@ -1,20 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
 
   extends: [
     '@lusai/base-api-layer',
   ],
 
-  app: {
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-    },
-    head: {
-      title: 'Cookbook Web',
-    },
-  },
+  modules: [
+    'nuxt-quasar-ui',
+    '@nuxt/image',
+    '@vueuse/nuxt',
+    'nuxt-security',
+    '@formkit/nuxt',
+    'nuxt-auth-utils',
+    '@nuxt/eslint',
+    '@nuxt/test-utils/module',
+    '@nuxt/content',
+    '@unocss/nuxt',
+  ],
 
   $development: {
     app: {
@@ -42,75 +44,19 @@ export default defineNuxtConfig({
   pages: {
     pattern: ['**/*.vue', '!**/components/**'],
   },
+  devtools: { enabled: true },
 
-  runtimeConfig: {
-    public: {
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
     },
-  },
-
-  modules: [
-    'nuxt-quasar-ui',
-    '@nuxt/image',
-    '@vueuse/nuxt',
-    'nuxt-security',
-    '@formkit/nuxt',
-    'nuxt-auth-utils',
-    '@nuxt/eslint',
-    '@nuxt/test-utils/module',
-    '@nuxt/content',
-    '@unocss/nuxt',
-  ],
-
-  // vue: {
-  //   compilerOptions: {
-  //     isCustomElement: (tag) => tag.startsWith("FormKit")
-  //   }
-  // },
-
-  image: {
-    dir: '/public/uploads',
-  },
-
-  quasar: {
-    plugins: ['Notify'],
-    config: {
-      brand: {
-        positive: '#32bf1e',
-        negative: 'rgb(242,83,84)',
-      },
-      dark: 'auto',
+    head: {
+      title: 'Cookbook Web',
     },
-  },
-
-  security: {
-    rateLimiter: {
-      tokensPerInterval: 100,
-      interval: 300000,
-    },
-    headers: {
-      crossOriginEmbedderPolicy: 'require-corp',
-      contentSecurityPolicy: {
-        'img-src': false,
-        'script-src': false,
-      },
-    },
-  },
-
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
-
-  formkit: {
-    autoImport: true,
   },
 
   content: {
-    // api: {
-    // baseURL: '/api/content',
-    // },
     build: {
       markdown: {
         highlight: {
@@ -129,6 +75,12 @@ export default defineNuxtConfig({
           ],
         },
       },
+    },
+  },
+
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     },
   },
 
@@ -178,6 +130,8 @@ export default defineNuxtConfig({
     },
   },
 
+  compatibilityDate: '2025-07-15',
+
   nitro: {
     experimental: {
       tasks: true,
@@ -196,5 +150,48 @@ export default defineNuxtConfig({
     ],
   },
 
-  compatibilityDate: '2025-07-15',
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
+
+  formkit: {
+    autoImport: true,
+  },
+
+  // vue: {
+  //   compilerOptions: {
+  //     isCustomElement: (tag) => tag.startsWith("FormKit")
+  //   }
+  // },
+
+  image: {
+    dir: '/public/uploads',
+  },
+
+  quasar: {
+    plugins: ['Notify'],
+    config: {
+      brand: {
+        positive: '#32bf1e',
+        negative: 'rgb(242,83,84)',
+      },
+      dark: 'auto',
+    },
+  },
+
+  security: {
+    rateLimiter: {
+      tokensPerInterval: 100,
+      interval: 300000,
+    },
+    headers: {
+      crossOriginEmbedderPolicy: 'require-corp',
+      contentSecurityPolicy: {
+        'img-src': false,
+        'script-src': false,
+      },
+    },
+  },
 })

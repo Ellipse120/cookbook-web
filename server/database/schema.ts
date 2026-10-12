@@ -1,5 +1,5 @@
 import { sqliteTable, integer, text, int } from 'drizzle-orm/sqlite-core'
-import { sql, relations } from 'drizzle-orm'
+import { sql } from 'drizzle-orm'
 
 export const users = sqliteTable('users', {
   id: int().primaryKey({ autoIncrement: true }),
@@ -14,13 +14,6 @@ export const comments = sqliteTable('comments', {
   createdAt: text().default(sql`(CURRENT_DATE)`),
   cookbookId: integer('cookbook_id'),
 })
-
-export const commentsRelations = relations(comments, ({ one }) => ({
-  cookbook: one(cookbooks, {
-    fields: [comments.cookbookId],
-    references: [cookbooks.id],
-  }),
-}))
 
 export const cookbooks = sqliteTable('cookbooks', {
   id: int().primaryKey({ autoIncrement: true }),
@@ -37,6 +30,14 @@ export const cookbooks = sqliteTable('cookbooks', {
   updatedAt: text().default(sql`(CURRENT_DATE)`),
 })
 
-export const cookbooksRelations = relations(cookbooks, ({ many }) => ({
-  comments: many(comments),
-}))
+// export const commentsRelations = defineRelations({ cookbooks, comments }, r => ({
+//   comments: {
+//     cookbook: r.one.cookbooks({
+//       from: r.comments.cookbookId,
+//       to: r.cookbooks.id,
+//     }),
+//   },
+//   cookbooks: {
+//     comments: r.many.comments(),
+//   },
+// }))

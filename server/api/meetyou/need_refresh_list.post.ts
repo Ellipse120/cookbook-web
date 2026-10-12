@@ -11,13 +11,11 @@ export default defineEventHandler(async (event) => {
   const dates = body.dates
   const needRefresh = body.needRefresh
 
-  let currentData = []
-
   await access(jsonPath, constants.F_OK)
 
   const content = await readFile(resolve(jsonPath), { encoding: 'utf-8' })
 
-  currentData = JSON.parse(content)
+  const currentData = JSON.parse(content)
 
   if (needRefresh && dates) {
     remove(currentData, item => item.date === dates)

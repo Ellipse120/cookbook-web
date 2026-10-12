@@ -7,6 +7,7 @@ export default defineEventHandler(async () => {
       comments: true,
     },
   })
+  console.log(result)
 
   return result
 })

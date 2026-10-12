@@ -1,8 +1,8 @@
 import { drizzle } from 'drizzle-orm/libsql'
-import * as schema from '~~/server/database/schema'
+import { relations } from '~~/server/database/relations'
 
 export function useDb() {
   return drizzle(import.meta.env.DATABASE_URL!, {
-    schema,
+    relations,
   })
 }

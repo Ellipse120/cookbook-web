@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { writeFile, access, constants, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
@@ -777,7 +778,7 @@ const jsonPath = filePath + fileName
 const url = 'https://api-bbj.meiyou.com/v3/baby/my_baby_record?common_baby_id=266913376&guide_position=7&page_size=200'
 const authorization = 'XDS 7.u7Ii3wNnLBUbNFKKMWyjrgADd0tbVSaW_mL309JXJr0'
 
-const headers = {
+const headers: any = {
   'Host': 'api-bbj.meiyou.com',
   'source': 'IMYHomeRelativeContainerVC',
   'lang': 'zh',

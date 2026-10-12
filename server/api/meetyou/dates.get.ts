@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { writeFile, access, constants, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
@@ -116,7 +117,7 @@ const url = 'https://api-bbj.meiyou.com/v3/life/record/dates'
 const commonBabyId = 266913376
 const authorization = 'XDS 7.u7Ii3wNnLBUbNFKKMWyjrgADd0tbVSaW_mL309JXJr0'
 
-const headers = {
+const headers: any = {
   'Host': 'api-bbj.meiyou.com',
   'source': 'IMYHomeRelativeContainerVC',
   'lang': 'zh',
@@ -146,7 +147,7 @@ const headers = {
 }
 
 export default defineEventHandler(async () => {
-  const today: string = new Date().toISOString().split('T')[0]
+  const today: string = new Date().toISOString().split('T')[0]!
 
   await access(jsonPath, constants.F_OK).catch(async () => {
     await writeFile(jsonPath, '')
@@ -168,7 +169,7 @@ export default defineEventHandler(async () => {
       headers,
     })),
   )
-  const mergeDates = [...data2025.data.dates, ...data2026.data.dates]
+  const mergeDates = [...data2025!.data.dates, ...data2026!.data.dates]
 
   await writeFile(jsonPath, JSON.stringify(mergeDates, null, 2))
 

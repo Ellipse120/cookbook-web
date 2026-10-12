@@ -1,7 +1,6 @@
 import { writeFile, access, constants, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { sum } from 'es-toolkit/math'
-import { remove } from 'es-toolkit/compat'
 
 const filePath = 'public/meetyou/'
 const fileName = 'baby_list.json'
@@ -13,7 +12,7 @@ const authorization = 'XDS 7.u7Ii3wNnLBUbNFKKMWyjrgADd0tbVSaW_mL309JXJr0'
 const red_dot_cond_days_x = 0
 const size = 50
 
-const headers = {
+const headers: any = {
   'Host': 'api-bbj.meiyou.com',
   'source': 'IMYHomeRelativeContainerVC',
   'lang': 'zh',
@@ -48,7 +47,7 @@ export default defineEventHandler(async (event) => {
   const dates: Array<string> = query.dates || [today]
   const begin_date = Array.isArray(dates) ? dates[0] : dates
 
-  let currentData = []
+  let currentData
 
   await access(jsonPath, constants.F_OK).catch(async () => {
     await writeFile(jsonPath, JSON.stringify([], null, 2))
@@ -58,7 +57,7 @@ export default defineEventHandler(async (event) => {
 
   currentData = JSON.parse(content)
 
-  if (currentData.filter(item => dates.includes(item.date)).length) {
+  if (currentData.filter((item: any) => dates.includes(item.date)).length) {
     return currentData
   }
   else {

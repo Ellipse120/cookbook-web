@@ -1,6 +1,4 @@
-import { eq } from 'drizzle-orm'
 import { useDb } from '~/utils/db'
-import { cookbooks } from '~~/server/database/schema'
 
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
@@ -14,7 +12,9 @@ export default defineEventHandler(async (event) => {
   }
 
   const targetItem = await db.query.cookbooks.findFirst({
-    where: eq(cookbooks.id, Number(id)),
+    where: {
+      id: Number(id),
+    },
     with: {
       comments: true,
     },

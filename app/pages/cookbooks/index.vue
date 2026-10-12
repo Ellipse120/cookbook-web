@@ -2,7 +2,7 @@
 import type { Cookbook } from '~~/shared/types/types'
 
 definePageMeta({
-  middleware: 'auth',
+  // middleware: 'auth',
 })
 
 const $q = useQuasar()
