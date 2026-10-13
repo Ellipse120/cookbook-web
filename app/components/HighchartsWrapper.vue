@@ -1,5 +1,8 @@
 <template>
-  <div class="px-4">
+  <div
+    class="px-4 highcharts-light"
+    :class="{ 'highcharts-dark': colorMode }"
+  >
     <NuxtErrorBoundary>
       <Chart
         ref="highchartsRef"
@@ -27,15 +30,16 @@
 </template>
 
 <script setup>
-// import * as Highcharts from 'highcharts'
 import { Chart } from 'highcharts-vue'
 import 'highcharts/modules/accessibility'
 import 'highcharts/modules/variable-pie'
 import 'highcharts/modules/treemap'
 import 'highcharts/highcharts-more'
-// import bubble from 'highcharts/highcharts-more'
 
 const highchartsRef = useTemplateRef('highchartsRef')
+
+const $q = useQuasar()
+const colorMode = computed(() => $q.dark.mode)
 
 const props = defineProps({
   options: {
@@ -47,6 +51,18 @@ const props = defineProps({
     default: false,
   },
 })
+
+const defaultOption = {
+  // Common options for all series
+  chart: {
+    // styledMode: true,
+  },
+  plotOptions: {
+    series: {
+      marker: {},
+    },
+  },
+}
 
 const chartOptions = computed(() => ({
   ...{
@@ -65,6 +81,7 @@ const chartOptions = computed(() => ({
     ],
   },
   ...props.options,
+  ...defaultOption,
 }))
 
 onMounted(() => {

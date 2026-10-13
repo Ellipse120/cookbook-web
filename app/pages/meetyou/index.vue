@@ -1,4 +1,6 @@
 <script setup>
+import Hgb from './components/hgb.vue'
+
 const highCharts = inject('Highcharts')
 const { $api } = useNuxtApp()
 const splitterModel = ref(50)
@@ -393,13 +395,17 @@ const babyRecordOptions = computed(() => {
             </q-list>
 
             <q-dialog v-model="babyRecordDialogVisible">
-              <ClientOnly>
-                <HighchartsWrapper
-                  ref="charts"
-                  class="!w-4/5 !max-w-4/5"
-                  :options="babyRecordOptions"
-                />
-              </ClientOnly>
+              <div class="!w-96vw !max-w-4/5">
+                <ClientOnly>
+                  <HighchartsWrapper
+                    ref="charts"
+                    :options="babyRecordOptions"
+                  />
+                </ClientOnly>
+                <div>
+                  <Hgb />
+                </div>
+              </div>
             </q-dialog>
           </div>
         </template>

@@ -1,18 +1,5 @@
-<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script lang="ts" setup>
 const { data: babyRecord } = useNuxtData('babyRecord')
-const normalHemoglobinRange = [104, 143]
-const hemoglobinUnit = 'g/L'
-const xiaomanHemoglobinData = [
-  {
-    date: '2026-10-13',
-    value: 116,
-  },
-  {
-    date: '2026-08-24',
-    value: 130,
-  },
-]
 </script>
 
 <template>
