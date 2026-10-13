@@ -10,6 +10,10 @@ const xiaomanHemoglobinData = [
     date: '2026-08-24',
     value: 130,
   },
+  {
+    date: '2026-03-20',
+    value: 123,
+  },
 ]
 
 const babyHgbOptions = computed(() => ({
