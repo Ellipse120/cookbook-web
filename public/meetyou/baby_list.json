@@ -228763,89 +228763,6 @@
     }
   },
   {
-    "date": "2026-10-13",
-    "records": [
-      {
-        "id": 6313931991,
-        "user_id": 608367633,
-        "uni": "4_0",
-        "record_type": 4,
-        "record_category": 41,
-        "start_at": "2026-10-13 08:05:00",
-        "end_at": "",
-        "record_detail": {},
-        "quantity": 0,
-        "remark": "",
-        "status": 1,
-        "update_at": "2026-10-13 08:05:10",
-        "can_edit": true,
-        "follower": {
-          "user_id": 608367633,
-          "relation_name": "爸爸"
-        },
-        "record_type_name": "换尿布",
-        "record_content": "嘘嘘",
-        "unit_type": 0,
-        "draft_id": 0
-      },
-      {
-        "id": 6313810222,
-        "user_id": 409898538,
-        "uni": "2_0",
-        "record_type": 2,
-        "record_category": 0,
-        "start_at": "2026-10-13 00:00:00",
-        "end_at": "2026-10-13 07:30:00",
-        "record_detail": {
-          "relation_id": 6313810221,
-          "time_source": 1
-        },
-        "quantity": 27000,
-        "remark": "",
-        "status": 1,
-        "update_at": "2026-10-13 07:42:00",
-        "can_edit": true,
-        "follower": {
-          "user_id": 409898538,
-          "relation_name": "妈妈"
-        },
-        "record_type_name": "睡眠",
-        "record_content": "睡了7小时30分钟",
-        "unit_type": 1,
-        "draft_id": 247665677
-      }
-    ],
-    "summary": {
-      "date": "2026-10-13",
-      "detail": [
-        {
-          "uni": "2_0",
-          "name": "睡眠",
-          "record_type": 2,
-          "count": 1,
-          "time": 27000,
-          "milliliter": 0,
-          "gram": 0,
-          "new_gram": "",
-          "time_left": 0,
-          "time_right": 0
-        },
-        {
-          "uni": "4_0",
-          "name": "换尿布",
-          "record_type": 4,
-          "count": 1,
-          "time": 0,
-          "milliliter": 0,
-          "gram": 0,
-          "new_gram": "",
-          "time_left": 0,
-          "time_right": 0
-        }
-      ]
-    }
-  },
-  {
     "date": "2026-10-12",
     "records": [
       {
@@ -229134,5 +229051,5393 @@
         "value": "2"
       }
     ]
+  },
+  {
+    "date": "2026-11-04",
+    "records": [
+      {
+        "id": 6434306605,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-04 14:41:00",
+        "end_at": "2026-11-04 16:56:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 8100,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 17:00:12",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时15分钟",
+        "unit_type": 1,
+        "draft_id": 259249858
+      },
+      {
+        "id": 6433665183,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-04 14:34:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 14:34:18",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6433640768,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-11-04 14:28:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 14:28:37",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6432671894,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-04 10:34:00",
+        "end_at": "2026-11-04 11:03:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 1740,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 11:07:23",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了29分钟",
+        "unit_type": 1,
+        "draft_id": 259110859
+      },
+      {
+        "id": 6431785596,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-04 08:05:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 08:05:14",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6431564384,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-04 00:00:00",
+        "end_at": "2026-11-04 06:46:00",
+        "record_detail": {
+          "relation_id": 6431564383,
+          "time_source": 1
+        },
+        "quantity": 24360,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 07:20:32",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时46分钟",
+        "unit_type": 1,
+        "draft_id": 258971983
+      }
+    ],
+    "summary": {
+      "date": "2026-11-04",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 34200,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 2,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-13",
+    "records": [
+      {
+        "id": 6318620096,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-13 19:20:00",
+        "end_at": "2026-10-13 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 16799,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 04:55:13",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时40分钟",
+        "unit_type": 1,
+        "draft_id": 248080632
+      },
+      {
+        "id": 6316999428,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-13 19:18:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-13 19:19:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6315981819,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-13 14:14:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-13 15:25:10",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6315564843,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-13 11:35:31",
+        "end_at": "2026-10-13 13:46:27",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7856,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-13 13:46:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时11分钟",
+        "unit_type": 1,
+        "draft_id": 247868234
+      },
+      {
+        "id": 6313931991,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-13 08:05:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-13 08:05:10",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6313810222,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-13 00:00:00",
+        "end_at": "2026-10-13 07:30:00",
+        "record_detail": {
+          "relation_id": 6313810221,
+          "time_source": 1
+        },
+        "quantity": 27000,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-13 07:42:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时30分钟",
+        "unit_type": 1,
+        "draft_id": 247665677
+      }
+    ],
+    "summary": {
+      "date": "2026-10-13",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 51655,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-14",
+    "records": [
+      {
+        "id": 6324184364,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-14 19:10:31",
+        "end_at": "2026-10-14 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 17368,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 06:21:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时49分钟",
+        "unit_type": 1,
+        "draft_id": 248586222
+      },
+      {
+        "id": 6322364209,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-14 19:00:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 19:18:53",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6321518603,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-14 16:04:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 16:04:53",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6320955616,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-14 13:53:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 13:53:21",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6320833029,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-14 12:40:00",
+        "end_at": "2026-10-14 13:25:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 2700,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 13:27:07",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了45分钟",
+        "unit_type": 1,
+        "draft_id": 248414497
+      },
+      {
+        "id": 6319941098,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-14 10:03:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 2,
+          "shit_shape": 7
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 10:19:58",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 黄绿色、泥土状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6319939747,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-14 08:19:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 10:19:40",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6319258853,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-14 05:35:00",
+        "end_at": "2026-10-14 07:45:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7800,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 07:59:58",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时10分钟",
+        "unit_type": 1,
+        "draft_id": 248265129
+      },
+      {
+        "id": 6318645416,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-14 05:00:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 05:07:25",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6318620097,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-14 00:00:00",
+        "end_at": "2026-10-14 04:10:00",
+        "record_detail": {
+          "relation_id": 6318620096,
+          "time_source": 1
+        },
+        "quantity": 15000,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-14 04:55:13",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时10分钟",
+        "unit_type": 1,
+        "draft_id": 248080632
+      }
+    ],
+    "summary": {
+      "date": "2026-10-14",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 42868,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 5,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-17",
+    "records": [
+      {
+        "id": 6340164346,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-17 19:36:00",
+        "end_at": "2026-10-17 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 15839,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 06:14:29",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时24分钟",
+        "unit_type": 1,
+        "draft_id": 250130990
+      },
+      {
+        "id": 6338315711,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-17 18:40:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 19:04:37",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6338318555,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-17 18:30:00",
+        "end_at": "2026-10-17 18:38:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 19:05:19",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "8分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6337416400,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-17 13:35:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 15:35:31",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6336820881,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-17 12:21:00",
+        "end_at": "2026-10-17 13:16:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 3300,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 13:21:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了55分钟",
+        "unit_type": 1,
+        "draft_id": 249934634
+      },
+      {
+        "id": 6337416044,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-17 07:35:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 15:35:26",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6335014318,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-17 00:00:00",
+        "end_at": "2026-10-17 06:56:00",
+        "record_detail": {
+          "relation_id": 6335014317,
+          "time_source": 1
+        },
+        "quantity": 24960,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 07:03:18",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时56分钟",
+        "unit_type": 1,
+        "draft_id": 249671107
+      }
+    ],
+    "summary": {
+      "date": "2026-10-17",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 44099,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 480,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-16",
+    "records": [
+      {
+        "id": 6335014317,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-16 21:10:00",
+        "end_at": "2026-10-16 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10199,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-17 07:03:18",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时50分钟",
+        "unit_type": 1,
+        "draft_id": 249671107
+      },
+      {
+        "id": 6332915220,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-16 18:45:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 18:45:30",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6332916077,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-16 18:31:00",
+        "end_at": "2026-10-16 18:43:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 18:45:42",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "12分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6332628717,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-16 17:38:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素AD",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 17:38:56",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素AD，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6332585219,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-16 16:01:25",
+        "end_at": "2026-10-16 17:28:48",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 5243,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 17:28:50",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时27分钟",
+        "unit_type": 1,
+        "draft_id": 249547121
+      },
+      {
+        "id": 6332586434,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-16 13:28:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 17:29:08",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6330809307,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-16 08:56:00",
+        "end_at": "2026-10-16 10:41:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 6300,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 10:57:48",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时45分钟",
+        "unit_type": 1,
+        "draft_id": 249334442
+      },
+      {
+        "id": 6330224446,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-16 08:51:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 08:51:09",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6330812870,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-16 04:30:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 10:58:35",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6329376556,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-16 00:00:00",
+        "end_at": "2026-10-16 03:35:00",
+        "record_detail": {
+          "relation_id": 6329376555,
+          "time_source": 1
+        },
+        "quantity": 12900,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 05:18:18",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了3小时35分钟",
+        "unit_type": 1,
+        "draft_id": 249149741
+      }
+    ],
+    "summary": {
+      "date": "2026-10-16",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 34642,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 4,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 720,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-15",
+    "records": [
+      {
+        "id": 6329376555,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-15 21:00:00",
+        "end_at": "2026-10-15 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10799,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-16 05:18:18",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了3小时",
+        "unit_type": 1,
+        "draft_id": 249149741
+      },
+      {
+        "id": 6327724532,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-15 19:20:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 3,
+          "shit_shape": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 19:21:14",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 墨绿色、干稠",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6326715101,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-15 15:29:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 15:29:32",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6326652982,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-15 15:14:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 15:15:04",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6326652307,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-15 15:10:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 15:14:55",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6326429942,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-15 11:09:10",
+        "end_at": "2026-10-15 14:21:44",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 11554,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 14:21:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了3小时13分钟",
+        "unit_type": 1,
+        "draft_id": 248879322
+      },
+      {
+        "id": 6324365570,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-15 07:06:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 07:09:43",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6324184365,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-15 00:00:00",
+        "end_at": "2026-10-15 06:21:00",
+        "record_detail": {
+          "relation_id": 6324184364,
+          "time_source": 1
+        },
+        "quantity": 22860,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-15 06:21:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时21分钟",
+        "unit_type": 1,
+        "draft_id": 248586222
+      }
+    ],
+    "summary": {
+      "date": "2026-10-15",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 45213,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 2,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-18",
+    "records": [
+      {
+        "id": 6346767203,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-18 21:39:00",
+        "end_at": "2026-10-18 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 8459,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 10:59:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时21分钟",
+        "unit_type": 1,
+        "draft_id": 250712025
+      },
+      {
+        "id": 6344322402,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-18 19:40:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 21:40:59",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6344323577,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-18 19:30:00",
+        "end_at": "2026-10-18 19:38:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 21:41:15",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "8分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6344319081,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-18 14:50:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 21:40:12",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6342449011,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-18 12:15:15",
+        "end_at": "2026-10-18 14:32:27",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 8232,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 14:32:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时17分钟",
+        "unit_type": 1,
+        "draft_id": 250443607
+      },
+      {
+        "id": 6341178052,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-18 09:45:17",
+        "end_at": "2026-10-18 09:57:45",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 748,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 09:57:45",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了12分钟",
+        "unit_type": 1,
+        "draft_id": 250373279
+      },
+      {
+        "id": 6340925862,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-18 08:25:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 2,
+          "shit_shape": 8
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 09:05:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 黄绿色、颗粒状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6340921695,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-18 06:44:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 09:04:44",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6340164347,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-18 00:00:00",
+        "end_at": "2026-10-18 06:01:00",
+        "record_detail": {
+          "relation_id": 6340164346,
+          "time_source": 1
+        },
+        "quantity": 21660,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-18 06:14:29",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时1分钟",
+        "unit_type": 1,
+        "draft_id": 250130990
+      }
+    ],
+    "summary": {
+      "date": "2026-10-18",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 39099,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 4,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 480,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-19",
+    "records": [
+      {
+        "id": 6350992517,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-19 19:59:00",
+        "end_at": "2026-10-19 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 14459,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 07:01:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时1分钟",
+        "unit_type": 1,
+        "draft_id": 251162638
+      },
+      {
+        "id": 6349208106,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-19 18:38:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 20:01:14",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6349211289,
+        "user_id": 409898538,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-19 18:28:00",
+        "end_at": "2026-10-19 18:37:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 20:01:39",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "9分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6349206091,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-19 13:20:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 20:00:36",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6347424235,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-19 10:55:00",
+        "end_at": "2026-10-19 13:12:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 8220,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 13:14:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时17分钟",
+        "unit_type": 1,
+        "draft_id": 250920871
+      },
+      {
+        "id": 6347206629,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-19 06:55:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 20:00:45",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6346767205,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-19 00:00:00",
+        "end_at": "2026-10-19 06:48:00",
+        "record_detail": {
+          "relation_id": 6346767203,
+          "time_source": 1
+        },
+        "quantity": 24480,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-19 10:59:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时48分钟",
+        "unit_type": 1,
+        "draft_id": 250712025
+      }
+    ],
+    "summary": {
+      "date": "2026-10-19",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 47159,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 540,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-20",
+    "records": [
+      {
+        "id": 6356275402,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-20 21:58:00",
+        "end_at": "2026-10-20 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7319,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-21 06:42:26",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时2分钟",
+        "unit_type": 1,
+        "draft_id": 251755062
+      },
+      {
+        "id": 6354287365,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-20 18:42:00",
+        "end_at": "2026-10-20 18:50:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 18:56:30",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "8分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6354186999,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-20 18:33:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 2,
+          "shit_shape": 7
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 18:33:23",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 黄绿色、泥土状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6353603024,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-20 16:19:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 16:19:39",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6353208350,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-20 14:48:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 14:48:44",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6352994201,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-20 11:46:07",
+        "end_at": "2026-10-20 13:58:04",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7917,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 13:58:08",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时12分钟",
+        "unit_type": 1,
+        "draft_id": 251456703
+      },
+      {
+        "id": 6352374476,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-20 07:15:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 11:51:42",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6350992518,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-20 00:00:00",
+        "end_at": "2026-10-20 06:58:00",
+        "record_detail": {
+          "relation_id": 6350992517,
+          "time_source": 1
+        },
+        "quantity": 25080,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-20 07:01:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时58分钟",
+        "unit_type": 1,
+        "draft_id": 251162638
+      }
+    ],
+    "summary": {
+      "date": "2026-10-20",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 40316,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 480,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-23",
+    "records": [
+      {
+        "id": 6372531748,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-23 22:20:44",
+        "end_at": "2026-10-23 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 5955,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 07:36:59",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时39分钟",
+        "unit_type": 1,
+        "draft_id": 253288710
+      },
+      {
+        "id": 6370255253,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-23 18:15:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 18:40:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6369492466,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-23 13:10:23",
+        "end_at": "2026-10-23 15:44:01",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 9218,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 15:44:01",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时34分钟",
+        "unit_type": 1,
+        "draft_id": 253047194
+      },
+      {
+        "id": 6368404023,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-23 11:18:07",
+        "end_at": "2026-10-23 11:43:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 1493,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 11:47:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了25分钟",
+        "unit_type": 1,
+        "draft_id": 252977163
+      },
+      {
+        "id": 6369417945,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-23 11:02:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 15:26:57",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6367515938,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-23 08:35:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 08:35:11",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6367198946,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-23 07:27:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 07:33:14",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6367117718,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-23 00:00:00",
+        "end_at": "2026-10-23 07:02:00",
+        "record_detail": {
+          "relation_id": 6367117716,
+          "time_source": 1
+        },
+        "quantity": 25320,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 07:15:49",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时2分钟",
+        "unit_type": 1,
+        "draft_id": 252724852
+      }
+    ],
+    "summary": {
+      "date": "2026-10-23",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 41986,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-22",
+    "records": [
+      {
+        "id": 6367117716,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-22 20:50:00",
+        "end_at": "2026-10-22 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 11399,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-23 07:15:49",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了3小时10分钟",
+        "unit_type": 1,
+        "draft_id": 252724852
+      },
+      {
+        "id": 6365460318,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-22 20:20:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 20:40:24",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6364468327,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-22 16:32:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 16:56:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6365168390,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-22 15:40:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 19:37:44",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6363926036,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-22 12:52:53",
+        "end_at": "2026-10-22 15:25:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 9127,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 15:25:51",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时32分钟",
+        "unit_type": 1,
+        "draft_id": 252513100
+      },
+      {
+        "id": 6362783292,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-22 10:23:00",
+        "end_at": "2026-10-22 10:45:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 1320,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 10:47:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了22分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6362279587,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-22 08:57:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 08:57:06",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6361991479,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-22 02:38:00",
+        "end_at": "2026-10-22 07:45:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 18420,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 08:01:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了5小时7分钟",
+        "unit_type": 1,
+        "draft_id": 252335113
+      },
+      {
+        "id": 6361994039,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-22 00:00:00",
+        "end_at": "2026-10-22 00:08:00",
+        "record_detail": {
+          "relation_id": 6360899682,
+          "time_source": 2
+        },
+        "quantity": 480,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 08:01:29",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了8分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      }
+    ],
+    "summary": {
+      "date": "2026-10-22",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 5,
+          "time": 40746,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-21",
+    "records": [
+      {
+        "id": 6360899682,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-21 19:39:00",
+        "end_at": "2026-10-21 23:59:59",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 15659,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 08:01:29",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时21分钟",
+        "unit_type": 1,
+        "draft_id": 252184958
+      },
+      {
+        "id": 6361084192,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-21 19:30:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 02:24:38",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6361083538,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-21 13:24:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-22 02:24:16",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6358079669,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-21 10:00:00",
+        "end_at": "2026-10-21 12:59:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10740,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-21 13:02:48",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时59分钟",
+        "unit_type": 1,
+        "draft_id": 251918480
+      },
+      {
+        "id": 6357315541,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-21 06:46:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-21 10:21:03",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6356275403,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-21 00:00:00",
+        "end_at": "2026-10-21 06:36:00",
+        "record_detail": {
+          "relation_id": 6356275402,
+          "time_source": 1
+        },
+        "quantity": 23760,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-21 06:42:26",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时36分钟",
+        "unit_type": 1,
+        "draft_id": 251755062
+      }
+    ],
+    "summary": {
+      "date": "2026-10-21",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 50159,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-24",
+    "records": [
+      {
+        "id": 6377601816,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-24 22:20:00",
+        "end_at": "2026-10-24 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 5999,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 06:37:26",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时40分钟",
+        "unit_type": 1,
+        "draft_id": 253802767
+      },
+      {
+        "id": 6376193051,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-24 20:00:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 21:00:17",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6376193865,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-24 19:50:00",
+        "end_at": "2026-10-24 19:59:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 21:00:28",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "9分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6375280107,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-24 16:15:00",
+        "end_at": "2026-10-24 17:30:30",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 4530,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 17:30:30",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时15分钟",
+        "unit_type": 1,
+        "draft_id": 253656942
+      },
+      {
+        "id": 6376192593,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-24 15:33:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 21:00:11",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6373927243,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-24 11:50:00",
+        "end_at": "2026-10-24 12:15:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 1500,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 12:29:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了25分钟",
+        "unit_type": 1,
+        "draft_id": 253497183
+      },
+      {
+        "id": 6373282919,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-24 08:08:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 10:08:53",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6372531749,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-24 00:00:00",
+        "end_at": "2026-10-24 07:36:59",
+        "record_detail": {
+          "relation_id": 6372531748,
+          "time_source": 1
+        },
+        "quantity": 27419,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-24 07:36:59",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时37分钟",
+        "unit_type": 1,
+        "draft_id": 253288710
+      }
+    ],
+    "summary": {
+      "date": "2026-10-24",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 39448,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 540,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-25",
+    "records": [
+      {
+        "id": 6383352072,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-25 21:50:27",
+        "end_at": "2026-10-25 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7772,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 08:16:59",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时10分钟",
+        "unit_type": 1,
+        "draft_id": 254295081
+      },
+      {
+        "id": 6381574302,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-25 20:00:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 21:16:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6380536542,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-25 15:23:35",
+        "end_at": "2026-10-25 17:21:22",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7067,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 17:21:22",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时58分钟",
+        "unit_type": 1,
+        "draft_id": 254136023
+      },
+      {
+        "id": 6381840678,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-25 13:16:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 22:21:36",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6379250368,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-25 12:00:13",
+        "end_at": "2026-10-25 12:33:57",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 2024,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 12:33:57",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了34分钟",
+        "unit_type": 1,
+        "draft_id": 254019003
+      },
+      {
+        "id": 6378067075,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-25 08:23:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 2,
+          "shit_shape": 8
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 09:52:23",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 黄绿色、颗粒状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6378065826,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-25 08:15:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 08:23:17",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6377601817,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-25 00:00:00",
+        "end_at": "2026-10-25 06:26:00",
+        "record_detail": {
+          "relation_id": 6377601816,
+          "time_source": 1
+        },
+        "quantity": 23160,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-25 06:37:26",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时26分钟",
+        "unit_type": 1,
+        "draft_id": 253802767
+      }
+    ],
+    "summary": {
+      "date": "2026-10-25",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 40023,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-26",
+    "records": [
+      {
+        "id": 6387374839,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-26 23:12:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 23:17:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6387299714,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-26 21:23:00",
+        "end_at": "2026-10-26 22:39:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 4560,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 22:50:01",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时16分钟",
+        "unit_type": 1,
+        "draft_id": 254786959
+      },
+      {
+        "id": 6386902881,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-26 20:45:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素AD",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 21:09:36",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素AD，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6386901679,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-26 19:09:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 21:09:21",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6385501211,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-26 15:57:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 15:57:44",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6384893554,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-26 11:25:13",
+        "end_at": "2026-10-26 13:37:37",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7944,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 13:37:38",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时12分钟",
+        "unit_type": 1,
+        "draft_id": 254507722
+      },
+      {
+        "id": 6384615559,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-26 08:03:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 12:42:17",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6383352074,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-26 00:00:00",
+        "end_at": "2026-10-26 08:16:59",
+        "record_detail": {
+          "relation_id": 6383352072,
+          "time_source": 1
+        },
+        "quantity": 29819,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-26 08:16:59",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了8小时17分钟",
+        "unit_type": 1,
+        "draft_id": 254295081
+      }
+    ],
+    "summary": {
+      "date": "2026-10-26",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 42323,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 4,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-29",
+    "records": [
+      {
+        "id": 6404780061,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-29 21:13:42",
+        "end_at": "2026-10-29 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 9977,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 07:46:33",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时46分钟",
+        "unit_type": 1,
+        "draft_id": 256321204
+      },
+      {
+        "id": 6402509002,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-29 18:56:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 19:03:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6402510233,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-10-29 18:45:00",
+        "end_at": "2026-10-29 18:54:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 19:03:45",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "9分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6401550402,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-29 15:25:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 15:26:00",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6403171184,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-29 13:25:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素AD",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 21:25:51",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素AD，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6401273901,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-29 12:30:36",
+        "end_at": "2026-10-29 14:20:52",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 6616,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 14:20:53",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时50分钟",
+        "unit_type": 1,
+        "draft_id": 256082385
+      },
+      {
+        "id": 6400783063,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-29 07:28:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 12:38:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6399233965,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-29 00:00:00",
+        "end_at": "2026-10-29 07:19:05",
+        "record_detail": {
+          "relation_id": 6399233964,
+          "time_source": 1
+        },
+        "quantity": 26345,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 07:19:06",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时19分钟",
+        "unit_type": 1,
+        "draft_id": 255859298
+      }
+    ],
+    "summary": {
+      "date": "2026-10-29",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 42938,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 540,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-28",
+    "records": [
+      {
+        "id": 6399233964,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-28 22:37:49",
+        "end_at": "2026-10-28 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 4930,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-29 07:19:06",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时22分钟",
+        "unit_type": 1,
+        "draft_id": 255859298
+      },
+      {
+        "id": 6397709313,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-28 21:13:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 21:13:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6397701214,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-28 20:28:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 3,
+          "shit_shape": 7
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 21:11:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 墨绿色、泥土状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6396949261,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-28 16:52:41",
+        "end_at": "2026-10-28 18:20:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 5239,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 18:27:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时27分钟",
+        "unit_type": 1,
+        "draft_id": 255703074
+      },
+      {
+        "id": 6396540688,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-28 13:54:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 16:55:03",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6395298153,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-28 11:47:00",
+        "end_at": "2026-10-28 12:20:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 1980,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 12:22:46",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了33分钟",
+        "unit_type": 1,
+        "draft_id": 255542479
+      },
+      {
+        "id": 6395215444,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-28 08:10:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 12:06:04",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6394079265,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-28 00:00:00",
+        "end_at": "2026-10-28 07:56:00",
+        "record_detail": {
+          "relation_id": 6394079264,
+          "time_source": 1
+        },
+        "quantity": 28560,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 08:07:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时56分钟",
+        "unit_type": 1,
+        "draft_id": 255230862
+      }
+    ],
+    "summary": {
+      "date": "2026-10-28",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 40709,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-27",
+    "records": [
+      {
+        "id": 6394079264,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-27 18:45:00",
+        "end_at": "2026-10-27 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 18899,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-28 08:07:27",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了5小时15分钟",
+        "unit_type": 1,
+        "draft_id": 255230862
+      },
+      {
+        "id": 6390502915,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-27 11:43:54",
+        "end_at": "2026-10-27 14:29:04",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 9910,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-27 14:29:04",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时45分钟",
+        "unit_type": 1,
+        "draft_id": 255027088
+      },
+      {
+        "id": 6389212126,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-10-27 09:32:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 3,
+          "shit_shape": 8
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-27 09:53:42",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 墨绿色、颗粒状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6389210713,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-27 02:58:00",
+        "end_at": "2026-10-27 08:45:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 20820,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-27 09:53:24",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了5小时47分钟",
+        "unit_type": 1,
+        "draft_id": 254890155
+      },
+      {
+        "id": 6387793730,
+        "user_id": 608367633,
+        "uni": "1_13",
+        "record_type": 1,
+        "record_category": 13,
+        "start_at": "2026-10-27 02:50:00",
+        "end_at": "2026-10-27 02:52:00",
+        "record_detail": {
+          "bottle_feed_capacity": 60
+        },
+        "quantity": 60,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-27 02:53:08",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "配方奶",
+        "record_content": "60ml",
+        "unit_type": 2,
+        "draft_id": 0
+      }
+    ],
+    "summary": {
+      "date": "2026-10-27",
+      "detail": [
+        {
+          "uni": "1_13",
+          "name": "配方奶",
+          "record_type": 1,
+          "count": 1,
+          "time": 0,
+          "milliliter": 60,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 49629,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-30",
+    "records": [
+      {
+        "id": 6410043953,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-30 21:06:00",
+        "end_at": "2026-10-30 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10439,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 07:24:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时54分钟",
+        "unit_type": 1,
+        "draft_id": 256829700
+      },
+      {
+        "id": 6408242368,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-30 19:20:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 20:20:25",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6407068747,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-10-30 15:52:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 15:52:23",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6407069362,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-30 15:48:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 15:52:32",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6406754582,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-30 12:05:39",
+        "end_at": "2026-10-30 14:39:32",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 9233,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 14:39:32",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时34分钟",
+        "unit_type": 1,
+        "draft_id": 256579513
+      },
+      {
+        "id": 6404950527,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-30 08:19:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 08:19:15",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6404780062,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-30 00:00:00",
+        "end_at": "2026-10-30 07:46:33",
+        "record_detail": {
+          "relation_id": 6404780061,
+          "time_source": 1
+        },
+        "quantity": 27993,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-30 07:46:33",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时47分钟",
+        "unit_type": 1,
+        "draft_id": 256321204
+      }
+    ],
+    "summary": {
+      "date": "2026-10-30",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 47665,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-10-31",
+    "records": [
+      {
+        "id": 6415397136,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-31 21:01:00",
+        "end_at": "2026-10-31 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10739,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 07:26:16",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时59分钟",
+        "unit_type": 1,
+        "draft_id": 257340525
+      },
+      {
+        "id": 6413602286,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-31 19:30:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 20:19:42",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6412871856,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-31 14:29:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 17:29:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6411870397,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-31 10:55:05",
+        "end_at": "2026-10-31 13:42:41",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 10056,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 13:42:41",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时48分钟",
+        "unit_type": 1,
+        "draft_id": 257059213
+      },
+      {
+        "id": 6410044533,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-10-31 07:24:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 07:24:15",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6410043956,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-10-31 00:00:00",
+        "end_at": "2026-10-31 07:15:00",
+        "record_detail": {
+          "relation_id": 6410043953,
+          "time_source": 1
+        },
+        "quantity": 26100,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-10-31 07:24:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时15分钟",
+        "unit_type": 1,
+        "draft_id": 256829700
+      }
+    ],
+    "summary": {
+      "date": "2026-10-31",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 46895,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-11-01",
+    "records": [
+      {
+        "id": 6420403977,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-01 19:41:00",
+        "end_at": "2026-11-01 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 15539,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 05:34:56",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了4小时19分钟",
+        "unit_type": 1,
+        "draft_id": 257813673
+      },
+      {
+        "id": 6418788321,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-01 18:50:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 19:43:06",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6418789437,
+        "user_id": 608367633,
+        "uni": "5_0",
+        "record_type": 5,
+        "record_category": 0,
+        "start_at": "2026-11-01 18:40:00",
+        "end_at": "2026-11-01 18:48:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 19:43:21",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "洗澡",
+        "record_content": "8分钟",
+        "unit_type": 1,
+        "draft_id": 0
+      },
+      {
+        "id": 6417474245,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-01 13:40:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 14:40:50",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6417097660,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-01 11:15:00",
+        "end_at": "2026-11-01 13:18:05",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 7385,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 13:18:05",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时3分钟",
+        "unit_type": 1,
+        "draft_id": 257582330
+      },
+      {
+        "id": 6415398335,
+        "user_id": 409898538,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-11-01 07:23:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 3,
+          "shit_shape": 7
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 07:26:31",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 墨绿色、泥土状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6415397137,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-01 00:00:00",
+        "end_at": "2026-11-01 07:15:00",
+        "record_detail": {
+          "relation_id": 6415397136,
+          "time_source": 1
+        },
+        "quantity": 26100,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-01 07:26:16",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时15分钟",
+        "unit_type": 1,
+        "draft_id": 257340525
+      }
+    ],
+    "summary": {
+      "date": "2026-11-01",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 49024,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "5_0",
+          "name": "洗澡",
+          "record_type": 5,
+          "count": 1,
+          "time": 480,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
+  },
+  {
+    "date": "2026-11-03",
+    "records": [
+      {
+        "id": 6431564383,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-03 23:55:00",
+        "end_at": "2026-11-03 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 299,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-04 07:20:32",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了5分钟",
+        "unit_type": 1,
+        "draft_id": 258971983
+      },
+      {
+        "id": 6430147626,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-03 20:10:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 21:38:13",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6429659557,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-03 17:07:29",
+        "end_at": "2026-11-03 19:44:00",
+        "record_detail": {
+          "time_source": 2
+        },
+        "quantity": 9391,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 19:57:11",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了2小时37分钟",
+        "unit_type": 1,
+        "draft_id": 258792054
+      },
+      {
+        "id": 6428394401,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-11-03 15:12:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素AD",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 15:12:35",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素AD，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6428395353,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-03 13:12:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 15:12:49",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6427775958,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-03 12:20:00",
+        "end_at": "2026-11-03 12:53:00",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 1980,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 12:56:54",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了33分钟",
+        "unit_type": 1,
+        "draft_id": 258642164
+      },
+      {
+        "id": 6426199608,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-03 07:33:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 07:33:33",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6426145420,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-03 00:00:00",
+        "end_at": "2026-11-03 07:10:00",
+        "record_detail": {
+          "relation_id": 6426145418,
+          "time_source": 1
+        },
+        "quantity": 25800,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 07:22:03",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了7小时10分钟",
+        "unit_type": 1,
+        "draft_id": 258292916
+      }
+    ],
+    "summary": {
+      "date": "2026-11-03",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 4,
+          "time": 37470,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 3,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    },
+    "append_params": [
+      {
+        "key": "tab",
+        "value": "2"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "records": [
+      {
+        "id": 6426145418,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-02 17:45:00",
+        "end_at": "2026-11-02 23:59:59",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 22499,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-03 07:22:03",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了6小时15分钟",
+        "unit_type": 1,
+        "draft_id": 258292916
+      },
+      {
+        "id": 6422513231,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 43,
+        "start_at": "2026-11-02 13:15:00",
+        "end_at": "",
+        "record_detail": {
+          "shit_color": 3,
+          "shit_shape": 8
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 13:26:50",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "臭臭+嘘嘘 墨绿色、颗粒状",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6421877878,
+        "user_id": 409898538,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-02 09:27:07",
+        "end_at": "2026-11-02 11:17:50",
+        "record_detail": {
+          "time_source": 1
+        },
+        "quantity": 6643,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 11:17:51",
+        "can_edit": true,
+        "follower": {
+          "user_id": 409898538,
+          "relation_name": "妈妈"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了1小时51分钟",
+        "unit_type": 1,
+        "draft_id": 258050149
+      },
+      {
+        "id": 6421347371,
+        "user_id": 608367633,
+        "uni": "4_0",
+        "record_type": 4,
+        "record_category": 41,
+        "start_at": "2026-11-02 07:20:00",
+        "end_at": "",
+        "record_detail": {},
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 09:21:02",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "换尿布",
+        "record_content": "嘘嘘",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6420604005,
+        "user_id": 608367633,
+        "uni": "11_0",
+        "record_type": 11,
+        "record_category": 0,
+        "start_at": "2026-11-02 06:48:00",
+        "end_at": "",
+        "record_detail": {
+          "nutritional_supplements": [
+            {
+              "name": "维生素D3",
+              "quantity": "1",
+              "unit": "粒"
+            }
+          ]
+        },
+        "quantity": 0,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 06:48:35",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "营养补剂",
+        "record_content": "维生素D3，1粒",
+        "unit_type": 0,
+        "draft_id": 0
+      },
+      {
+        "id": 6420403978,
+        "user_id": 608367633,
+        "uni": "2_0",
+        "record_type": 2,
+        "record_category": 0,
+        "start_at": "2026-11-02 00:00:00",
+        "end_at": "2026-11-02 05:30:00",
+        "record_detail": {
+          "relation_id": 6420403977,
+          "time_source": 1
+        },
+        "quantity": 19800,
+        "remark": "",
+        "status": 1,
+        "update_at": "2026-11-02 05:34:56",
+        "can_edit": true,
+        "follower": {
+          "user_id": 608367633,
+          "relation_name": "爸爸"
+        },
+        "record_type_name": "睡眠",
+        "record_content": "睡了5小时30分钟",
+        "unit_type": 1,
+        "draft_id": 257813673
+      }
+    ],
+    "summary": {
+      "date": "2026-11-02",
+      "detail": [
+        {
+          "uni": "2_0",
+          "name": "睡眠",
+          "record_type": 2,
+          "count": 3,
+          "time": 48942,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "4_0",
+          "name": "换尿布",
+          "record_type": 4,
+          "count": 2,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        },
+        {
+          "uni": "11_0",
+          "name": "营养补剂",
+          "record_type": 11,
+          "count": 1,
+          "time": 0,
+          "milliliter": 0,
+          "gram": 0,
+          "new_gram": "",
+          "time_left": 0,
+          "time_right": 0
+        }
+      ]
+    }
   }
 ]
