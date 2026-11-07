@@ -48,12 +48,13 @@
     "@vueuse/nuxt": "^15.0.0",
     "better-sqlite3": "^13.0.3",
     "consola": "^3.2.3",
+    "date-fns": "^4.4.0",
     "drizzle-orm": "1.0.0-rc.4",
     "es-toolkit": "^1.52.0",
     "highcharts": "^13.1.1",
     "highcharts-vue": "^2.0.2",
     "playwright": "^1.52.0",
-    "quasar": "^2.33.1",
+    "quasar": "^2.35.2",
     "zod": "^4.6.5"
   },
   "pnpm": {

@@ -190,7 +190,7 @@ const isDarkMode = computed(() => $q.dark.isActive)
       >
         <div
           class="flex align-center justify-center p-4 gap-4"
-          @click="toggleRightDrawer"
+          @click="toggleRightDrawer()"
         >
           <NuxtLink
             to="/code-snippets"

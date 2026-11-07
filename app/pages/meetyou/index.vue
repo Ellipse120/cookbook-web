@@ -17,6 +17,7 @@ const { data, refresh } = await useAPI('/api/meetyou/list', {
   query: {
     dates: currentDates,
   },
+  key: 'babyDetailRecordList',
 })
 
 const { data: babyRecord, refresh: refreshBabyRecord } = await useAPI('/api/meetyou/baby_record', {

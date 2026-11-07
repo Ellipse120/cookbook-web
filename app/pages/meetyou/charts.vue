@@ -1,14 +1,18 @@
 <script lang="ts" setup>
-const { data: babyRecord } = useNuxtData('babyRecord')
+import Nappy from './components/nappy.vue'
+
+const { data: babyRecordList } = useNuxtData('babyDetailRecordList')
+
+const { data: babyRecord } = await useAPI('/api/meetyou/baby_record', {
+  key: 'babyRecord',
+})
 </script>
 
 <template>
   <div>
-    {{ babyRecord?.records[0] }}
-    <ul>
-      <li>拉粑粑情况</li>
-      <li>尿布情况</li>
-      <li>其它事件</li>
-    </ul>
+    <Nappy
+      :baby-record="babyRecord as any"
+      :baby-record-list="babyRecordList"
+    />
   </div>
 </template>
