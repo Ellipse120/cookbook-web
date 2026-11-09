@@ -2,6 +2,7 @@
 import Nappy from './components/nappy.vue'
 
 const { data: babyRecordList } = useNuxtData('babyDetailRecordList')
+const { data: babyRecordDates } = useNuxtData('babyRecordDates')
 
 const { data: babyRecord } = await useAPI('/api/meetyou/baby_record', {
   key: 'babyRecord',
@@ -13,6 +14,7 @@ const { data: babyRecord } = await useAPI('/api/meetyou/baby_record', {
     <Nappy
       :baby-record="babyRecord as any"
       :baby-record-list="babyRecordList"
+      :baby-record-dates="babyRecordDates"
     />
   </div>
 </template>

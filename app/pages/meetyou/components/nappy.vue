@@ -1,34 +1,208 @@
 <script lang="ts" setup>
 import TinyCard from './tiny-card.vue'
 
+const dateFns = useUseDatefns()
+
 const props = defineProps({
   babyRecord: Object,
-  babyRecordList: Object,
+  babyRecordList: Array,
+  babyRecordDates: Array,
 })
+
+const currentDate = ref(dateFns.formatDate(new Date(), 'yyyy-MM-dd'))
+
+const calculateTimeIntervals = (timeArray) => {
+  if (!timeArray || timeArray.length < 2) {
+    return { averageIntervalMs: 0, maxIntervalMs: 0, message: '数据不足，无法计算间隔' }
+  }
+
+  let maxIntervalIndex = -1
+  let maxIntervalMs = -1
+
+  const sortedDates = [...timeArray]
+    .map(date => new Date(date))
+    .sort(dateFns.compareAsc)
+
+  let totalIntervalsMs = 0
+  const intervalsCount = sortedDates.length - 1
+
+  // 单次循环：同时计算总和、寻找最大值并锁定位置
+  for (let i = 0; i < intervalsCount; i++) {
+    const msDiff = dateFns.differenceInMilliseconds(sortedDates[i + 1], sortedDates[i])
+    totalIntervalsMs += msDiff
+
+    if (msDiff > maxIntervalMs) {
+      maxIntervalMs = msDiff
+      maxIntervalIndex = i
+    }
+  }
+
+  // 计算平均值
+  const averageIntervalMs = totalIntervalsMs / intervalsCount
+
+  //  提取最长间隔的具体时间点
+  const maxIntervalStart = dateFns.formatDate(sortedDates[maxIntervalIndex], 'HH:mm')
+  const maxIntervalEnd = dateFns.formatDate(sortedDates[maxIntervalIndex + 1], 'HH:mm')
+
+  return {
+    averageIntervalMs,
+    maxIntervalMs,
+    maxIntervalPeriod: {
+      start: maxIntervalStart,
+      end: maxIntervalEnd,
+    },
+    readable: {
+      average: dateFns.toReadableDuration(averageIntervalMs),
+      max: dateFns.toReadableDuration(maxIntervalMs),
+    },
+  }
+}
+
+const babyRecordOfDay = computed(() => {
+  const data = props.babyRecordList?.find((o: any) => currentDate.value === o.date)
+  const nappyData = data!.records?.filter(o => o.record_type === 4).sort(o => o.start_at).reverse() || []
+
+  return {
+    nappyData,
+    peeData: nappyData.filter(o => o.record_category === 41),
+    poopData: nappyData.filter(o => o.record_category === 43),
+    yData: nappyData.slice(0, -1).map((val, index) => ({
+      x: val.start_at,
+      x2: nappyData[index + 1].start_at,
+      y: 0.6,
+      label: val.record_content,
+    })),
+    todaySummary: calculateTimeIntervals(nappyData.map(o => o.start_at)),
+  }
+})
+
+const handleQuery = () => {
+}
 
 const babyRecordIntervalOptions = computed(() => {
   return {
     chart: {
-      type: 'line',
+      type: 'xrange',
+      backgroundColor: '#faf9f6',
+      plotBorderWidth: 0,
+    },
+    title: {
+      text: '',
+    },
+    legend: {
+      align: 'right',
+      verticalAlign: 'top',
+      y: -10,
+      floating: true,
+      borderWidth: 0,
+    },
+    tooltip: {
+      enabled: false,
     },
     xAxis: {
-      categories: ['02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '24:00'],
+      type: 'datetime',
       reversed: true,
       crosshair: true,
+      min: dateFns.startOfDay(new Date()).getTime(),
+      max: dateFns.endOfDay(new Date()).getTime(),
+      tickInterval: 2 * 3600 * 1000, // 每2小时一个刻度
+      gridLineWidth: 0,
+      lineColor: '#E6E6E6',
+      title: { text: '时间 · 24小时制', style: { color: '#666' } },
+      dateTimeLabelFormats: {
+        hour: '%H:%M',
+      },
+      plotLines: babyRecordOfDay.value.nappyData.slice(0, -1).map(v => ({
+        color: '#e74c3c',
+        value: dateFns.formatDate(v.start_at),
+        width: 3,
+        dashStyle: 'Dash',
+        label: {
+          text: v.record_content,
+          align: 'center',
+          x: -16,
+          y: 36,
+          rotation: 0,
+        },
+      })),
     },
     yAxis: {
-      labels: {
-        format: '{value}',
+      visible: false, // 隐藏Y轴
+      min: 0,
+      max: 2,
+    },
+    plotOptions: {
+      scatter: {
+        marker: {
+          enabled: false,
+        },
       },
-      title: {
-        text: '时间',
+      xrange: {
+        borderRadius: 8,
+        pointWidth: 45,
+        borderWidth: 0,
+        grouping: false,
+        dataLabels: {
+          enabled: true,
+          align: 'center',
+          inside: true,
+          style: { color: '#4A5D4E', fontSize: '24px', textOutline: 'none' },
+          formatter: function () {
+            return this.point.label // 显示自定义的“X时X分”
+          },
+        },
       },
     },
     series: [
       {
-        name: '时间',
-        yAxis: 0,
-        data: [1, 2, 3, 4, 5, 6],
+        name: '两次更换间隔',
+        type: 'xrange',
+        color: '#e3ede6',
+        y: 1,
+        data: babyRecordOfDay.value.yData,
+      },
+      // {
+      //   name: '更换尿布',
+      //   type: 'scatter',
+      //   color: '#708090',
+      //   dataLabels: {
+      //     enabled: true,
+      //     y: -35,
+      //     style: { color: '#333', fontSize: '16px' },
+      //   },
+      //   data: babyRecordOfDay.value.nappyData.map(o => ({ x: o.start_at, y: 1 })),
+      // },
+      {
+        name: '小便',
+        type: 'scatter',
+        color: '#4682B4',
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontSize: '24px',
+            textOutline: 'none',
+          },
+          formatter: function () {
+            return this.point.emoji
+          },
+        },
+        data: babyRecordOfDay.value.nappyData.map(o => ({ x: o.start_at, y: 0.8, emoji: '💦' })),
+      },
+      {
+        name: '大便',
+        type: 'scatter',
+        color: '#8B4513',
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontSize: '24px',
+            textOutline: 'none',
+          },
+          formatter: function () {
+            return this.point.emoji
+          },
+        },
+        data: babyRecordOfDay.value.poopData.map(o => ({ x: o.start_at, y: 1, emoji: '💩' })),
       },
     ],
   }
@@ -55,6 +229,7 @@ const babyRecordIntervalOptions = computed(() => {
         <q-btn
           class="ml-4"
           color="red"
+          rounded
           @click="navigateTo('/meetyou')"
         >
           返回
@@ -64,6 +239,31 @@ const babyRecordIntervalOptions = computed(() => {
       <div class="flex gap-2 justify-between items-center">
         <div>7天与月度汇总</div>
         <div>小便、大便</div>
+
+        <q-select
+          v-model="currentDate"
+          outlined
+          rounded
+          dense
+          label="喂养日期"
+          clearable
+          :options="babyRecordDates"
+          class="p-2"
+        >
+          <template #prepend>
+            <q-icon name="event" />
+          </template>
+
+          <template #after>
+            <q-btn
+              round
+              outline
+              color="primary"
+              icon="search"
+              @click="handleQuery"
+            />
+          </template>
+        </q-select>
       </div>
     </div>
 
@@ -71,26 +271,26 @@ const babyRecordIntervalOptions = computed(() => {
       <q-card-section class="grid grid-cols-4 gap-4 p-6 rounded-2xl  border-4 border-red-500 divide-x-4">
         <tiny-card
           header="换尿布次数"
-          body="6"
+          :body="`${babyRecordOfDay.nappyData.length}`"
           extra-body="次"
         />
 
         <tiny-card
           header="平均间隔"
-          body="2h12min"
-          extra-body="共5段间隔"
+          :body="babyRecordOfDay.todaySummary.readable?.average"
+          :extra-body="`共${babyRecordOfDay.nappyData.length -1}段间隔`"
         />
 
         <tiny-card
           header="最长间隔"
-          body="2h45min"
-          extra-body="12:30-15:15"
+          :body="`${babyRecordOfDay.todaySummary.readable?.max}`"
+          :extra-body="`${babyRecordOfDay.todaySummary.maxIntervalPeriod?.start}-${babyRecordOfDay.todaySummary.maxIntervalPeriod?.end}`"
         />
 
         <tiny-card
           header="小便与大便"
-          body="小便4次"
-          extra-body="大便💩3次"
+          :body="`小便💦${babyRecordOfDay.peeData.length}次`"
+          :extra-body="`大便💩${babyRecordOfDay.poopData.length}次`"
         />
       </q-card-section>
     </q-card>

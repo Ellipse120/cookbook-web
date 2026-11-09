@@ -8,6 +8,7 @@ const currentDates = ref([])
 const expanded = ref({})
 
 const { data: babyRecordDates } = await useAPI('/api/meetyou/dates', {
+  key: 'babyRecordDates',
   transform: (v) => {
     return v.reverse()
   },
@@ -403,9 +404,7 @@ const babyRecordOptions = computed(() => {
                     :options="babyRecordOptions"
                   />
                 </ClientOnly>
-                <div>
-                  <Hgb />
-                </div>
+                <Hgb />
               </div>
             </q-dialog>
           </div>

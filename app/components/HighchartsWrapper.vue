@@ -20,7 +20,7 @@
               type="primary"
               @click="clearError"
             >
-              Clear error.
+              Clear error
             </q-btn>
           </q-card-actions>
         </q-card>
@@ -35,6 +35,7 @@ import 'highcharts/modules/accessibility'
 import 'highcharts/modules/variable-pie'
 import 'highcharts/modules/treemap'
 import 'highcharts/highcharts-more'
+import 'highcharts/modules/gantt'
 
 const highchartsRef = useTemplateRef('highchartsRef')
 
@@ -71,7 +72,7 @@ const chartOptions = computed(() => ({
     },
 
     title: {
-      text: '当日游客',
+      text: '',
     },
 
     series: [
