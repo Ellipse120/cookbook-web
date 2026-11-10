@@ -99,12 +99,15 @@ const babyRecordIntervalOptions = computed(() => {
     tooltip: {
       enabled: false,
     },
+    time: {
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    },
     xAxis: {
       type: 'datetime',
-      reversed: true,
+      reversed: false,
       crosshair: true,
-      min: dateFns.startOfDay(new Date()).getTime(),
-      max: dateFns.endOfDay(new Date()).getTime(),
+      min: dateFns.startOfDay(currentDate.value || new Date()).getTime(),
+      max: dateFns.endOfDay(currentDate.value || new Date()).getTime(),
       tickInterval: 2 * 3600 * 1000, // 每2小时一个刻度
       gridLineWidth: 0,
       lineColor: '#E6E6E6',
@@ -270,7 +273,7 @@ const babyRecordIntervalOptions = computed(() => {
     <q-card>
       <q-card-section class="grid grid-cols-4 gap-4 p-6 rounded-2xl  border-4 border-red-500 divide-x-4">
         <tiny-card
-          header="换尿布次数"
+          :header="`换尿布次数 （${currentDate}）`"
           :body="`${babyRecordOfDay.nappyData.length}`"
           extra-body="次"
         />
