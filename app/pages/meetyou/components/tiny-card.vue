@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const props = defineProps({
-  header: String || Number,
-  body: String || Number,
-  extraBody: String || Number,
-  footer: String || Number,
+  header: String || Number || undefined,
+  body: String || Number || undefined,
+  extraBody: String || Number || undefined,
+  footer: String || Number || undefined,
 })
 </script>
 

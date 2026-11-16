@@ -4,8 +4,16 @@ import {
   intervalToDuration,
   formatDuration,
   parse,
+  parseISO,
   startOfDay,
   endOfDay,
+  subDays,
+  subMonths,
+  isAfter,
+  isWithinInterval,
+  getWeekOfMonth,
+  startOfMonth,
+  eachWeekOfInterval,
 } from 'date-fns'
 import { zhCN } from 'date-fns/locale/zh-CN'
 
@@ -25,7 +33,7 @@ export const useUseDatefns = () => {
     })
   }
 
-  function toReadableDuration(ms) {
+  function toReadableDuration(ms: number) {
   // 1. 将毫秒差值转换为 Duration 对象 (包含 hours, minutes, seconds 等)
     const duration = intervalToDuration({ start: 0, end: ms })
 
@@ -45,8 +53,16 @@ export const useUseDatefns = () => {
     differenceInMilliseconds,
     toReadableDuration,
     parse,
+    parseISO,
     addDays,
     startOfDay,
     endOfDay,
+    subDays,
+    subMonths,
+    isAfter,
+    isWithinInterval,
+    getWeekOfMonth,
+    startOfMonth,
+    eachWeekOfInterval,
   }
 }
