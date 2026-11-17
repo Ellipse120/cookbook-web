@@ -1,7 +1,6 @@
 <script setup>
 import TinyCard from './tiny-card.vue'
 import { sumBy } from 'es-toolkit/math'
-import { chunk } from 'es-toolkit/array'
 
 const dateFns = useUseDatefns()
 
@@ -153,9 +152,6 @@ const lastMonthBabyRecords = computed(() => {
       avgAndMaxData: calculateTimeIntervals(t.map(b => b.start_at)),
     })
   }
-
-  const splittedWeekData = chunk(rawRecords, 5)
-  console.log(splittedWeekData)
 
   return {
     summary: {
