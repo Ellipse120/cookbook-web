@@ -1,6 +1,7 @@
 <script setup>
 import TinyCard from './tiny-card.vue'
 import { sumBy } from 'es-toolkit/math'
+import { chunk } from 'es-toolkit/array'
 
 const dateFns = useUseDatefns()
 
@@ -73,7 +74,7 @@ const calculateTimeIntervals = (timeArray) => {
 
 const babyRecordOfDay = computed(() => {
   const data = props.babyRecordList?.find(o => currentDate.value === o.date)
-  const nappyData = data.records?.filter(o => o.record_type === 4).sort(o => o.start_at).reverse() || []
+  const nappyData = data?.records?.filter(o => o.record_type === 4).sort(o => o.start_at).reverse() || []
 
   return {
     nappyData,
@@ -152,6 +153,9 @@ const lastMonthBabyRecords = computed(() => {
       avgAndMaxData: calculateTimeIntervals(t.map(b => b.start_at)),
     })
   }
+
+  const splittedWeekData = chunk(rawRecords, 5)
+  console.log(splittedWeekData)
 
   return {
     summary: {

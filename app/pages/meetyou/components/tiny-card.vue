@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const props = defineProps({
-  header: String || Number || undefined,
-  body: String || Number || undefined,
-  extraBody: String || Number || undefined,
-  footer: String || Number || undefined,
-})
+const props = defineProps<{
+  header?: string | number | undefined
+  body?: string | number | undefined
+  extraBody?: string | number | undefined
+  footer?: string | number | undefined
+}>()
 </script>
 
 <template>
